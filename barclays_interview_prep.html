@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barclays Interview Prep — 100 Questions</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Arial,sans-serif;background:#f0f2f5;color:#333;font-size:15px;line-height:1.6}
+header{background:#00aeef;color:#fff;padding:0 30px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px}.logo em{font-style:normal;color:#fff;opacity:.85}
+.hbadge{background:#fff;color:#00aeef;font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase}
+.hero{background:linear-gradient(135deg,#00aeef 0%,#005f8e 60%,#003a5c 100%);color:#fff;padding:44px 30px 36px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px)}
+.hero-in{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.hero-eye{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:32px;font-weight:900;margin-bottom:10px;line-height:1.15}
+.hero h1 em{font-style:normal;color:#7de8ff}
+.hero p{font-size:14px;color:rgba(255,255,255,.75);max-width:620px;margin-bottom:20px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 12px;font-size:12px;color:rgba(255,255,255,.9)}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 16px;text-align:center}
+.stat .n{font-size:20px;font-weight:900;color:#7de8ff;line-height:1}
+.stat .l{font-size:10px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.layout{max-width:1080px;margin:0 auto;padding:22px 30px 60px;display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:start}
+.sidebar{position:sticky;top:72px}
+.scard{background:#fff;border:1px solid #dde1ea;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:12px}
+.shead{background:#00aeef;color:#fff;padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.snav{padding:4px 0}
+.snav button{display:flex;align-items:center;gap:8px;width:100%;padding:7px 12px;font-size:12px;color:#555;background:none;border:none;cursor:pointer;text-align:left;border-left:3px solid transparent;transition:all .15s}
+.snav button:hover{background:#e8f7fd;color:#00aeef;border-left-color:#00aeef}
+.snav button .cnt{margin-left:auto;background:#f0f2f5;color:#999;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px}
+.sbody{padding:12px 14px}
+.prow{margin-bottom:8px}
+.plabel{display:flex;justify-content:space-between;font-size:11px;color:#999;margin-bottom:3px}
+.pbar{height:4px;background:#e0e4ea;border-radius:2px;overflow:hidden}
+.pfill{height:100%;border-radius:2px}
+.p-bl{background:#00aeef}.p-gd{background:#f5a623}.p-gn{background:#27ae60}
+.stl{font-size:11.5px;color:#666;line-height:1.8}
+.stl p{padding:2px 0}
+.expand-btn{width:100%;background:#00aeef;color:#fff;border:none;padding:9px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer}
+.expand-btn:hover{background:#0090cc}
+.content{min-width:0}
+.info-box{background:#e8f7fd;border:1px solid rgba(0,174,239,.25);border-left:4px solid #00aeef;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:12.5px;color:#005f8e}
+.info-box strong{color:#00aeef}
+.section{background:#fff;border:1px solid #dde1ea;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:16px;overflow:hidden}
+.sec-head{padding:15px 20px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;border-bottom:2px solid transparent;transition:background .15s}
+.sec-head:hover{background:#f7f8fa}
+.section.open .sec-head{border-bottom-color:#00aeef}
+.sec-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.si-bl{background:#e8f7fd}.si-gd{background:#fef9e7}.si-gn{background:#eafaf1}.si-rd{background:#fdecea}.si-pp{background:#f3e8fd}.si-tl{background:#e8f8f5}.si-or{background:#fef5e7}.si-gy{background:#f0f2f5}
+.sec-info{flex:1}
+.sec-cat{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#bbb;margin-bottom:1px}
+.sec-title{font-size:14px;font-weight:700;color:#003a5c}
+.sec-right{display:flex;align-items:center;gap:7px}
+.qcount{background:#00aeef;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.diff{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;text-transform:uppercase}
+.d-h{background:#fdecea;color:#c0392b}.d-m{background:#fef5e7;color:#c05c00}.d-e{background:#eafaf1;color:#27ae60}
+.arrow{font-size:11px;color:#bbb;transition:transform .3s;flex-shrink:0}
+.section.open .arrow{transform:rotate(180deg)}
+.sec-body{display:none;padding:4px 20px 18px}
+.section.open .sec-body{display:block}
+.qcard{border:1px solid #dde1ea;border-radius:7px;margin-top:11px;overflow:hidden}
+.q-head{padding:11px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;background:#f7f8fa;transition:background .15s}
+.qcard.open .q-head{background:#e8f7fd}
+.qno{width:23px;height:23px;border-radius:50%;background:#00aeef;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.qwrap{flex:1;min-width:0}
+.qtext{font-size:13px;font-weight:600;color:#003a5c;line-height:1.4}
+.qtags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase}
+.t-bl{background:#e8f7fd;color:#00aeef}.t-gd{background:#fef9e7;color:#b7770d}.t-gn{background:#eafaf1;color:#27ae60}.t-rd{background:#fdecea;color:#c0392b}.t-pp{background:#f3e8fd;color:#7d3c98}.t-tl{background:#e8f8f5;color:#148f77}.t-or{background:#fef5e7;color:#c05c00}.t-gy{background:#f0f2f5;color:#666}
+.qtoggle{font-size:11px;color:#00aeef;font-weight:700;white-space:nowrap;flex-shrink:0;background:#e8f7fd;padding:2px 8px;border-radius:4px;margin-top:1px}
+.q-body{display:none;padding:13px 14px;background:#fff;border-top:1px solid #dde1ea}
+.qcard.open .q-body{display:block}
+.ans-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#00aeef;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ans-label::after{content:'';flex:1;height:1px;background:#e8f7fd}
+.ans{font-size:13px;color:#444;line-height:1.72}
+.ans strong{color:#003a5c}
+.ans ul,.ans ol{margin:6px 0 6px 18px}
+.ans li{margin-bottom:4px}
+.ans code{background:#f0f2f5;border:1px solid #dde1ea;border-radius:3px;padding:1px 5px;font-family:'Courier New',monospace;font-size:12px;color:#003a5c}
+.ans pre{background:#1a2a3a;color:#e8f0f8;border-radius:6px;padding:11px 13px;font-family:'Courier New',monospace;font-size:11.5px;line-height:1.65;overflow-x:auto;margin:8px 0;white-space:pre-wrap;word-break:break-word}
+.tip{background:#e8f7fd;border-left:3px solid #00aeef;border-radius:0 5px 5px 0;padding:8px 12px;margin-top:10px;font-size:12.5px;color:#003a5c;line-height:1.6}
+.tip strong{color:#00aeef}
+.warn{background:#fef9e7;border-left:3px solid #f5a623;border-radius:0 5px 5px 0;padding:8px 12px;margin-top:10px;font-size:12.5px;color:#7d5a00;line-height:1.6}
+footer{background:#003a5c;color:rgba(255,255,255,.5);text-align:center;padding:18px;font-size:12px}
+footer strong{color:#fff}
+@media(max-width:820px){.layout{grid-template-columns:1fr;padding:14px}.sidebar{position:static}.hero{padding:26px 16px}.hero h1{font-size:24px}header{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Barclays <em>Interview Prep</em></div>
+  <span class="hbadge">100 Questions · 2025–26</span>
+</header>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="hero-eye">�� Based on Real GFG · LeetCode · Glassdoor · Blind Reports</div>
+    <h1>Crack the <em>Barclays</em><br>Technology Interview</h1>
+    <p>100 deep-dive questions based on real Barclays interview experiences — covering every round from OA to final onsite. Barclays emphasizes DSA, Python/Java, system design for banking, and strong behavioral rounds aligned with their values.</p>
+    <div class="pills">
+      <span class="pill">�� DSA & Algorithms</span>
+      <span class="pill">�� Python / Java</span>
+      <span class="pill">��️ System Design</span>
+      <span class="pill">�� Banking & Finance</span>
+      <span class="pill">��️ SQL & Databases</span>
+      <span class="pill">�� Behavioral / HR</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">100</div><div class="l">Questions</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">Categories</div></div>
+      <div class="stat"><div class="n">4–5</div><div class="l">Rounds</div></div>
+      <div class="stat"><div class="n">2026</div><div class="l">Aligned</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="scard">
+      <div class="shead">�� Jump to Category</div>
+      <nav class="snav" id="nav"></nav>
+    </div>
+    <div class="scard">
+      <div class="shead">�� Round Weightage</div>
+      <div class="sbody">
+        <div class="prow"><div class="plabel"><span>DSA / Coding</span><span>35%</span></div><div class="pbar"><div class="pfill p-bl" style="width:35%"></div></div></div>
+        <div class="prow"><div class="plabel"><span>System Design</span><span>20%</span></div><div class="pbar"><div class="pfill p-gd" style="width:20%"></div></div></div>
+        <div class="prow"><div class="plabel"><span>Behavioral</span><span>30%</span></div><div class="pbar"><div class="pfill p-gn" style="width:30%"></div></div></div>
+        <div class="prow"><div class="plabel"><span>Domain / Python</span><span>15%</span></div><div class="pbar"><div class="pfill p-bl" style="width:15%"></div></div></div>
+      </div>
+    </div>
+    <div class="scard">
+      <div class="shead">�� Barclays Interview Process</div>
+      <div class="sbody stl">
+        <p>�� <strong>Round 1:</strong> Online Assessment — Aptitude + 2 DSA problems</p>
+        <p>�� <strong>Round 2:</strong> Technical Phone Screen — Python/Java + DSA</p>
+        <p>��️ <strong>Round 3:</strong> Technical Deep Dive — Projects + System Design</p>
+        <p>�� <strong>Round 4:</strong> HR / Behavioral — Values + Culture Fit</p>
+        <p>�� <strong>Round 5:</strong> Final Panel (Senior roles)</p>
+      </div>
+    </div>
+    <div class="scard">
+      <div class="shead">�� Barclays-Specific Tips</div>
+      <div class="sbody stl">
+        <p>✅ Barclays loves <strong>LeetCode Easy–Medium</strong></p>
+        <p>✅ Know <strong>Barclays values</strong>: Respect, Integrity, Service, Excellence, Stewardship (RISES)</p>
+        <p>✅ Expect <strong>banking domain</strong> questions</p>
+        <p>✅ Prepare <strong>STAR stories</strong> aligned with RISES</p>
+        <p>✅ Know <strong>retail banking</strong> products</p>
+        <p>✅ Barclays uses <strong>Java + Python</strong> heavily</p>
+        <p>✅ Know <strong>PCI-DSS, GDPR</strong> basics</p>
+      </div>
+    </div>
+    <button class="expand-btn" id="expandBtn" onclick="toggleAll()">⊕ Expand All Answers</button>
+  </aside>
+
+  <main class="content">
+    <div class="info-box">
+      <strong>How to use this guide:</strong> Click any <strong>section header</strong> to expand that category. Then click any <strong>question</strong> to reveal the model answer. Use "Expand All Answers" to open everything at once.
+    </div>
+    <div id="container"></div>
+  </main>
+</div>
+
+<footer>
+  <strong>Barclays Interview Preparation Guide</strong> · Om Rawal<br>
+  <span>100 questions · 8 categories · Based on real GFG/LeetCode/Glassdoor reports · 2025–26 Edition</span>
+</footer>
+
+<script>
+var SECTIONS = [
+  {
+    id:"s1", icon:"��", ico:"si-bl",
+    cat:"Most Tested · OA + Technical Rounds",
+    title:"Data Structures, Algorithms & Coding",
+    diff:"Highest Priority", dc:"d-h",
+    qs:[
+      {n:1,q:"Two Sum — find two numbers in an array that add up to a target. (Barclays OA — most frequently reported on GFG)",tags:[["Arrays","bl"],["HashMap","gn"],["Barclays OA","gd"]],
+       a:"<pre>def twoSum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        complement = target - n\n        if complement in seen:\n            return [seen[complement], i]\n        seen[n] = i\n    return []\n# Time: O(n), Space: O(n)</pre><strong>Intuition:</strong> For each number, check if its complement (target - num) has been seen before. Store each number's index in a HashMap.<div class='tip'><strong>�� Barclays Tip:</strong> This is the most commonly reported Barclays OA question on GFG. Also know the sorted array variant (two pointers, O(1) space) and the 3Sum variant.</div>"},
+
+      {n:2,q:"Reverse a linked list — both iteratively and recursively. (Reported on GFG for Barclays — very common)",tags:[["Linked List","bl"],["Barclays Classic","gd"]],
+       a:"<pre># Iterative: O(n) time, O(1) space\ndef reverseList(head):\n    prev = None\n    curr = head\n    while curr:\n        nxt = curr.next\n        curr.next = prev\n        prev = curr\n        curr = nxt\n    return prev\n\n# Recursive: O(n) time, O(n) space\ndef reverseListRec(head):\n    if not head or not head.next: return head\n    new_head = reverseListRec(head.next)\n    head.next.next = head\n    head.next = None\n    return new_head</pre><div class='tip'><strong>�� Barclays Tip:</strong> Interviewers often ask both approaches. Know the iterative (preferred for production — no stack overflow risk) and recursive. Also know how to reverse in groups of k.</div>"},
+
+      {n:3,q:"Check if a string is a valid palindrome, considering only alphanumeric characters. (Reported on GFG for Barclays)",tags:[["String","bl"],["Two Pointers","gn"],["Barclays Reported","gd"]],
+       a:"<pre>def isPalindrome(s):\n    s = ''.join(c.lower() for c in s if c.isalnum())\n    return s == s[::-1]\n\n# Two pointer approach (O(1) space)\ndef isPalindromeTP(s):\n    left, right = 0, len(s) - 1\n    while left < right:\n        while left < right and not s[left].isalnum(): left += 1\n        while left < right and not s[right].isalnum(): right -= 1\n        if s[left].lower() != s[right].lower(): return False\n        left += 1; right -= 1\n    return True\n# Time: O(n), Space: O(1)</pre>"},
+
+      {n:4,q:"Find the maximum subarray sum (Kadane's algorithm). Apply to finding the best trading period. (Reported on GFG for Barclays)",tags:[["DP","rd"],["Arrays","bl"],["Barclays Reported","gd"]],
+       a:"<pre>def maxSubArray(nums):\n    max_sum = cur_sum = nums[0]\n    for n in nums[1:]:\n        cur_sum = max(n, cur_sum + n)\n        max_sum = max(max_sum, cur_sum)\n    return max_sum\n# Time: O(n), Space: O(1)</pre><strong>Finance application:</strong> Apply to daily return series to find the best consecutive trading period (maximum cumulative return window).<div class='tip'><strong>�� Barclays Tip:</strong> Follow-up: 'What if you need to return the subarray itself?' Track start and end indices. 'What if all numbers are negative?' Return the maximum single element.</div>"},
+
+      {n:5,q:"Binary search — find the first and last position of a target in a sorted array. (Reported on GFG for Barclays)",tags:[["Binary Search","bl"],["Arrays","gn"]],
+       a:"<pre>def searchRange(nums, target):\n    def find_bound(is_left):\n        lo, hi, bound = 0, len(nums)-1, -1\n        while lo <= hi:\n            mid = (lo + hi) // 2\n            if nums[mid] == target:\n                bound = mid\n                if is_left: hi = mid - 1\n                else: lo = mid + 1\n            elif nums[mid] < target: lo = mid + 1\n            else: hi = mid - 1\n        return bound\n    return [find_bound(True), find_bound(False)]\n# Time: O(log n), Space: O(1)</pre><strong>Common pitfalls:</strong> Off-by-one errors, infinite loops, integer overflow (use <code>lo + (hi-lo)//2</code>)."},
+
+      {n:6,q:"Valid parentheses — check if a string of brackets is valid. (Reported on GFG for Barclays — very common)",tags:[["Stack","bl"],["String","gn"],["Barclays Classic","gd"]],
+       a:"<pre>def isValid(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in s:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[ch] != top: return False\n        else:\n            stack.append(ch)\n    return not stack\n# Time: O(n), Space: O(n)</pre><strong>Finance use case:</strong> Validating nested financial expressions, JSON/XML parsing for financial data feeds."},
+
+      {n:7,q:"Detect a cycle in a linked list using Floyd's algorithm. (Reported on GFG for Barclays)",tags:[["Linked List","bl"],["Two Pointers","gn"],["Barclays Reported","gd"]],
+       a:"<pre>def hasCycle(head):\n    slow = fast = head\n    while fast and fast.next:\n        slow = slow.next\n        fast = fast.next.next\n        if slow == fast: return True\n    return False\n\n# Find the start of the cycle\ndef detectCycle(head):\n    slow = fast = head\n    while fast and fast.next:\n        slow = slow.next\n        fast = fast.next.next\n        if slow == fast:\n            slow = head\n            while slow != fast:\n                slow = slow.next\n                fast = fast.next\n            return slow\n    return None\n# Time: O(n), Space: O(1)</pre>"},
+
+      {n:8,q:"Level order traversal of a binary tree (BFS). Return levels as a list of lists. (Reported on GFG for Barclays)",tags:[["Trees","bl"],["BFS","gn"],["Barclays Reported","gd"]],
+       a:"<pre>from collections import deque\n\ndef levelOrder(root):\n    if not root: return []\n    result = []\n    queue = deque([root])\n    while queue:\n        level = []\n        for _ in range(len(queue)):\n            node = queue.popleft()\n            level.append(node.val)\n            if node.left: queue.append(node.left)\n            if node.right: queue.append(node.right)\n        result.append(level)\n    return result\n# Time: O(n), Space: O(n)</pre><strong>Variants:</strong> Zigzag level order, right side view, average of levels — all use the same BFS template."},
+
+      {n:9,q:"Find all pairs in an array with a given sum. Handle duplicates. (Reported on GFG for Barclays)",tags:[["Arrays","bl"],["HashMap","gn"],["Barclays Reported","gd"]],
+       a:"<pre>def findPairs(nums, target):\n    seen = set()\n    pairs = set()\n    for n in nums:\n        complement = target - n\n        if complement in seen:\n            pairs.add((min(n, complement), max(n, complement)))\n        seen.add(n)\n    return list(pairs)\n# Time: O(n), Space: O(n)</pre><strong>Finance use case:</strong> Finding transaction pairs that sum to a specific amount for reconciliation or fraud detection."},
+
+      {n:10,q:"Implement a stack using queues and a queue using stacks. (Reported on GFG for Barclays)",tags:[["Stack","bl"],["Queue","gn"],["Barclays Classic","gd"]],
+       a:"<pre>from collections import deque\n\n# Stack using two queues\nclass MyStack:\n    def __init__(self): self.q = deque()\n    def push(self, x):\n        self.q.append(x)\n        for _ in range(len(self.q) - 1):\n            self.q.append(self.q.popleft())\n    def pop(self): return self.q.popleft()\n    def top(self): return self.q[0]\n    def empty(self): return not self.q\n\n# Queue using two stacks\nclass MyQueue:\n    def __init__(self): self.s1 = []; self.s2 = []\n    def push(self, x): self.s1.append(x)\n    def pop(self):\n        if not self.s2:\n            while self.s1: self.s2.append(self.s1.pop())\n        return self.s2.pop()\n    def peek(self):\n        if not self.s2:\n            while self.s1: self.s2.append(self.s1.pop())\n        return self.s2[-1]\n    def empty(self): return not self.s1 and not self.s2</pre>"},
+
+      {n:11,q:"Merge two sorted linked lists. (Reported on GFG for Barclays — very common)",tags:[["Linked List","bl"],["Barclays Classic","gd"]],
+       a:"<pre>def mergeTwoLists(l1, l2):\n    dummy = ListNode(0)\n    curr = dummy\n    while l1 and l2:\n        if l1.val <= l2.val:\n            curr.next = l1; l1 = l1.next\n        else:\n            curr.next = l2; l2 = l2.next\n        curr = curr.next\n    curr.next = l1 or l2\n    return dummy.next\n# Time: O(m+n), Space: O(1)</pre><strong>Recursive version:</strong><pre>def mergeTwoListsRec(l1, l2):\n    if not l1: return l2\n    if not l2: return l1\n    if l1.val <= l2.val:\n        l1.next = mergeTwoListsRec(l1.next, l2)\n        return l1\n    else:\n        l2.next = mergeTwoListsRec(l1, l2.next)\n        return l2</pre>"},
+
+      {n:12,q:"Find the first non-repeating character in a string. (Reported on GFG for Barclays)",tags:[["String","bl"],["HashMap","gn"],["Barclays Reported","gd"]],
+       a:"<pre>from collections import Counter\n\ndef firstUniqChar(s):\n    count = Counter(s)\n    for i, ch in enumerate(s):\n        if count[ch] == 1:\n            return i\n    return -1\n# Time: O(n), Space: O(1) — fixed alphabet size</pre><strong>Streaming variant:</strong> Use an OrderedDict to maintain insertion order while tracking counts — O(1) lookup for the first unique character at any point."},
+
+      {n:13,q:"Rotate an array by k positions to the right. (Reported on GFG for Barclays)",tags:[["Arrays","bl"],["Barclays Reported","gd"]],
+       a:"<pre>def rotate(nums, k):\n    n = len(nums)\n    k = k % n  # Handle k > n\n    # Reverse entire array\n    nums.reverse()\n    # Reverse first k elements\n    nums[:k] = nums[:k][::-1]\n    # Reverse remaining elements\n    nums[k:] = nums[k:][::-1]\n# Time: O(n), Space: O(1)\n\n# Example: [1,2,3,4,5,6,7], k=3\n# After reverse all: [7,6,5,4,3,2,1]\n# After reverse first 3: [5,6,7,4,3,2,1]\n# After reverse rest: [5,6,7,1,2,3,4]</pre>"},
+
+      {n:14,q:"Find the intersection of two arrays. Return unique elements. (Reported on GFG for Barclays)",tags:[["Arrays","bl"],["HashSet","gn"]],
+       a:"<pre>def intersection(nums1, nums2):\n    return list(set(nums1) & set(nums2))\n# Time: O(m+n), Space: O(m+n)\n\n# If arrays are sorted (O(1) space):\ndef intersectionSorted(nums1, nums2):\n    nums1.sort(); nums2.sort()\n    i = j = 0; result = []\n    while i < len(nums1) and j < len(nums2):\n        if nums1[i] == nums2[j]:\n            if not result or result[-1] != nums1[i]:\n                result.append(nums1[i])\n            i += 1; j += 1\n        elif nums1[i] < nums2[j]: i += 1\n        else: j += 1\n    return result</pre><strong>Finance use case:</strong> Finding common securities between two portfolios, matching transaction IDs across systems."},
+
+      {n:15,q:"Implement a min stack that supports push, pop, top, and getMin in O(1). (Reported on GFG for Barclays)",tags:[["Stack","bl"],["Design","gn"],["Barclays Reported","gd"]],
+       a:"<pre>class MinStack:\n    def __init__(self):\n        self.stack = []\n        self.min_stack = []\n\n    def push(self, val):\n        self.stack.append(val)\n        min_val = min(val, self.min_stack[-1] if self.min_stack else val)\n        self.min_stack.append(min_val)\n\n    def pop(self):\n        self.stack.pop()\n        self.min_stack.pop()\n\n    def top(self): return self.stack[-1]\n    def getMin(self): return self.min_stack[-1]\n# All operations: O(1)</pre><strong>Finance use case:</strong> Tracking minimum price in a sliding window for trading strategies."},
+
+      {n:16,q:"Count the number of islands in a binary matrix. (Reported on GFG for Barclays)",tags:[["Graphs","bl"],["BFS/DFS","gn"],["Barclays Reported","gd"]],
+       a:"<pre>def numIslands(grid):\n    if not grid: return 0\n    rows, cols = len(grid), len(grid[0])\n    count = 0\n    def dfs(r, c):\n        if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != '1': return\n        grid[r][c] = '0'\n        for dr, dc in [(0,1),(0,-1),(1,0),(-1,0)]: dfs(r+dr, c+dc)\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == '1': dfs(r, c); count += 1\n    return count\n# Time: O(mn), Space: O(mn) for recursion stack</pre>"},
+
+      {n:17,q:"Implement binary search tree (BST) insert, search, and inorder traversal. (Reported on GFG for Barclays)",tags:[["BST","bl"],["Trees","gn"],["Barclays Reported","gd"]],
+       a:"<pre>class BST:\n    def __init__(self): self.root = None\n\n    def insert(self, val):\n        def _insert(node, val):\n            if not node: return TreeNode(val)\n            if val < node.val: node.left = _insert(node.left, val)\n            elif val > node.val: node.right = _insert(node.right, val)\n            return node\n        self.root = _insert(self.root, val)\n\n    def search(self, val):\n        def _search(node, val):\n            if not node or node.val == val: return node\n            if val < node.val: return _search(node.left, val)\n            return _search(node.right, val)\n        return _search(self.root, val)\n\n    def inorder(self):\n        result = []\n        def _inorder(node):\n            if node:\n                _inorder(node.left)\n                result.append(node.val)\n                _inorder(node.right)\n        _inorder(self.root)\n        return result  # Returns sorted order!</pre>"},
+
+      {n:18,q:"Given a sorted array, find the target using binary search. What is the time complexity? (Barclays OA — reported on GFG)",tags:[["Binary Search","bl"],["Barclays OA","gd"]],
+       a:"<pre>def binarySearch(nums, target):\n    lo, hi = 0, len(nums) - 1\n    while lo <= hi:\n        mid = lo + (hi - lo) // 2  # Avoid overflow\n        if nums[mid] == target: return mid\n        elif nums[mid] < target: lo = mid + 1\n        else: hi = mid - 1\n    return -1\n# Time: O(log n), Space: O(1)</pre><strong>Common variants:</strong><ul><li>Find first/last occurrence: modify to continue searching after finding target</li><li>Search in rotated sorted array: determine which half is sorted first</li><li>Find peak element: binary search on the slope</li></ul><div class='tip'><strong>�� Barclays Tip:</strong> Always use <code>lo + (hi-lo)//2</code> instead of <code>(lo+hi)//2</code> to avoid integer overflow — shows attention to detail.</div>"}
+    ]
+  },
+  {
+    id:"s2", icon:"��", ico:"si-gd",
+    cat:"Technical Round",
+    title:"Python, Java & Core Programming",
+    diff:"Medium–Hard", dc:"d-m",
+    qs:[
+      {n:19,q:"What is Python's GIL? How does it affect multi-threaded applications? How do you handle CPU-bound parallelism at Barclays scale?",tags:[["GIL","bl"],["Concurrency","gn"]],
+       a:"The GIL (Global Interpreter Lock) allows only one thread to execute Python bytecode at a time, even on multi-core systems.<br><br><strong>Impact:</strong><ul><li><strong>I/O-bound tasks:</strong> Threading still helps — GIL released during I/O waits (network, file, DB)</li><li><strong>CPU-bound tasks:</strong> Threading provides NO speedup — use <code>multiprocessing</code> instead</li></ul><strong>Solutions for CPU-bound parallelism:</strong><ul><li><code>multiprocessing</code> — separate processes, each with own GIL</li><li><code>concurrent.futures.ProcessPoolExecutor</code> — high-level API</li><li>NumPy/SciPy — release GIL for C-level operations</li><li>Numba with <code>parallel=True</code> — releases GIL for JIT-compiled loops</li><li>PySpark — distributed processing bypasses GIL entirely</li></ul><div class='tip'><strong>�� Barclays Context:</strong> Risk calculations (Monte Carlo simulations) are CPU-bound → multiprocessing. Market data ingestion is I/O-bound → asyncio or threading.</div>"},
+
+      {n:20,q:"What are Python decorators? Write one that logs execution time and handles exceptions. (Reported on GFG for Barclays)",tags:[["Decorators","bl"],["Python","gn"],["Barclays Reported","gd"]],
+       a:"A decorator is a higher-order function that wraps another function to extend its behavior without modifying it.<br><br><pre>import time, logging, functools\n\ndef timed_logger(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        try:\n            result = func(*args, **kwargs)\n            logging.info(f\"{func.__name__} took {time.perf_counter()-start:.3f}s\")\n            return result\n        except Exception as e:\n            logging.error(f\"{func.__name__} failed: {e}\")\n            raise\n    return wrapper</pre><strong>Key:</strong> Always use <code>@functools.wraps(func)</code> to preserve the original function's metadata."},
+
+      {n:21,q:"Explain Python's memory model. Explain mutable vs immutable objects and how assignment works under the hood.",tags:[["Python Internals","bl"],["Memory","gn"]],
+       a:"In Python, <strong>everything is an object</strong>. Variables are references (pointers) to objects, not containers.<br><br><strong>Immutable:</strong> int, float, str, tuple — cannot be changed after creation. Reassignment creates a new object.<br><strong>Mutable:</strong> list, dict, set — can be modified in place. Multiple variables can reference the same object.<br><br><pre># Mutable — shared reference!\na = [1,2,3]; b = a; b.append(4)\n# a is now [1,2,3,4] — same object!\n\n# Python interns small ints (-5 to 256)\na = 256; b = 256; print(a is b)  # True\na = 257; b = 257; print(a is b)  # False</pre><div class='tip'><strong>�� Barclays Tip:</strong> Interviewers test if you understand <code>is</code> vs <code>==</code> and implications for function arguments (pass by object reference).</div>"},
+
+      {n:22,q:"What are generators and when would you use them in a financial data pipeline? (Reported on GFG for Barclays)",tags:[["Python","bl"],["Memory Efficiency","gn"],["Barclays Reported","gd"]],
+       a:"A generator is a special iterator created with <code>yield</code> — it lazily produces values one at a time, holding state between calls. Constant memory usage regardless of dataset size.<br><br><pre>def read_transactions(file, chunk_size=10000):\n    for chunk in pd.read_csv(file, chunksize=chunk_size):\n        yield chunk\n\n# Process large files without loading into memory\nfor chunk in read_transactions('transactions.csv'):\n    process(chunk)\n    load_to_db(chunk)</pre><strong>Generator expressions:</strong> <code>(x*2 for x in range(1_000_000))</code> — lazy, vs list comprehension which is eager.<br><strong>Use generators when:</strong> Data is too large for memory, you only need one pass, streaming processing."},
+
+      {n:23,q:"What is the difference between list, tuple, set, and dict in Python? When would you use each in a banking application?",tags:[["Python","bl"],["Data Structures","gn"]],
+       a:"<table style='width:100%;border-collapse:collapse;font-size:12px;margin:8px 0'><tr style='background:#e8f7fd'><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Type</th><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Ordered</th><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Mutable</th><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Duplicates</th><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Lookup</th></tr><tr><td style='padding:7px;border:1px solid #dde1ea'><strong>list</strong></td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>O(n)</td></tr><tr style='background:#f7f8fa'><td style='padding:7px;border:1px solid #dde1ea'><strong>tuple</strong></td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>No</td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>O(n)</td></tr><tr><td style='padding:7px;border:1px solid #dde1ea'><strong>set</strong></td><td style='padding:7px;border:1px solid #dde1ea'>No</td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>No</td><td style='padding:7px;border:1px solid #dde1ea'>O(1)</td></tr><tr style='background:#f7f8fa'><td style='padding:7px;border:1px solid #dde1ea'><strong>dict</strong></td><td style='padding:7px;border:1px solid #dde1ea'>Yes (3.7+)</td><td style='padding:7px;border:1px solid #dde1ea'>Yes</td><td style='padding:7px;border:1px solid #dde1ea'>Keys: No</td><td style='padding:7px;border:1px solid #dde1ea'>O(1)</td></tr></table><strong>Banking use cases:</strong><ul><li><strong>list:</strong> Ordered transaction history, price series</li><li><strong>tuple:</strong> Immutable trade records (ticker, price, timestamp) — hashable, can be dict keys</li><li><strong>set:</strong> Unique account IDs, blacklisted merchants, sanctioned entities</li><li><strong>dict:</strong> Account balances, instrument pricing, customer profiles</li></ul>"},
+
+      {n:24,q:"How do you use Pydantic for data validation in financial APIs? Why use Decimal instead of float for money?",tags:[["Python","bl"],["Validation","tl"],["Finance","gd"]],
+       a:"<pre>from pydantic import BaseModel, field_validator, Field\nfrom decimal import Decimal\n\nclass Transaction(BaseModel):\n    id: str = Field(pattern=r'^TXN\\d{10}$')\n    amount: Decimal = Field(gt=0, decimal_places=2)\n    currency: str = Field(min_length=3, max_length=3)\n\n    @field_validator('currency')\n    @classmethod\n    def validate_currency(cls, v):\n        if v not in {'GBP', 'USD', 'EUR', 'JPY'}:\n            raise ValueError('Invalid currency')\n        return v</pre><strong>Why Decimal not float:</strong> Float has precision issues — <code>0.1 + 0.2 != 0.3</code> in floating point. Financial calculations require exact decimal arithmetic. Always use <code>Decimal</code> for monetary amounts."},
+
+      {n:25,q:"What are Python's abstract base classes (ABCs)? How do they enforce interfaces in a banking system?",tags:[["Python OOP","bl"],["Design","gn"]],
+       a:"ABCs define interfaces that subclasses must implement. Unlike duck typing (runtime check), ABCs enforce contracts at class definition time.<br><br><pre>from abc import ABC, abstractmethod\n\nclass PaymentProcessor(ABC):\n    @abstractmethod\n    def process_payment(self, amount, currency): ...\n\n    @abstractmethod\n    def refund(self, transaction_id): ...\n\n    def validate_amount(self, amount):  # Concrete method\n        if amount <= 0:\n            raise ValueError('Amount must be positive')\n\nclass BacsPayment(PaymentProcessor):\n    def process_payment(self, amount, currency): ...\n    def refund(self, transaction_id): ...</pre><strong>ABCs vs Duck Typing:</strong> ABCs are explicit contracts — fail at class definition if abstract methods aren't implemented. Better for large teams and banking systems where interface compliance is critical."},
+
+      {n:26,q:"Explain SOLID principles with examples from a banking system. (Reported on Glassdoor for Barclays)",tags:[["SOLID","bl"],["OOP","gn"],["Barclays Reported","gd"]],
+       a:"<strong>S — Single Responsibility:</strong> Each class has one reason to change.<br><pre>class Account:           # Core domain logic only\n    def deposit(self, amount): ...\n\nclass AccountRepository:  # Persistence\n    def save(self, account): ...\n\nclass AccountNotifier:    # Notifications\n    def notify(self, account): ...</pre><strong>O — Open/Closed:</strong> Open for extension, closed for modification. Add new payment types without modifying existing code.<br><strong>L — Liskov Substitution:</strong> Subclasses must be substitutable for their base class.<br><strong>I — Interface Segregation:</strong> Don't force clients to implement interfaces they don't use.<br><strong>D — Dependency Inversion:</strong> Depend on abstractions, not concretions. Inject dependencies rather than creating them.<div class='tip'><strong>�� Barclays Tip:</strong> Barclays interviewers love SOLID questions. Always give concrete banking examples — don't just define the principles abstractly.</div>"},
+
+      {n:27,q:"What is the difference between shallow copy and deep copy in Python? Give a scenario where using the wrong one caused a bug.",tags:[["Python","bl"],["Tricky","rd"]],
+       a:"<strong>Shallow copy</strong> (<code>copy.copy()</code> or <code>list[:]</code>) creates a new container but references the same nested objects.<br><strong>Deep copy</strong> (<code>copy.deepcopy()</code>) recursively copies all nested objects.<br><br><pre>import copy\n\n# Bug scenario: account config with nested lists\nconfig = {'limits': [1000, 5000, 10000]}\nconfig_copy = config.copy()  # Shallow!\n\n# Modifying nested list affects original!\nconfig_copy['limits'].append(50000)\nprint(config['limits'])  # [1000, 5000, 10000, 50000] — BUG!\n\n# Fix: use deepcopy\nconfig_copy = copy.deepcopy(config)\nconfig_copy['limits'].append(50000)\nprint(config['limits'])  # [1000, 5000, 10000] — Correct!</pre>"},
+
+      {n:28,q:"How do you write thread-safe code in Python? What synchronization primitives does Python provide?",tags:[["Concurrency","bl"],["Thread Safety","rd"]],
+       a:"<strong>Python synchronization primitives:</strong> Lock, RLock, Semaphore, Event, Condition, Queue (thread-safe FIFO).<br><br><pre>import threading\n\nclass BankAccount:\n    def __init__(self, balance=0):\n        self._balance = balance\n        self._lock = threading.Lock()\n\n    def deposit(self, amount):\n        with self._lock:  # Context manager ensures release\n            self._balance += amount\n\n    def withdraw(self, amount):\n        with self._lock:\n            if self._balance >= amount:\n                self._balance -= amount\n                return True\n            return False\n\n    def get_balance(self):\n        with self._lock:\n            return self._balance</pre><strong>Note:</strong> Python's GIL provides some protection for simple operations, but compound operations (check-then-act) are NOT atomic and require explicit locking."},
+
+      {n:29,q:"What is functools.lru_cache? Implement memoization from scratch. What are its limitations?",tags:[["Python","bl"],["Optimization","gn"]],
+       a:"<pre>def memoize(func):\n    cache = {}\n    def wrapper(*args):\n        if args not in cache:\n            cache[args] = func(*args)\n        return cache[args]\n    return wrapper\n\n@memoize\ndef fib(n):\n    if n < 2: return n\n    return fib(n-1) + fib(n-2)</pre><strong>lru_cache vs cache (Python 3.9+):</strong> <code>lru_cache(maxsize=N)</code> is bounded with LRU eviction. <code>cache</code> = <code>lru_cache(maxsize=None)</code> — unbounded, slightly faster.<br><strong>Limitations:</strong> Only works with hashable arguments. Not thread-safe by default for custom implementations. Memory grows unboundedly without maxsize."},
+
+      {n:30,q:"How do you handle exceptions in Python? What's the difference between Exception and BaseException? How do you create custom exceptions for a banking system?",tags:[["Python","bl"],["Error Handling","gn"]],
+       a:"<strong>BaseException:</strong> Root of all exceptions including SystemExit, KeyboardInterrupt. Almost never catch this.<br><strong>Exception:</strong> Base for all non-system-exiting exceptions — catch this for application errors.<br><br><pre>class BankingError(Exception):\n    \"\"\"Base class for all banking errors\"\"\"\n    pass\n\nclass InsufficientFundsError(BankingError):\n    def __init__(self, account_id, required, available):\n        self.account_id = account_id\n        self.required = required\n        self.available = available\n        super().__init__(\n            f\"Account {account_id}: required {required}, available {available}\"\n        )\n\nclass DailyLimitExceededError(BankingError):\n    def __init__(self, account_id, limit):\n        super().__init__(f\"Daily limit {limit} exceeded for account {account_id}\")\n\n# Usage\ntry:\n    account.withdraw(1000)\nexcept InsufficientFundsError as e:\n    logger.warning(f\"Insufficient funds: {e}\")\n    notify_customer(e.account_id)\nexcept BankingError as e:\n    logger.error(f\"Banking error: {e}\")\n    raise</pre>"},
+
+      {n:31,q:"What is the difference between @classmethod and @staticmethod? When would you use each in a banking application?",tags:[["Python OOP","bl"],["Design","gn"]],
+       a:"<pre>class BankAccount:\n    _interest_rate = 0.05\n    _accounts = {}\n\n    def __init__(self, account_id, balance=0):\n        self.account_id = account_id\n        self.balance = balance\n\n    @classmethod\n    def from_dict(cls, data):\n        # Factory method — can be overridden by subclasses\n        return cls(data['account_id'], data['balance'])\n\n    @classmethod\n    def set_interest_rate(cls, rate):\n        # Modifies class-level state\n        cls._interest_rate = rate\n\n    @staticmethod\n    def validate_account_number(account_no):\n        # Pure utility — no access to class or instance\n        return len(account_no) == 8 and account_no.isdigit()\n\n    @property\n    def interest(self):\n        return self.balance * self._interest_rate</pre><strong>@classmethod:</strong> Receives class as first arg (<code>cls</code>). Used for factory methods. Can be overridden by subclasses (polymorphic).<br><strong>@staticmethod:</strong> No implicit first arg. Pure utility function. Cannot be overridden polymorphically."}
+    ]
+  },
+  {
+    id:"s3", icon:"��️", ico:"si-pp",
+    cat:"Senior Roles · Round 3",
+    title:"System Design — Banking Systems at Scale",
+    diff:"Hard", dc:"d-h",
+    qs:[
+      {n:32,q:"Design a banking payment processing system that handles 50,000 transactions per second with exactly-once delivery. (Classic Barclays system design — reported on Glassdoor)",tags:[["System Design","pp"],["Finance","gd"],["Barclays Classic","bl"]],
+       a:"<strong>Requirements:</strong> 50K TPS, exactly-once, &lt;100ms latency, 99.99% availability, PCI-DSS compliant.<br><br><strong>Architecture:</strong><ul><li><strong>API Gateway:</strong> Load balancing, rate limiting, authentication (OAuth2/mTLS). TLS 1.3 for all connections.</li><li><strong>Payment Service:</strong> Stateless microservices, horizontal scaling. Validates payment details, checks fraud rules.</li><li><strong>Idempotency Layer:</strong> Redis with idempotency keys — deduplicate retries. Key = client_id + transaction_id.</li><li><strong>Message Queue (Kafka):</strong> Durable, ordered, partitioned by account_id for ordering guarantees. Exactly-once semantics with transactional producers.</li><li><strong>Database:</strong> Sharded PostgreSQL (by account_id) + read replicas. Optimistic locking for balance updates.</li><li><strong>Saga Pattern:</strong> Distributed transactions — debit source → credit destination → notify → settle.</li><li><strong>Event Sourcing:</strong> Immutable transaction log — audit trail, replay capability. Required for PCI-DSS.</li></ul><strong>Exactly-once:</strong> Idempotency key + DB unique constraint on transaction_id. Kafka exactly-once semantics with transactional producers.<div class='tip'><strong>�� Barclays Tip:</strong> Always mention PCI-DSS compliance, audit logs, data residency (UK/EU), and FCA regulatory requirements. This shows financial domain awareness.</div>"},
+
+      {n:33,q:"Design a fraud detection system that flags suspicious transactions in real-time (&lt;50ms) while processing millions per day.",tags:[["System Design","pp"],["ML","tl"],["Barclays Domain","gd"]],
+       a:"<strong>Two-tier approach:</strong><br><br><strong>Tier 1 — Real-time rules engine (&lt;5ms):</strong><ul><li>Rule-based checks: velocity limits, geographic anomalies, blacklisted merchants</li><li>In-memory Redis for user transaction history (last 24h)</li><li>Bloom filters for known fraudulent patterns</li></ul><strong>Tier 2 — ML scoring (&lt;50ms):</strong><ul><li>Feature store (Redis) with pre-computed user features</li><li>Lightweight ML model (XGBoost) served via FastAPI</li><li>Features: amount, merchant category, time, location delta, velocity</li></ul><strong>Async enrichment:</strong> Kafka stream for deep analysis (graph neural networks). Feedback loop: confirmed fraud → retrain models.<br><strong>Decision:</strong> Block (high score), flag for review (medium), allow (low score)."},
+
+      {n:34,q:"Design a distributed cache system. How do you handle cache invalidation, consistency, and eviction?",tags:[["System Design","pp"],["Caching","bl"]],
+       a:"<strong>Architecture:</strong> Redis Cluster with consistent hashing for key distribution.<br><br><strong>Cache invalidation strategies:</strong><ul><li><strong>TTL-based:</strong> Simple, eventual consistency</li><li><strong>Write-through:</strong> Update cache and DB simultaneously — strong consistency</li><li><strong>Write-behind:</strong> Update cache first, async DB write — low latency, risk of data loss</li><li><strong>Cache-aside:</strong> Read from cache; on miss, load from DB and populate</li><li><strong>Event-driven:</strong> DB change events (CDC) trigger cache invalidation</li></ul><strong>Eviction policies:</strong> LRU (most common), LFU, TTL, Random.<br><strong>Financial data:</strong> Use write-through with short TTL. Never cache account balances without invalidation on update.<br><strong>Thundering herd:</strong> Use mutex on cache miss to prevent multiple DB queries for the same key."},
+
+      {n:35,q:"Design a URL shortener service. Scale it to handle 100M URLs and 10B redirects per month.",tags:[["System Design","pp"],["Classic","bl"]],
+       a:"<strong>Core design:</strong><ul><li><strong>Short code:</strong> Base62 encoding of auto-increment ID (6 chars = 62^6 = 56B URLs)</li><li><strong>Write path:</strong> API → ID generator (Snowflake ID) → encode → store in DB</li><li><strong>Read path:</strong> Short URL → Redis cache → DB fallback → 301 redirect</li></ul><strong>Scale:</strong> 10B redirects/month = ~3,858 RPS avg, ~40K RPS peak. Read:Write = 100:1.<br><strong>Database:</strong> Cassandra for URL mappings (high write throughput). Redis for hot URL cache (99% hit rate target).<br><strong>CDN:</strong> Cache redirects at edge for popular URLs — sub-10ms globally."},
+
+      {n:36,q:"What is the CAP theorem? How does it apply to Barclays' banking systems? Give examples of CP vs AP systems.",tags:[["Distributed Systems","pp"],["Theory","tl"]],
+       a:"<strong>CAP Theorem:</strong> Consistency, Availability, Partition Tolerance — choose 2. Since partitions are inevitable, the real choice is CP vs AP.<br><br><strong>Barclays' choices by use case:</strong><ul><li><strong>Account balance updates (CP):</strong> Must be consistent — cannot have two systems thinking different balances. Use strong consistency (PostgreSQL with synchronous replication). A double-spend is catastrophic.</li><li><strong>Transaction history display (AP):</strong> Showing slightly stale history on a dashboard is acceptable. Use eventual consistency (Redis with async replication).</li><li><strong>Payment processing (CP):</strong> Cannot have split-brain — two systems thinking different payments were processed. Use distributed consensus (Raft/Paxos).</li><li><strong>Analytics dashboards (AP):</strong> Slight staleness acceptable. Availability is more important than perfect freshness.</li></ul><div class='tip'><strong>�� Barclays Tip:</strong> 'For core banking operations, we choose CP — consistency is non-negotiable. For read-heavy analytics, we can tolerate AP.'</div>"},
+
+      {n:37,q:"Design a notification system that sends alerts to millions of customers across email, SMS, and push with priority queuing.",tags:[["System Design","pp"],["Messaging","tl"]],
+       a:"<strong>Architecture:</strong><ul><li><strong>Notification API:</strong> Accepts requests, validates, enqueues</li><li><strong>Priority Queues (Kafka):</strong> CRITICAL (fraud alerts, account locked), HIGH (payment confirmations), NORMAL (statements, promotions)</li><li><strong>Channel Workers:</strong> Separate consumer groups for Email (SendGrid), SMS (Twilio), Push (FCM/APNs)</li><li><strong>User Preferences Service:</strong> Channel preferences, quiet hours, opt-outs (GDPR compliance)</li><li><strong>Delivery Tracking:</strong> Track sent/delivered/failed status</li><li><strong>Retry Logic:</strong> Exponential backoff for failed deliveries</li></ul><strong>Barclays context:</strong> Fraud alerts must be CRITICAL priority — delivered within seconds regardless of load. GDPR requires opt-out management."},
+
+      {n:38,q:"Design a microservices architecture for a retail banking application. How do you handle distributed transactions?",tags:[["Microservices","pp"],["Finance","gd"]],
+       a:"<strong>Core services:</strong> Account, Transaction, Notification, Auth, Audit, Reporting, Fraud Detection.<br><br><strong>Distributed transaction patterns:</strong><ul><li><strong>2PC:</strong> Strong consistency but blocking — not suitable for high-throughput</li><li><strong>Saga Pattern (preferred):</strong> Chain of local transactions with compensating transactions for rollback</li></ul><strong>Saga — Money Transfer:</strong><ol><li>Debit source account → success</li><li>Credit destination account → success</li><li>Send notification → success</li><li>If step 2 fails → compensating: credit back source account</li></ol><strong>Choreography vs Orchestration:</strong> Choreography (event-driven, decoupled) for simple flows; Orchestration (central coordinator) for complex flows."},
+
+      {n:39,q:"Design a real-time account balance monitoring system that alerts customers when their balance drops below a threshold.",tags:[["System Design","pp"],["Barclays Domain","gd"]],
+       a:"<strong>Architecture:</strong><ul><li><strong>Transaction Event Stream:</strong> Every transaction published to Kafka topic (partitioned by account_id)</li><li><strong>Balance Calculator:</strong> Streaming Flink/Spark job consuming transaction events. Maintains running balance per account in Redis.</li><li><strong>Threshold Engine:</strong> Rules engine checking balance against customer-defined thresholds. Configurable per customer (e.g., alert when balance &lt; £100).</li><li><strong>Alert Service:</strong> Priority queue for alerts. Multi-channel delivery: push notification, SMS, email. Deduplication to prevent alert storms.</li><li><strong>Customer Preferences:</strong> Store threshold settings, channel preferences, quiet hours. GDPR-compliant opt-in/opt-out.</li></ul><strong>Latency target:</strong> Transaction → alert: &lt;5 seconds. This is a key Barclays product feature (Barclays app balance alerts)."},
+
+      {n:40,q:"Design a system for Open Banking API (PSD2 compliance) that allows third-party providers to access customer account data.",tags:[["System Design","pp"],["Barclays Domain","gd"],["Compliance","tl"]],
+       a:"<strong>Open Banking context:</strong> PSD2 (Payment Services Directive 2) requires UK/EU banks to provide APIs for authorized third-party providers (TPPs) to access customer account data with customer consent.<br><br><strong>Architecture:</strong><ul><li><strong>OAuth2/OIDC:</strong> Customer authentication and consent management. Customers explicitly authorize TPPs to access specific data.</li><li><strong>API Gateway:</strong> Rate limiting per TPP, authentication, request logging. FCA-registered TPPs only.</li><li><strong>Consent Service:</strong> Store and manage customer consents. Customers can revoke at any time. Consent expiry (max 90 days for AIS).</li><li><strong>Account Information Service (AIS):</strong> Read-only access to account data, transaction history, balances.</li><li><strong>Payment Initiation Service (PIS):</strong> Initiate payments on behalf of customers.</li><li><strong>Audit Trail:</strong> Every API call logged with TPP identity, customer consent reference, data accessed. Required for FCA compliance.</li></ul><strong>Security:</strong> mTLS for TPP authentication, FAPI (Financial-grade API) security profile, strong customer authentication (SCA)."},
+
+      {n:41,q:"What is event sourcing and CQRS? When would you use them in a banking application?",tags:[["Architecture","pp"],["Finance","gd"]],
+       a:"<strong>Event Sourcing:</strong> Store state as a sequence of immutable events. Current state = replay of all events.<br><strong>CQRS:</strong> Separate read and write models. Commands (writes) → write model; Queries (reads) → optimized read models (projections).<br><br><strong>Banking use cases:</strong><ul><li><strong>Account ledger:</strong> Every debit/credit is an event. Balance = sum of all events. Perfect audit trail.</li><li><strong>Transaction history:</strong> Order placed → processed → settled — each state change is an event</li><li><strong>Regulatory replay:</strong> Reconstruct account state at any point in time for FCA audits</li></ul><strong>Trade-offs:</strong><ul><li>✅ Complete audit trail, temporal queries, event replay</li><li>❌ Eventual consistency for read models, event schema evolution complexity</li></ul>"},
+
+      {n:42,q:"Design a data pipeline for end-of-day reconciliation between Barclays' internal systems and external clearing houses.",tags:[["Data Pipeline","pp"],["Barclays Domain","gd"],["Finance","tl"]],
+       a:"<strong>Pipeline stages:</strong><ol><li><strong>Ingestion:</strong> Pull from clearing houses (BACS, CHAPS, Faster Payments, SWIFT). Normalize to internal format.</li><li><strong>Validation:</strong> Schema validation, business rule checks (valid sort codes, account numbers)</li><li><strong>Matching:</strong> Match internal transactions against clearing house confirmations. Flag breaks.</li><li><strong>Enrichment:</strong> Add customer details, regulatory classifications, fee calculations</li><li><strong>P&L Calculation:</strong> Realized/unrealized P&L per product, branch, region</li><li><strong>Reporting:</strong> Regulatory reports (FCA, PRA), internal dashboards, customer statements</li><li><strong>Exception Handling:</strong> Route breaks to operations team for manual resolution</li></ol><strong>Technology:</strong> Apache Spark for processing, Airflow for orchestration, PostgreSQL for reconciliation state, S3 for raw data archival."}
+    ]
+  },
+  {
+    id:"s4", icon:"��️", ico:"si-tl",
+    cat:"Technical Round",
+    title:"SQL, Databases & Data Engineering",
+    diff:"Medium", dc:"d-m",
+    qs:[
+      {n:43,q:"Find customers who made transactions in every month of 2024. (Barclays SQL round — reported on GFG)",tags:[["SQL","tl"],["Barclays Reported","gd"]],
+       a:"<pre>SELECT customer_id\nFROM transactions\nWHERE YEAR(transaction_date) = 2024\nGROUP BY customer_id\nHAVING COUNT(DISTINCT MONTH(transaction_date)) = 12;</pre><strong>With CTE for clarity:</strong><pre>WITH monthly_activity AS (\n    SELECT customer_id,\n           COUNT(DISTINCT MONTH(transaction_date)) AS active_months\n    FROM transactions\n    WHERE transaction_date >= '2024-01-01'\n      AND transaction_date < '2025-01-01'\n    GROUP BY customer_id\n)\nSELECT customer_id FROM monthly_activity WHERE active_months = 12;</pre>"},
+
+      {n:44,q:"Find the second highest salary in each department. Handle ties and departments with fewer than 2 employees. (Barclays SQL classic — GFG)",tags:[["SQL","tl"],["Window Functions","bl"],["Barclays Classic","gd"]],
+       a:"<pre>WITH ranked AS (\n    SELECT department_id, employee_id, salary,\n           DENSE_RANK() OVER (\n               PARTITION BY department_id\n               ORDER BY salary DESC\n           ) AS rnk\n    FROM employees\n)\nSELECT department_id, employee_id, salary\nFROM ranked WHERE rnk = 2;</pre><strong>Why DENSE_RANK vs RANK:</strong> DENSE_RANK handles ties correctly — if two employees share the highest salary, the next distinct salary is rank 2 (not rank 3 as with RANK)."},
+
+      {n:45,q:"Detect accounts with unusual patterns: more than 5 transactions within 1 hour exceeding £500 each. (Barclays domain SQL — reported on GFG)",tags:[["SQL","tl"],["Barclays Domain","gd"],["Fraud","rd"]],
+       a:"<pre>WITH large_txns AS (\n    SELECT account_id, transaction_id, amount, transaction_time,\n           COUNT(*) OVER (\n               PARTITION BY account_id\n               ORDER BY transaction_time\n               RANGE BETWEEN INTERVAL '1 HOUR' PRECEDING AND CURRENT ROW\n           ) AS txns_in_window\n    FROM transactions\n    WHERE amount > 500\n)\nSELECT DISTINCT account_id FROM large_txns WHERE txns_in_window > 5;</pre><strong>Key:</strong> <code>RANGE BETWEEN INTERVAL '1 HOUR' PRECEDING AND CURRENT ROW</code> creates a sliding time window — a powerful SQL pattern for financial analysis."},
+
+      {n:46,q:"Calculate a running total and 30-day moving average of account balances per customer.",tags:[["SQL","tl"],["Window Functions","bl"]],
+       a:"<pre>SELECT\n    customer_id, transaction_date, amount,\n    SUM(amount) OVER (\n        PARTITION BY customer_id\n        ORDER BY transaction_date\n        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n    ) AS running_balance,\n    AVG(amount) OVER (\n        PARTITION BY customer_id\n        ORDER BY transaction_date\n        ROWS BETWEEN 29 PRECEDING AND CURRENT ROW\n    ) AS moving_avg_30d\nFROM transactions\nORDER BY customer_id, transaction_date;</pre>"},
+
+      {n:47,q:"What are database indexes? Explain B-tree vs Hash indexes. When would you use a composite index?",tags:[["Database","tl"],["Performance","bl"]],
+       a:"<strong>B-tree index:</strong> Balanced tree. Supports range queries (&lt;, &gt;, BETWEEN), ORDER BY, equality. Default in PostgreSQL/MySQL.<br><strong>Hash index:</strong> Only supports equality (=). O(1) lookup but no range queries.<br><br><strong>Composite index — leftmost prefix rule:</strong> Index on (A, B, C) can be used for queries on A, (A,B), or (A,B,C) but NOT B alone.<br><br><pre>-- Optimal for 'get recent transactions for account'\nCREATE INDEX idx_account_date\nON transactions(account_id, transaction_date DESC);\n\n-- Uses index: WHERE account_id = ? AND transaction_date > ?\n-- Uses index: WHERE account_id = ?\n-- Does NOT use index: WHERE transaction_date > ?</pre>"},
+
+      {n:48,q:"Explain ACID properties and database isolation levels. What are dirty read, non-repeatable read, and phantom read?",tags:[["Database","tl"],["ACID","rd"]],
+       a:"<strong>ACID:</strong> Atomicity, Consistency, Isolation, Durability.<br><br><strong>Isolation levels (weakest to strongest):</strong><br><strong>READ UNCOMMITTED:</strong> Dirty read — T1 reads uncommitted data from T2. T2 rolls back. T1 saw data that never existed.<br><strong>READ COMMITTED:</strong> Prevents dirty reads. Non-repeatable read — T1 reads balance=£1000. T2 commits debit. T1 reads again=£500.<br><strong>REPEATABLE READ:</strong> Prevents non-repeatable reads. Phantom read — T1 counts 10 rows. T2 inserts one. T1 counts 11.<br><strong>SERIALIZABLE:</strong> Prevents all anomalies. Highest isolation, lowest concurrency.<br><br><strong>Barclays recommendation:</strong> READ COMMITTED for most operations. SERIALIZABLE for critical financial operations (balance transfers)."},
+
+      {n:49,q:"What is database sharding vs partitioning? How would you shard a transactions table for a UK retail bank?",tags:[["Database","tl"],["Scalability","bl"]],
+       a:"<strong>Partitioning:</strong> Splitting a table within a single DB instance (range, list, hash).<br><strong>Sharding:</strong> Splitting data across multiple DB instances (servers).<br><br><strong>Sharding strategy for UK retail bank transactions:</strong><ul><li><strong>Shard key:</strong> <code>account_id</code> — all transactions for an account on same shard (no cross-shard joins)</li><li><strong>Hash sharding:</strong> <code>shard = hash(account_id) % num_shards</code> — even distribution</li><li><strong>Geographic sharding:</strong> UK accounts → UK shards (data residency compliance — GDPR, UK GDPR)</li></ul><strong>Challenges:</strong> Cross-shard queries require scatter-gather, rebalancing when adding shards, hot spots with skewed distribution."},
+
+      {n:50,q:"Write a SQL query to find the top 5 customers by total transaction volume in each branch for last quarter, excluding customers with any fraud flags.",tags:[["SQL","tl"],["Complex Query","bl"],["Barclays Domain","gd"]],
+       a:"<pre>WITH clean_customers AS (\n    SELECT DISTINCT customer_id FROM customers\n    WHERE customer_id NOT IN (\n        SELECT DISTINCT customer_id FROM fraud_flags\n        WHERE flag_date >= DATEADD(quarter, -1, GETDATE())\n    )\n),\nquarterly_volume AS (\n    SELECT t.customer_id, t.branch_id,\n           SUM(t.amount) AS total_volume,\n           RANK() OVER (\n               PARTITION BY t.branch_id\n               ORDER BY SUM(t.amount) DESC\n           ) AS rnk\n    FROM transactions t\n    JOIN clean_customers cc ON t.customer_id = cc.customer_id\n    WHERE t.transaction_date >= DATEADD(quarter, -1, GETDATE())\n    GROUP BY t.customer_id, t.branch_id\n)\nSELECT customer_id, branch_id, total_volume, rnk\nFROM quarterly_volume WHERE rnk <= 5\nORDER BY branch_id, rnk;</pre>"},
+
+      {n:51,q:"How do you detect and fix slow queries in PostgreSQL? Walk through your debugging process.",tags:[["Performance","tl"],["Debugging","or"]],
+       a:"<strong>Step 1 — Identify:</strong> Enable <code>pg_stat_statements</code>. Check <code>slow_query_log</code> for queries exceeding threshold.<br><strong>Step 2 — Analyze:</strong> <code>EXPLAIN ANALYZE SELECT ...</code> — shows actual execution plan, row estimates vs actuals, time per node.<br><strong>Step 3 — Common fixes:</strong><ul><li>Missing index: Add index on WHERE/JOIN columns</li><li>Bad row estimates: Run <code>ANALYZE table_name</code> to update statistics</li><li>N+1 queries: Use JOINs or batch fetching</li><li>Lock contention: Check <code>pg_locks</code> for blocking queries</li><li>Sequential scan on large table: Verify index exists and is being used</li></ul><strong>Step 4 — Verify:</strong> Re-run EXPLAIN ANALYZE after fix to confirm improvement."},
+
+      {n:52,q:"Explain OLTP vs OLAP. How would you design a data warehouse for financial reporting at Barclays?",tags:[["Data Warehouse","tl"],["Barclays Domain","gd"]],
+       a:"<strong>OLTP:</strong> Many small reads/writes, normalized schema, row-oriented. Examples: PostgreSQL, MySQL.<br><strong>OLAP:</strong> Few large reads, denormalized (star/snowflake schema), columnar. Examples: BigQuery, Snowflake.<br><br><strong>Star Schema design for Barclays:</strong><ul><li><strong>Fact table:</strong> <code>fact_transactions</code> — transaction_id, amount, date_key, customer_key, product_key, branch_key, channel_key</li><li><strong>Dimension tables:</strong> <code>dim_date</code>, <code>dim_customer</code>, <code>dim_product</code>, <code>dim_branch</code>, <code>dim_channel</code></li><li><strong>SCD Type 2:</strong> For customer attributes that change over time (preserve history for regulatory compliance)</li></ul><strong>ETL pipeline:</strong> OLTP → Kafka → Spark → Data Warehouse (daily batch + near-real-time streaming for critical metrics)."}
+    ]
+  },
+  {
+    id:"s5", icon:"��", ico:"si-pp",
+    cat:"Growing Focus · 2025–26",
+    title:"AI/ML, GenAI & Data Science",
+    diff:"Medium–Hard", dc:"d-m",
+    qs:[
+      {n:53,q:"How is Barclays using AI and GenAI? What is their AI strategy and how would you contribute?",tags:[["GenAI","pp"],["Barclays Specific","gd"],["Must Know","rd"]],
+       a:"<strong>Barclays' AI initiatives:</strong><ul><li><strong>Barclays AI:</strong> Internal AI platform for employees — document summarization, code generation, research assistance. Similar to MS's AI @ Morgan Stanley.</li><li><strong>Fraud Detection AI:</strong> ML models processing millions of transactions daily. Real-time scoring using XGBoost and deep learning.</li><li><strong>Credit Risk AI:</strong> ML models for credit scoring, loan approval, risk assessment. Replacing traditional scorecards.</li><li><strong>Customer Service AI:</strong> Chatbots for retail banking customers. NLP for complaint analysis and routing.</li><li><strong>Barclays Eagle Labs:</strong> Innovation hub supporting fintech startups — AI/ML tools for financial services.</li><li><strong>Code Generation:</strong> GitHub Copilot-like tools for developer productivity across technology teams.</li><li><strong>Anti-Money Laundering (AML):</strong> Graph neural networks for detecting complex money laundering networks.</li></ul><strong>How I'd contribute:</strong> My RAG system experience at Citi directly maps to Barclays' internal AI platform. I'd apply similar architecture to financial document processing — regulatory filings, customer communications, policy documents — using Barclays' internal LLM infrastructure.<div class='tip'><strong>�� Barclays Tip:</strong> Research 'Barclays AI' and 'Barclays Eagle Labs' specifically before your interview. Mentioning these by name shows genuine interest and preparation.</div>"},
+
+      {n:54,q:"What is RAG (Retrieval-Augmented Generation)? How would you build one for Barclays' internal document search?",tags:[["RAG","pp"],["Barclays Domain","gd"]],
+       a:"<strong>RAG Architecture:</strong><ul><li><strong>Ingestion:</strong> Financial documents → chunked → embedded (768-dim) → stored in vector DB (FAISS/Pinecone)</li><li><strong>Retrieval:</strong> User query → embedded → cosine similarity search → top-k relevant chunks</li><li><strong>Generation:</strong> Retrieved chunks + query → LLM → grounded answer with citations</li></ul><strong>Barclays-specific considerations:</strong><ul><li><strong>Data sovereignty:</strong> All documents stay within Barclays' UK infrastructure — no external API calls for sensitive data</li><li><strong>Auditability:</strong> Every answer cites exact source documents — compliance can verify</li><li><strong>Access control:</strong> Users only retrieve documents they're authorized to see (role-based access)</li><li><strong>Hallucination prevention:</strong> Strict grounding — model instructed to only use retrieved context</li><li><strong>GDPR compliance:</strong> No customer PII in the document corpus without explicit consent</li></ul><strong>My experience:</strong> Built exactly this at Citi — 100+ regulatory documents, FAISS, Gemini 2.0 Flash, 85% time reduction."},
+
+      {n:55,q:"Explain the bias-variance tradeoff. How do you detect and handle overfitting in a credit risk model?",tags:[["ML Theory","pp"],["Finance","gd"]],
+       a:"<strong>Bias:</strong> Error from wrong assumptions — model too simple (underfitting). Misses patterns.<br><strong>Variance:</strong> Error from sensitivity to training data — model too complex (overfitting). Memorizes noise.<br><br><strong>Detecting overfitting in credit risk models:</strong><ul><li>Large gap between training AUC and validation AUC</li><li>Model performs well on historical data but poorly on recent data (temporal drift)</li></ul><strong>Handling overfitting:</strong><ul><li>Regularization: L1 (Lasso — feature selection), L2 (Ridge — weight shrinkage)</li><li>Cross-validation: Time-series CV for financial data (no data leakage)</li><li>Ensemble methods: Random Forest, XGBoost — reduce variance through averaging</li><li>Feature selection: Remove irrelevant features using SHAP values</li></ul>"},
+
+      {n:56,q:"What is precision vs recall? Which matters more for fraud detection and why?",tags:[["ML Metrics","pp"],["Fraud","rd"]],
+       a:"<strong>Precision:</strong> Of all flagged as fraud, what % are actually fraud? (TP / (TP + FP))<br><strong>Recall:</strong> Of all actual fraud, what % did we catch? (TP / (TP + FN))<br><br><strong>For fraud detection — Recall matters more:</strong><ul><li>Missed fraud (false negative) = financial loss + customer harm + regulatory risk</li><li>False alarm (false positive) = customer inconvenience (blocked legitimate transaction)</li><li>Cost of missing fraud >> cost of false alarm</li></ul><strong>But precision still matters:</strong> Too many false positives → customers frustrated, call center overwhelmed, churn.<br><strong>Solution:</strong> Use F-beta score with β &gt; 1 (weights recall higher). Or optimize for specific precision threshold (e.g., maintain 95% precision while maximizing recall)."},
+
+      {n:57,q:"How do you prevent data leakage in a time-series financial model? What is the correct cross-validation approach?",tags:[["ML","pp"],["Critical","rd"],["Finance","gd"]],
+       a:"<strong>Data leakage:</strong> When future information leaks into training data, causing artificially high performance.<br><br><strong>Common leakage sources:</strong><ul><li>Normalizing using statistics from the entire dataset (including test period)</li><li>Target encoding using the full dataset</li><li>Features computed using future information</li></ul><strong>Correct time-series cross-validation:</strong><ul><li><strong>Walk-forward validation:</strong> Train on months 1-12, test on 13. Then 1-13, test on 14. Never use future data for training.</li><li><strong>Purging:</strong> Remove samples near train/test boundary</li><li><strong>Embargo:</strong> Gap between train and test sets</li></ul><strong>Rule:</strong> All preprocessing (scaling, encoding) must be fit on training data only, then applied to test data."},
+
+      {n:58,q:"What is model explainability? Why is it critical in financial services? How do SHAP values work?",tags:[["ML Explainability","pp"],["Regulatory","tl"]],
+       a:"<strong>Why explainability is critical in finance:</strong><ul><li><strong>FCA requirements:</strong> UK banks must provide specific reasons for credit denial</li><li><strong>Fair lending:</strong> Must demonstrate models don't discriminate based on protected characteristics</li><li><strong>SR 11-7 equivalent:</strong> Requires understanding of model behavior</li><li><strong>Consumer Duty:</strong> FCA's Consumer Duty requires banks to demonstrate good outcomes for customers</li></ul><strong>SHAP (SHapley Additive exPlanations):</strong> Based on game theory — assigns each feature a contribution value for a specific prediction. Shows how much each feature moved the prediction from the baseline (average) to the actual prediction.<br><br><strong>Example credit denial explanation:</strong> 'Your application was declined due to: high existing debt (-45 pts), recent missed payment (-30 pts), short credit history (-15 pts).'"},
+
+      {n:59,q:"How would you build a recommendation system for Barclays' retail banking customers (credit cards, loans, savings)?",tags:[["ML System","pp"],["Barclays Domain","gd"]],
+       a:"<strong>Approaches:</strong><ul><li><strong>Collaborative filtering:</strong> 'Customers like you also took this product.' Matrix factorization (SVD, ALS).</li><li><strong>Content-based filtering:</strong> Match customer profile to product features.</li><li><strong>Hybrid:</strong> Combine both — better cold start handling.</li></ul><strong>Barclays-specific considerations:</strong><ul><li><strong>Eligibility filtering:</strong> Only recommend products the customer qualifies for (credit score, income requirements)</li><li><strong>FCA Consumer Duty:</strong> Recommendations must be in customer's best interest, not Barclays' revenue interest</li><li><strong>Regulatory compliance:</strong> No discriminatory recommendations based on protected characteristics</li><li><strong>Explainability:</strong> 'We recommend this because...' — required for financial advice</li><li><strong>Vulnerable customers:</strong> Special handling for customers in financial difficulty</li></ul><strong>Evaluation:</strong> A/B testing — measure customer satisfaction, product performance, not just click-through rate."},
+
+      {n:60,q:"What is model drift? How do you monitor and retrain ML models in production at a retail bank?",tags:[["MLOps","pp"],["Production","tl"]],
+       a:"<strong>Types of drift:</strong><ul><li><strong>Data drift (covariate shift):</strong> Input feature distribution changes. COVID caused spending patterns to shift dramatically — fraud models trained pre-COVID became less accurate.</li><li><strong>Concept drift:</strong> Relationship between features and target changes. Fraud patterns evolve as fraudsters adapt.</li></ul><strong>Monitoring:</strong><ul><li>PSI (Population Stability Index) for feature drift — alert when PSI &gt; 0.2</li><li>Track AUC, precision, recall on recent data with delayed labels</li><li>Shadow mode: Run new model alongside old, compare predictions</li></ul><strong>Retraining strategy:</strong> Scheduled (monthly/quarterly), triggered (when drift detected), or online learning (continuous updates).<br><strong>Governance:</strong> All retrained models go through validation and approval before deployment — FCA model risk management requirements."},
+
+      {n:61,q:"How do you use NLP to analyze customer complaints and identify systemic issues at a retail bank?",tags:[["NLP","pp"],["Barclays Domain","gd"]],
+       a:"<strong>Pipeline:</strong><ol><li><strong>Data collection:</strong> Customer service calls (transcribed), emails, chat logs, FCA complaint database, social media</li><li><strong>Preprocessing:</strong> Tokenization, stop word removal, PII redaction (GDPR compliance)</li><li><strong>Sentiment analysis:</strong> FinBERT for financial text — classify as positive/negative/neutral</li><li><strong>Entity extraction:</strong> Identify products, channels, locations mentioned</li><li><strong>Topic modeling:</strong> BERTopic to identify complaint themes (fees, fraud, service quality, app issues)</li><li><strong>Trend analysis:</strong> Track complaint volume by topic — spike detection</li><li><strong>Alerting:</strong> Notify relevant teams when complaint volume for a topic exceeds threshold</li></ol><strong>Business value:</strong> Identify product defects before they become FCA enforcement actions. Barclays is required to report complaint data to the FCA quarterly."},
+
+      {n:62,q:"What is the difference between supervised, unsupervised, and reinforcement learning? Give banking examples of each.",tags:[["ML Fundamentals","pp"],["Finance","gd"]],
+       a:"<strong>Supervised learning:</strong> Labeled training data. Learn mapping from inputs to outputs.<br><em>Banking examples:</em> Credit scoring (labels = default/no default), fraud detection (labels = confirmed fraud), churn prediction (labels = churned/retained).<br><br><strong>Unsupervised learning:</strong> No labels. Find structure in data.<br><em>Banking examples:</em> Customer segmentation (cluster customers by behavior), anomaly detection (identify unusual transactions), market regime detection.<br><br><strong>Reinforcement learning:</strong> Learn from rewards/penalties through interaction.<br><em>Banking examples:</em> Optimal pricing for financial products, dynamic credit limit adjustment, chatbot conversation optimization.<br><br><strong>Self-supervised learning:</strong> Generate labels from data itself.<br><em>Banking examples:</em> FinBERT (pre-trained on financial text, fine-tuned for sentiment), masked transaction prediction."}
+    ]
+  },
+  {
+    id:"s6", icon:"��", ico:"si-gd",
+    cat:"Domain Knowledge · Differentiator",
+    title:"Finance Domain & Barclays Specific",
+    diff:"High Priority", dc:"d-h",
+    qs:[
+      {n:63,q:"What do you know about Barclays? Why Barclays specifically over other banks or tech companies?",tags:[["Barclays Research","gd"],["Must Know","rd"]],
+       a:"<strong>Key Barclays facts:</strong><ul><li>One of the world's largest banks, founded 1690 — over 330 years of history</li><li>~85,000 employees globally, headquartered in London</li><li>Two main divisions: Barclays UK (retail banking, credit cards, mortgages) and Barclays International (investment banking, corporate banking, private banking)</li><li>CEO: C.S. Venkatakrishnan ('Venkat') since 2021</li><li>Major technology investments: Barclays AI platform, cloud migration (AWS/Azure), Open Banking APIs</li><li>Barclays Eagle Labs: Innovation hub supporting fintech startups across the UK</li><li>Barclaycard: One of the world's largest credit card businesses</li><li>Barclays is a Systemically Important Financial Institution (SIFI) — regulated by FCA and PRA</li></ul><strong>Why Barclays:</strong> 'Barclays' combination of retail banking serving millions of UK customers and investment banking creates unique technology challenges. The scale of Barclays' technology estate — processing millions of transactions daily — combined with their commitment to AI transformation and Open Banking innovation is exactly where I want to apply my skills.'<div class='warn'><strong>⚠️ Research tip:</strong> Before your interview, read Barclays' latest technology blog posts and annual report technology section. Mentioning specific initiatives by name shows genuine interest.</div>"},
+
+      {n:64,q:"What is retail banking? What are the main products at Barclays and how does technology serve each?",tags:[["Finance Structure","gd"],["Barclays Domain","bl"]],
+       a:"<strong>Barclays UK main products:</strong><br><br><strong>Current Accounts:</strong> Everyday banking for individuals and businesses. Barclays app, contactless payments, direct debits.<br><em>Technology:</em> Core banking system, mobile app, real-time notifications, Open Banking APIs.<br><br><strong>Savings Accounts:</strong> ISAs, fixed-rate bonds, easy access savings.<br><em>Technology:</em> Interest calculation engines, regulatory reporting (FSCS), product recommendation systems.<br><br><strong>Mortgages:</strong> Home loans for UK property purchases.<br><em>Technology:</em> Affordability calculators, automated underwriting, property valuation APIs.<br><br><strong>Barclaycard (Credit Cards):</strong> One of the world's largest credit card businesses.<br><em>Technology:</em> Real-time fraud detection, credit scoring, rewards systems, contactless payments.<br><br><strong>Business Banking:</strong> SME banking, merchant services, trade finance.<br><em>Technology:</em> Business current accounts, payment processing, invoice financing platforms."},
+
+      {n:65,q:"What is Open Banking and PSD2? How does Barclays implement it and what are the technology challenges?",tags:[["Open Banking","gd"],["Compliance","tl"],["Barclays Domain","bl"]],
+       a:"<strong>Open Banking:</strong> UK regulatory initiative (CMA Order 2017) requiring the 9 largest UK banks to provide standardized APIs for authorized third-party providers (TPPs) to access customer account data with customer consent.<br><br><strong>PSD2 (Payment Services Directive 2):</strong> EU equivalent, also applies to UK post-Brexit via UK PSD2.<br><br><strong>Two main services:</strong><ul><li><strong>Account Information Services (AIS):</strong> Read-only access to account data, transaction history, balances. Used by budgeting apps (Monzo, Emma).</li><li><strong>Payment Initiation Services (PIS):</strong> Initiate payments directly from bank accounts. Used by e-commerce (pay by bank).</li></ul><strong>Technology challenges:</strong><ul><li>Strong Customer Authentication (SCA) — 2-factor authentication for every API access</li><li>Consent management — customers can revoke at any time, 90-day re-authentication</li><li>API rate limiting — prevent TPPs from overwhelming Barclays' systems</li><li>Security — mTLS for TPP authentication, FAPI security profile</li><li>Availability — FCA requires 99.5% uptime for Open Banking APIs</li></ul>"},
+
+      {n:66,q:"What is the difference between BACS, CHAPS, and Faster Payments? How does technology support each?",tags:[["Finance","gd"],["Payments","bl"]],
+       a:"<strong>BACS (Bankers' Automated Clearing Services):</strong> Batch payment system for regular payments (salaries, direct debits). 3-day settlement. Low cost. Used for payroll, utility bills.<br><em>Technology:</em> Batch file processing, scheduled jobs, reconciliation systems.<br><br><strong>CHAPS (Clearing House Automated Payment System):</strong> High-value same-day payments. No upper limit. Used for property purchases, large business payments. Expensive.<br><em>Technology:</em> Real-time gross settlement (RTGS), Bank of England connection, strict SLA monitoring.<br><br><strong>Faster Payments:</strong> Near-real-time payments (seconds). Up to £1M. Used for most everyday transfers. Free for consumers.<br><em>Technology:</em> Real-time processing, 24/7 availability, fraud screening in milliseconds, ISO 20022 messaging.<br><br><strong>Key difference:</strong> BACS = batch/slow/cheap. CHAPS = real-time/expensive/high-value. Faster Payments = real-time/free/everyday."},
+
+      {n:67,q:"What is KYC and AML? How does technology support these compliance processes at Barclays?",tags:[["Compliance","gd"],["Finance","tl"]],
+       a:"<strong>KYC (Know Your Customer):</strong> Verifying customer identity before onboarding. Required to prevent fraud and financial crime.<br><strong>AML (Anti-Money Laundering):</strong> Detecting and preventing money laundering — disguising illegal funds as legitimate income.<br><br><strong>Technology solutions:</strong><ul><li><strong>Identity verification:</strong> Document OCR + liveness detection + sanctions list checks (OFAC, UN, EU, HM Treasury)</li><li><strong>Transaction monitoring:</strong> Rule-based + ML models to flag suspicious patterns (structuring, layering)</li><li><strong>Network analysis:</strong> Graph algorithms to detect money laundering networks</li><li><strong>SAR filing:</strong> Automated Suspicious Activity Report generation to National Crime Agency (NCA)</li><li><strong>Sanctions screening:</strong> Real-time check against HM Treasury, OFAC, UN, EU sanctions lists</li></ul><strong>UK-specific:</strong> Barclays must comply with the Proceeds of Crime Act 2002 (POCA), Terrorism Act 2000, and Money Laundering Regulations 2017."},
+
+      {n:68,q:"What is PCI-DSS compliance? How does it affect how you design and code payment systems at Barclays?",tags:[["Compliance","gd"],["Security","rd"]],
+       a:"<strong>PCI-DSS (Payment Card Industry Data Security Standard):</strong> Security standard for organizations handling credit card data. 12 requirements covering network security, data protection, access control, monitoring.<br><br><strong>Impact on development:</strong><ul><li><strong>Data minimization:</strong> Never store full card numbers (PAN) — store only last 4 digits + tokenized reference</li><li><strong>Encryption:</strong> All cardholder data encrypted at rest (AES-256) and in transit (TLS 1.2+)</li><li><strong>Tokenization:</strong> Replace card numbers with tokens — useless if DB is breached</li><li><strong>Access control:</strong> Least privilege — developers shouldn't access production cardholder data</li><li><strong>Audit logging:</strong> All access to cardholder data logged and monitored</li><li><strong>Code review:</strong> Security review for all payment-related code</li></ul><strong>In practice:</strong> Never log card numbers, never store CVV, use payment processors (Barclaycard's own infrastructure) to handle raw card data."},
+
+      {n:69,q:"What is GDPR and UK GDPR? How does it affect how you store and process customer data at Barclays?",tags:[["Compliance","gd"],["Privacy","rd"]],
+       a:"<strong>GDPR:</strong> EU regulation governing personal data processing. <strong>UK GDPR:</strong> UK's post-Brexit equivalent — largely mirrors EU GDPR but with UK-specific elements.<br><br><strong>Key principles affecting development:</strong><ul><li><strong>Data minimization:</strong> Collect only what's necessary</li><li><strong>Right to erasure ('right to be forgotten'):</strong> System must support deleting all personal data — complex in event-sourced systems</li><li><strong>Data portability:</strong> Customers can request their data in machine-readable format (Open Banking supports this)</li><li><strong>Data residency:</strong> UK customer data must stay in UK/EEA — affects cloud architecture</li><li><strong>Breach notification:</strong> Notify ICO within 72 hours of a data breach</li><li><strong>Consent:</strong> Clear, specific, informed consent for data processing</li></ul><strong>Technical implementation:</strong> PII encryption and pseudonymization, data catalog with PII classification, automated retention/deletion policies, consent management platform."},
+
+      {n:70,q:"What is the FCA (Financial Conduct Authority) and how does it regulate Barclays' technology?",tags:[["Regulatory","gd"],["Barclays Domain","bl"]],
+       a:"<strong>FCA (Financial Conduct Authority):</strong> UK financial regulator responsible for conduct regulation of financial services firms. Barclays is dual-regulated by FCA (conduct) and PRA (prudential).<br><br><strong>Key FCA requirements affecting technology:</strong><ul><li><strong>Consumer Duty (2023):</strong> Banks must demonstrate good outcomes for customers. Technology must support fair treatment, clear communications, and appropriate products.</li><li><strong>Operational Resilience:</strong> FCA requires banks to identify important business services and set impact tolerances. Technology must meet strict availability SLAs.</li><li><strong>Senior Managers and Certification Regime (SMCR):</strong> Individual accountability for technology failures. Technology leaders are personally accountable.</li><li><strong>Complaint Handling:</strong> FCA requires complaints to be resolved within 8 weeks. Technology must support complaint tracking and reporting.</li><li><strong>Open Banking:</strong> FCA mandates Open Banking API availability and security standards.</li></ul><strong>Technology implication:</strong> Every major technology change at Barclays requires regulatory impact assessment. Outages must be reported to FCA if they affect significant numbers of customers."},
+
+      {n:71,q:"What is the difference between retail banking and investment banking? How does Barclays operate in both?",tags:[["Finance Structure","gd"],["Barclays Domain","bl"]],
+       a:"<strong>Retail Banking (Barclays UK):</strong> Consumer-facing — current accounts, savings, mortgages, credit cards, personal loans. High volume, standardized products, regulatory focus on consumer protection (FCA Consumer Duty).<br><em>Technology:</em> High-throughput transaction processing, fraud detection, customer analytics, mobile banking.<br><br><strong>Investment Banking (Barclays International):</strong> Institutional clients — corporate lending, M&A advisory, capital markets, derivatives, fixed income trading. Lower volume, complex bespoke products, regulatory focus on capital adequacy (Basel III, PRA).<br><em>Technology:</em> Risk models, pricing engines, trade processing, regulatory reporting.<br><br><strong>Barclays' unique position:</strong> One of the few UK banks with significant investment banking operations (alongside HSBC). This creates technology challenges of serving both retail customers needing intuitive interfaces and institutional clients needing sophisticated analytics."},
+
+      {n:72,q:"What is Basel III and how does it affect technology systems at Barclays?",tags:[["Regulatory","gd"],["Finance","tl"]],
+       a:"<strong>Basel III:</strong> International regulatory framework for banks, developed by the Basel Committee on Banking Supervision after the 2008 financial crisis. Key requirements:<ul><li><strong>Capital requirements:</strong> Banks must hold minimum capital ratios (CET1, Tier 1, Total Capital) to absorb losses</li><li><strong>Liquidity requirements:</strong> LCR (Liquidity Coverage Ratio) — enough liquid assets to survive 30-day stress scenario</li><li><strong>Leverage ratio:</strong> Limits excessive leverage</li></ul><strong>Technology impact:</strong><ul><li>Risk calculation engines must compute capital requirements daily/intraday</li><li>Data quality requirements (BCBS 239) — accurate, timely risk data aggregation</li><li>Stress testing systems — model thousands of economic scenarios</li><li>Regulatory reporting systems — automated report generation for PRA/FCA</li></ul><strong>Basel IV (2025+):</strong> Revises how banks calculate risk-weighted assets — more standardized approaches, less reliance on internal models. Significant technology investment required."}
+    ]
+  },
+  {
+    id:"s7", icon:"☁️", ico:"si-gn",
+    cat:"Technical Round",
+    title:"OOP, Design Patterns & Software Engineering",
+    diff:"Medium", dc:"d-m",
+    qs:[
+      {n:73,q:"Implement the Observer pattern. How would you use it in a real-time banking alert system? (Reported on GFG for Barclays)",tags:[["Design Patterns","gn"],["Finance","gd"],["Barclays Reported","bl"]],
+       a:"<pre>from abc import ABC, abstractmethod\n\nclass Observer(ABC):\n    @abstractmethod\n    def update(self, event): ...\n\nclass AccountSubject:\n    def __init__(self): self._observers = []\n\n    def subscribe(self, obs): self._observers.append(obs)\n    def unsubscribe(self, obs): self._observers.remove(obs)\n\n    def notify_transaction(self, account_id, amount, balance):\n        event = {'account_id': account_id, 'amount': amount, 'balance': balance}\n        for obs in self._observers:\n            obs.update(event)\n\nclass FraudDetector(Observer):\n    def update(self, event):\n        if event['amount'] > 5000:\n            print(f\"FRAUD CHECK: Large transaction {event['amount']} on {event['account_id']}\")\n\nclass BalanceAlert(Observer):\n    def update(self, event):\n        if event['balance'] < 100:\n            print(f\"LOW BALANCE ALERT: {event['account_id']} balance is {event['balance']}\")</pre><strong>Real-world use:</strong> Account transaction (Subject) notifies multiple systems (Observers): fraud detector, balance alert, statement generator, loyalty points — all independently without tight coupling."},
+
+      {n:74,q:"Implement the Strategy pattern for a payment processing system supporting multiple payment methods (BACS, CHAPS, Faster Payments).",tags:[["Design Patterns","gn"],["Finance","gd"]],
+       a:"<pre>from abc import ABC, abstractmethod\n\nclass PaymentStrategy(ABC):\n    @abstractmethod\n    def process(self, amount, recipient): ...\n    @abstractmethod\n    def get_settlement_time(self): ...\n\nclass BACSPayment(PaymentStrategy):\n    def process(self, amount, recipient):\n        return f\"BACS payment of £{amount} to {recipient} initiated\"\n    def get_settlement_time(self): return '3 business days'\n\nclass CHAPSPayment(PaymentStrategy):\n    def process(self, amount, recipient):\n        return f\"CHAPS payment of £{amount} to {recipient} initiated\"\n    def get_settlement_time(self): return 'Same day'\n\nclass FasterPayment(PaymentStrategy):\n    def process(self, amount, recipient):\n        return f\"Faster Payment of £{amount} to {recipient} initiated\"\n    def get_settlement_time(self): return 'Seconds'\n\nclass PaymentProcessor:\n    def __init__(self, strategy: PaymentStrategy):\n        self.strategy = strategy\n    def execute(self, amount, recipient):\n        return self.strategy.process(amount, recipient)\n\n# Select strategy based on amount and urgency\nprocessor = PaymentProcessor(FasterPayment())\nprocessor.execute(500, 'John Smith')</pre>"},
+
+      {n:75,q:"What is the Factory pattern? Implement a banking product factory. (Reported on GFG for Barclays)",tags:[["Design Patterns","gn"],["Finance","gd"],["Barclays Reported","bl"]],
+       a:"<pre>class ProductFactory:\n    _registry = {}\n\n    @classmethod\n    def register(cls, product_type):\n        def decorator(klass):\n            cls._registry[product_type] = klass\n            return klass\n        return decorator\n\n    @classmethod\n    def create(cls, product_type, **kwargs):\n        if product_type not in cls._registry:\n            raise ValueError(f\"Unknown product: {product_type}\")\n        return cls._registry[product_type](**kwargs)\n\n@ProductFactory.register('current_account')\nclass CurrentAccount:\n    def __init__(self, customer_id, overdraft_limit=0):\n        self.customer_id = customer_id\n        self.overdraft_limit = overdraft_limit\n\n@ProductFactory.register('savings_account')\nclass SavingsAccount:\n    def __init__(self, customer_id, interest_rate=0.05):\n        self.customer_id = customer_id\n        self.interest_rate = interest_rate\n\n@ProductFactory.register('credit_card')\nclass CreditCard:\n    def __init__(self, customer_id, credit_limit):\n        self.customer_id = customer_id\n        self.credit_limit = credit_limit\n\naccount = ProductFactory.create('current_account', customer_id='C001', overdraft_limit=500)</pre>"},
+
+      {n:76,q:"What is the difference between composition and inheritance? When should you prefer each?",tags:[["OOP","gn"],["Design","bl"]],
+       a:"<strong>Inheritance:</strong> 'is-a' relationship. Subclass inherits behavior from parent. Creates tight coupling.<br><strong>Composition:</strong> 'has-a' relationship. Class contains instances of other classes. Loose coupling — components can be swapped independently.<br><br><pre># Inheritance (fragile — class explosion)\nclass PremiumCurrentAccount(CurrentAccount): ...\nclass StudentCurrentAccount(CurrentAccount): ...\nclass PremiumStudentCurrentAccount(PremiumCurrentAccount, StudentCurrentAccount): ...  # Multiple inheritance mess!\n\n# Composition (flexible)\nclass BankAccount:\n    def __init__(self, overdraft_policy, interest_calculator, fee_structure):\n        self.overdraft = overdraft_policy\n        self.interest = interest_calculator\n        self.fees = fee_structure</pre><strong>Rule:</strong> 'Favor composition over inheritance' (Gang of Four). Use inheritance only for true 'is-a' relationships."},
+
+      {n:77,q:"What is SOLID? Give a concrete example of violating and fixing the Single Responsibility Principle in a banking context.",tags:[["SOLID","gn"],["OOP","bl"]],
+       a:"<strong>SRP Violation:</strong><pre>class BankAccount:  # Does too much!\n    def deposit(self, amount): ...\n    def calculate_interest(self): ...\n    def generate_statement(self): ...\n    def send_email_notification(self): ...\n    def save_to_database(self): ...</pre><strong>SRP Fix — each class has one reason to change:</strong><pre>class BankAccount:           # Core domain logic only\n    def deposit(self, amount): ...\n    def withdraw(self, amount): ...\n\nclass InterestCalculator:    # Interest logic\n    def calculate(self, account): ...\n\nclass StatementGenerator:    # Reporting\n    def generate(self, account): ...\n\nclass AccountRepository:     # Persistence\n    def save(self, account): ...\n\nclass NotificationService:   # Notifications\n    def notify(self, account, event): ...</pre>"},
+
+      {n:78,q:"What is clean code? What are code smells? Give examples from banking software. (Reported on Glassdoor for Barclays)",tags:[["Code Quality","gn"],["Best Practices","bl"],["Barclays Reported","gd"]],
+       a:"<strong>Clean code:</strong> Readable, maintainable, testable, minimal duplication, clear naming, small functions with single purpose.<br><br><strong>Common code smells in banking software:</strong><ul><li><strong>Magic numbers:</strong> <code>if amount > 10000</code> → <code>SUSPICIOUS_AMOUNT_THRESHOLD = Decimal('10000')</code></li><li><strong>Long methods:</strong> 500-line <code>process_payment()</code> — split into validate, authorize, execute, notify, record</li><li><strong>Primitive obsession:</strong> Using <code>float</code> for money → use <code>Decimal</code> or a <code>Money</code> value object</li><li><strong>God class:</strong> <code>BankingSystem</code> that does everything — split by responsibility</li><li><strong>Shotgun surgery:</strong> Adding a new payment type requires changes in 20 files — missing abstraction</li></ul><strong>Banking-specific:</strong> Never use <code>float</code> for monetary calculations. Always use <code>Decimal</code> with explicit precision. Always validate currency codes."},
+
+      {n:79,q:"What is test-driven development (TDD)? How do you apply it in a banking application where correctness is critical?",tags:[["Testing","gn"],["Finance","gd"]],
+       a:"<strong>TDD cycle:</strong> Red (write failing test) → Green (write minimal code to pass) → Refactor (improve without breaking tests).<br><br><strong>Benefits for banking software:</strong><ul><li>Tests document expected behavior — critical when regulatory requirements change</li><li>Regression safety — refactoring doesn't break existing calculations</li><li>Forces thinking about edge cases upfront (negative amounts, zero balance, currency conversion)</li></ul><pre>def test_withdrawal_insufficient_funds():\n    account = BankAccount(balance=Decimal('100.00'))\n    with pytest.raises(InsufficientFundsError):\n        account.withdraw(Decimal('150.00'))\n\ndef test_withdrawal_exact_balance():\n    account = BankAccount(balance=Decimal('100.00'))\n    account.withdraw(Decimal('100.00'))\n    assert account.balance == Decimal('0.00')\n\ndef test_withdrawal_with_overdraft():\n    account = BankAccount(balance=Decimal('100.00'), overdraft_limit=Decimal('500.00'))\n    account.withdraw(Decimal('500.00'))\n    assert account.balance == Decimal('-400.00')</pre>"},
+
+      {n:80,q:"How do you approach code reviews? What do you look for as a reviewer and how do you respond to feedback?",tags:[["Process","gn"],["Collaboration","bl"]],
+       a:"<strong>As a reviewer, I look for:</strong><ul><li><strong>Correctness:</strong> Does it do what it's supposed to? Edge cases handled?</li><li><strong>Security:</strong> Input validation, SQL injection, secrets management, PCI-DSS compliance</li><li><strong>Performance:</strong> N+1 queries, unnecessary loops, memory issues</li><li><strong>Financial correctness:</strong> Decimal vs float, rounding modes, currency handling</li><li><strong>Tests:</strong> Are edge cases covered? Are tests meaningful?</li><li><strong>Regulatory compliance:</strong> Does the code meet FCA, GDPR, PCI-DSS requirements?</li></ul><strong>How I give feedback:</strong> Distinguish blocking issues from suggestions ('Must fix' vs 'Consider'). Explain the why. Acknowledge good code. Ask questions rather than make demands.<br><br><strong>Receiving feedback:</strong> I treat code review feedback as a gift. Never take it personally. If I disagree, I explain my reasoning — the best argument wins, not seniority."},
+
+      {n:81,q:"What is the difference between synchronous and asynchronous programming? When would you use message queues vs direct API calls?",tags:[["Architecture","gn"],["Async","bl"]],
+       a:"<strong>Synchronous:</strong> Caller waits for response. Simple, easy to reason about. Risk: caller blocked if downstream is slow/down.<br><strong>Asynchronous:</strong> Caller sends request and continues. More complex but resilient.<br><br><strong>Direct API calls (sync) when:</strong> Response needed immediately (customer is waiting), simple request-response, low latency required. Example: Check account balance, validate card, process Faster Payment.<br><br><strong>Message queues (async) when:</strong> Processing can be deferred, need to decouple producer from consumer, handle traffic spikes, need guaranteed delivery and retry. Example: Send confirmation email, generate monthly statement, fraud analysis, BACS batch processing.<br><br><strong>Barclays context:</strong> Faster Payment processing is sync (customer waits for confirmation). Downstream processing (settlement, notifications, reporting, BACS) is async via Kafka."},
+
+      {n:82,q:"How do you design for high availability and disaster recovery? What is RTO and RPO?",tags:[["HA/DR","gn"],["Finance","gd"]],
+       a:"<strong>RTO (Recovery Time Objective):</strong> Maximum acceptable downtime after failure.<br><strong>RPO (Recovery Point Objective):</strong> Maximum acceptable data loss.<br><br><strong>HA strategies:</strong><ul><li><strong>Active-Active:</strong> Multiple regions serving traffic simultaneously. Zero RTO, near-zero RPO. Highest cost.</li><li><strong>Active-Passive:</strong> Primary active, standby ready. RTO = failover time (minutes). Lower cost.</li><li><strong>Multi-AZ:</strong> Within a region, span multiple availability zones.</li></ul><strong>For Barclays payment systems:</strong> Active-Active across 2 UK data centres (regulatory requirement — data must stay in UK). RPO = 0 (synchronous replication). RTO &lt; 30 seconds (automated failover). FCA requires banks to set and meet impact tolerances for important business services."}
+    ]
+  },
+  {
+    id:"s8", icon:"��", ico:"si-or",
+    cat:"Final Round · Culture Fit",
+    title:"Behavioral, HR & Leadership Questions",
+    diff:"High Priority", dc:"d-h",
+    qs:[
+      {n:83,q:"Tell me about yourself. Why Barclays specifically? (Opening — must be perfect)",tags:[["Opening","or"],["Must Prepare","rd"]],
+       a:"\"I'm a Full Stack Python Developer with 4 years of experience at the intersection of AI and financial services. Currently at Citi, I've built a GenAI platform that reduced regulatory documentation time by 85% — processing 100+ regulatory documents through a RAG system I architected from scratch. Before that, I led data engineering at MSCI, migrating 37TB of financial data to BigQuery with 99.9% accuracy.<br><br>I'm drawn to Barclays specifically because of the scale and breadth of the technology challenges. Barclays serves millions of UK retail customers through Barclaycard and Barclays UK, while simultaneously operating a significant investment banking business. Building technology that serves both — from real-time fraud detection for retail customers to complex risk systems for institutional clients — is exactly the kind of challenge I want to work on.<br><br>I'm also excited about Barclays' commitment to AI transformation and Open Banking innovation. The Barclays AI platform and Eagle Labs initiative show genuine commitment to technology leadership, not just incremental improvement. My RAG and GenAI experience maps directly to what Barclays is building.\"<div class='tip'><strong>�� Tip:</strong> Mention Barclays' RISES values (Respect, Integrity, Service, Excellence, Stewardship) and connect them to your experience. Barclays interviewers specifically look for RISES alignment.</div>"},
+
+      {n:84,q:"Tell me about the most impactful project you've delivered. What was your role and the measurable outcome?",tags:[["STAR","or"],["Must Prepare","rd"]],
+       a:"<strong>Situation:</strong> Model risk analysts at Citi were spending 40+ hours per Model Development Document — a critical regulatory requirement. With dozens of CCAR models requiring annual documentation, this was a significant bottleneck.<br><br><strong>Task:</strong> Lead end-to-end development of an AI solution to automate this process.<br><br><strong>Action:</strong> Architected a RAG system using FAISS + Gemini 2.0 Flash, processing 100+ regulatory documents. Built microservices architecture with Streamlit UI. Implemented enterprise authentication, singleton patterns for performance, and a human review gate for compliance.<br><br><strong>Result:</strong> Reduced MDD time from 40+ hours to &lt;6 hours — 85% reduction and 700%+ efficiency gain. Achieved 99.9% system availability. Enabled the team to process significantly more models within regulatory deadlines.<br><br><strong>Barclays connection:</strong> This is directly analogous to what Barclays' AI platform does — using AI to help employees access and synthesize large document repositories while maintaining accuracy and regulatory compliance."},
+
+      {n:85,q:"Describe a time you demonstrated integrity in a difficult situation. (Barclays RISES value — Integrity)",tags:[["STAR","or"],["RISES","gd"],["Must Prepare","rd"]],
+       a:"<strong>Situation:</strong> During the 37TB Oracle→BigQuery migration at MSCI, I discovered mid-migration that Oracle's NUMBER type was storing values with precision that BigQuery's FLOAT64 couldn't represent exactly — causing subtle rounding errors in financial calculations.<br><br><strong>Task:</strong> Fix the precision issue without restarting the entire migration or compromising the 99.9% accuracy target.<br><br><strong>Action:</strong> I could have ignored it — it was subtle and unlikely to be caught immediately. Instead, I immediately stopped the migration, disclosed the issue to my manager and the client team, and proposed a fix. Researched BigQuery's NUMERIC type, built a type mapping layer, implemented checksum validation, and backfilled already-migrated data.<br><br><strong>Result:</strong> Achieved 99.9% data accuracy. All clients received correct data. The transparency built trust with the client team. Lesson: short-term discomfort from disclosing a problem is always better than the long-term consequences of hiding it.<div class='tip'><strong>�� Barclays Tip:</strong> Barclays' RISES values are central to their culture. Frame behavioral answers around Respect, Integrity, Service, Excellence, and Stewardship. Integrity is especially important in banking.</div>"},
+
+      {n:86,q:"Tell me about a time you delivered excellent service to a stakeholder or customer. (Barclays RISES value — Service)",tags:[["STAR","or"],["RISES","gd"]],
+       a:"<strong>Situation:</strong> A senior model risk manager at Citi was skeptical of AI-generated content and resistant to adopting the MDD platform, concerned about regulatory risk.<br><br><strong>Task:</strong> Address their concerns and gain adoption without compromising the project timeline.<br><br><strong>Action:</strong> Scheduled a dedicated session to understand their specific concerns. Demonstrated the citation feature — showing exactly which regulatory document sections informed each generated paragraph. Ran a side-by-side comparison of AI-generated vs. manually written MDDs with a neutral reviewer. Added a 'confidence indicator' feature showing retrieval relevance scores. Emphasized the human review gate — AI assists, analyst approves.<br><br><strong>Result:</strong> The analyst became one of the platform's strongest advocates. Their feedback also improved the product — the citation feature they requested became a key differentiator. Lesson: technical excellence alone isn't enough — change management is equally important."},
+
+      {n:87,q:"Describe a time you showed stewardship — taking responsibility for something beyond your immediate role. (Barclays RISES value — Stewardship)",tags:[["STAR","or"],["RISES","gd"]],
+       a:"<strong>Situation:</strong> At MSCI, I noticed BigQuery queries were running slowly and costs were increasing month-over-month, but no one had been assigned to investigate. This wasn't my direct responsibility — I was focused on the data migration project.<br><br><strong>Task:</strong> Self-initiated — no one asked me to do this. I saw an opportunity to improve the team's infrastructure and took ownership.<br><br><strong>Action:</strong> Analyzed BigQuery query logs to identify the most expensive queries. Found most were doing full table scans on a 37TB table. Proposed and implemented: date partitioning, clustering on frequently filtered columns, materialized views for common aggregations, query optimization for top 10 most expensive queries.<br><br><strong>Result:</strong> 85% reduction in query execution time, 27% reduction in processing costs. This initiative was recognized with the Rockstar Rookie Award. Lesson: stewardship means taking responsibility for the health of the systems and teams around you, not just your assigned tasks."},
+
+      {n:88,q:"Tell me about a time you failed. What did you learn and how did you recover?",tags:[["STAR","or"],["Growth Mindset","bl"]],
+       a:"<strong>Situation:</strong> Early in my career at MSCI, I deployed a data transformation change to production without adequate testing. The change caused incorrect financial calculations in client reports for 2 hours before detection.<br><br><strong>Task:</strong> Fix the issue, communicate with stakeholders, and prevent recurrence.<br><br><strong>Action:</strong> Immediately rolled back the change. Identified all affected reports and clients. Communicated transparently with my manager — no hiding. Worked overtime to regenerate all affected reports. Conducted a thorough post-mortem: root cause was insufficient test coverage for edge cases.<br><br><strong>Result:</strong> All clients received corrected reports within 4 hours. Implemented mandatory staging environment validation and expanded test coverage to 95%. This failure made me a much more rigorous engineer.<div class='tip'><strong>�� Tip:</strong> Barclays values honesty and accountability. A genuine failure story with clear learnings is more impressive than claiming you've never failed.</div>"},
+
+      {n:89,q:"Tell me about a time you mentored a junior developer. What was your approach?",tags:[["STAR","or"],["Leadership","bl"]],
+       a:"<strong>Situation:</strong> A junior developer on my team at MSCI was struggling with PySpark — making inefficient queries causing pipeline slowdowns.<br><br><strong>Task:</strong> Help them improve without undermining their confidence or creating dependency.<br><br><strong>Action:</strong> Pair programming sessions — worked through their code together, asking questions rather than giving answers. Shared a curated learning path. Code reviews with detailed explanations — not just 'this is wrong' but 'here's why and here's the pattern.' Gave them ownership of a specific pipeline optimization.<br><br><strong>Result:</strong> Within 2 months, they were independently optimizing queries and caught a performance issue I had missed. They became the team's go-to person for Spark questions. Lesson: the best mentoring builds independence, not dependency."},
+
+      {n:90,q:"How do you stay current with rapidly evolving technologies like GenAI? What have you learned recently?",tags:[["Learning","or"],["GenAI","pp"]],
+       a:"<strong>How I stay current:</strong><ul><li>arXiv for AI research papers — follow key researchers</li><li>Hacker News for engineering discussions</li><li>LeetCode for algorithmic skills (active profile)</li><li>GitHub — contribute to and study open-source projects</li><li>Personal projects: SahakarBot, Personal Finance Tracker — learn by building</li><li>Barclays' own technology blog and Eagle Labs announcements</li></ul><strong>Recent exciting developments:</strong><ul><li><strong>Agentic AI:</strong> LangGraph and multi-agent systems — autonomous agents that plan and execute complex tasks. Directly applicable to automating banking workflows.</li><li><strong>Gemini 2.0 Flash multimodal:</strong> Processing financial charts and tables in documents, not just text.</li><li><strong>Reasoning models (o1/o3):</strong> Chain-of-thought for complex financial calculations and regulatory interpretation.</li><li><strong>MCP (Model Context Protocol):</strong> Standardizing how AI agents interact with tools — could transform banking system data exposure to AI.</li></ul>"},
+
+      {n:91,q:"How do you prioritize when you have multiple competing deadlines? Give a specific example.",tags:[["STAR","or"],["Time Management","bl"]],
+       a:"<strong>Framework:</strong> Impact × urgency matrix. Regulatory deadlines are non-negotiable — they take priority. Within discretionary work, prioritize by business impact and dependencies (what's blocking others).<br><br><strong>Example:</strong> At Citi, I simultaneously had: (1) A CCAR model documentation deadline (regulatory, fixed date), (2) A new ETL pipeline feature request, (3) A production bug in the governance platform.<br><br><strong>Action:</strong> Fixed the production bug first — it was blocking users. Communicated to the modeling team that the ETL feature would be delayed by 1 week with a revised timeline. Focused entirely on CCAR documentation until the deadline. Delivered the ETL feature the following week.<br><br><strong>Result:</strong> All three delivered. Key was transparent communication — stakeholders knew the plan and weren't surprised by delays."},
+
+      {n:92,q:"What are Barclays' core values (RISES) and how do they align with your personal values?",tags:[["Culture Fit","or"],["RISES","gd"],["Must Know","rd"]],
+       a:"<strong>Barclays' RISES values:</strong><ul><li><strong>Respect:</strong> Treating everyone with dignity and valuing diversity</li><li><strong>Integrity:</strong> Acting with honesty and transparency</li><li><strong>Service:</strong> Putting clients and customers first</li><li><strong>Excellence:</strong> Delivering the highest quality in everything we do</li><li><strong>Stewardship:</strong> Taking responsibility for the long-term health of the bank and society</li></ul><strong>How to connect:</strong><br>\"Barclays' emphasis on Integrity resonates deeply with me — in financial services, a single ethical lapse can have systemic consequences affecting millions of customers. In my work, I've always prioritized doing things right over doing things fast. When I discovered the data precision issue during the MSCI migration, I could have ignored it — it was subtle and unlikely to be caught. Instead, I stopped the migration, fixed it properly, and implemented validation to prevent recurrence. That's the kind of integrity Barclays' customers deserve.<br><br>Stewardship also aligns with my approach — I proactively identified and fixed the BigQuery performance issues at MSCI even though it wasn't my direct responsibility. Taking ownership of the health of systems and teams around me is how I naturally operate.\""},
+
+      {n:93,q:"Where do you see yourself in 5 years? How does Barclays fit into your career trajectory?",tags:[["Career","or"],["HR","bl"]],
+       a:"\"In 5 years, I see myself as a technical lead or principal engineer specializing in AI-powered banking systems — someone who can architect solutions that operate at Barclays' scale and complexity.<br><br>This role is a perfect next step because Barclays' unique position — serving millions of UK retail customers while operating a significant investment banking business — creates technology challenges that don't exist anywhere else. Building systems that serve both retail customers needing intuitive mobile banking and institutional clients needing sophisticated analytics requires exactly the kind of cross-domain expertise I want to develop.<br><br>I'm also excited about Barclays' commitment to AI transformation and Open Banking innovation. Being part of a team that's genuinely transforming how millions of UK customers bank is the kind of high-impact work I want to be doing.\""},
+
+      {n:94,q:"What is your greatest weakness? How are you working to improve it?",tags:[["HR","or"],["Self-Awareness","bl"]],
+       a:"\"Early in my career, I tended to dive deep into technical implementation before fully validating requirements with stakeholders — sometimes building the right solution to the wrong problem. I learned this lesson during a project where I built a sophisticated feature that the business users didn't actually need.<br><br>I've actively worked on this by: (1) Always starting with a requirements document that stakeholders sign off on, (2) Building proof-of-concepts for validation before full development, (3) Scheduling regular check-ins during development rather than only at the end.<br><br>This has made me a much more effective developer — my MDD platform succeeded partly because I spent the first week understanding exactly what model risk analysts needed before writing a single line of code.\""},
+
+      {n:95,q:"Describe a time you had to explain a complex technical concept to a non-technical business stakeholder.",tags:[["STAR","or"],["Communication","bl"]],
+       a:"<strong>Situation:</strong> A senior model risk manager asked me to explain why the RAG system sometimes retrieved 'wrong' documents and what we were doing about it.<br><br><strong>Task:</strong> Explain vector similarity search and retrieval quality to someone with no ML background, in a way that built confidence in the system.<br><br><strong>Action:</strong> Used an analogy: 'Imagine you're searching a library. Keyword search finds books with the exact words you typed. Our system is like a librarian who understands what you mean — it finds books about the same topic even if they use different words. Sometimes the librarian makes a judgment call that doesn't match yours — that's what we're improving.' Then showed concrete examples of good and bad retrievals, explained the metrics we track, and described the improvements we were making.<br><br><strong>Result:</strong> The manager understood the system's capabilities and limitations. They became a more effective user — asking better questions that played to the system's strengths."},
+
+      {n:96,q:"How do you handle working with legacy code that has no tests and poor documentation?",tags:[["Technical","or"],["Legacy","bl"]],
+       a:"<strong>My approach:</strong><ol><li><strong>Understand before changing:</strong> Read the code, run it, trace execution paths with a debugger</li><li><strong>Characterization tests:</strong> Write tests capturing current behavior — even if wrong. These become your safety net.</li><li><strong>Document as you go:</strong> Add docstrings and comments as you understand each function</li><li><strong>Boy Scout Rule:</strong> Leave the code better than you found it — in small, safe increments</li><li><strong>Refactor with tests:</strong> Never refactor without tests. Extract methods, rename variables, verify behavior unchanged.</li><li><strong>Strangler Fig:</strong> For large rewrites, replace incrementally rather than big-bang rewrite</li></ol><strong>At MSCI:</strong> Inherited Oracle PL/SQL procedures with no documentation. Spent 2 weeks writing characterization tests before touching any code. This investment paid off — zero regressions during the migration to Python."},
+
+      {n:97,q:"Why should we hire you over other candidates? What makes you uniquely qualified for this role?",tags:[["Closing","or"],["Must Prepare","rd"]],
+       a:"\"Three things make me uniquely qualified:<br><br><strong>1. I sit at the exact intersection Barclays needs.</strong> Most Python developers don't understand banking regulations and payment systems. Most banking professionals don't know RAG systems and modern AI. I bring both — and I've demonstrated I can translate between technical and business stakeholders effectively.<br><br><strong>2. I've proven I can deliver measurable impact in exactly this domain.</strong> My MDD platform achieved an 85% reduction in documentation time and 700%+ efficiency gain — not a prototype, a production system with 99.9% availability. My ETL work handled 37TB with 99.9% accuracy. These aren't theoretical — they're delivered results.<br><br><strong>3. I'm genuinely aligned with Barclays' RISES values.</strong> Integrity, stewardship, and service aren't just words to me — they're how I've operated throughout my career. The examples I've shared today demonstrate that I don't just talk about these values, I live them in my day-to-day work.\""},
+
+      {n:98,q:"How do you approach estimating project timelines? How do you handle scope creep?",tags:[["Project Management","or"],["Process","bl"]],
+       a:"<strong>Estimation approach:</strong><ul><li><strong>Break down into tasks:</strong> Decompose until each task is &lt;2 days. Larger tasks have hidden complexity.</li><li><strong>Three-point estimation:</strong> Optimistic, realistic, pessimistic. Use weighted average: (O + 4R + P) / 6</li><li><strong>Add buffer:</strong> 20-30% for unknowns, integration issues, code review cycles</li><li><strong>Spike first:</strong> For uncertain tasks, timebox a 1-2 day investigation before estimating</li></ul><strong>Handling scope creep:</strong><ul><li>Clear requirements document signed off before development starts</li><li>Change request process: new requirements go through formal assessment</li><li>Communicate impact: 'We can add this feature, but it will push the deadline by 1 week'</li><li>Prioritize ruthlessly: MVP first, nice-to-haves in next sprint</li></ul>"},
+
+      {n:99,q:"Describe a time you disagreed with your manager or team. How did you handle it?",tags:[["STAR","or"],["Conflict","bl"]],
+       a:"<strong>Situation:</strong> My manager wanted a template-based approach for MDD generation. I believed a RAG + LLM approach would be significantly more effective but required more upfront investment.<br><br><strong>Task:</strong> Advocate for my technical position while respecting the decision-making hierarchy.<br><br><strong>Action:</strong> Prepared a structured comparison. Built a 3-day proof-of-concept demonstrating the quality difference with real regulatory documents. Quantified the business case: if RAG saves 30 more hours per MDD vs templates, the ROI justified the extra 2 weeks of development. Presented to manager and business users together — let them see the quality difference directly.<br><br><strong>Result:</strong> Manager approved the RAG approach after seeing the demo. Final system achieved 85% time reduction. Lesson: data and demos are more persuasive than arguments."},
+
+      {n:100,q:"What questions do you have for us? (Always prepare 3-5 thoughtful questions)",tags:[["Closing","or"],["Must Prepare","rd"]],
+       a:"<strong>Recommended Questions to Ask:</strong><ol><li style='margin-bottom:10px;'>\"What does the team's AI roadmap look like for the next 12 months, and where would someone in this role have the most impact — particularly around expanding Barclays' AI platform?\"</li><li style='margin-bottom:10px;'>\"What does success look like for this role at the 6-month and 1-year marks?\"</li><li style='margin-bottom:10px;'>\"How does the team balance innovation (new AI approaches) with the stability requirements of systems serving millions of UK retail customers?\"</li><li style='margin-bottom:10px;'>\"What are the biggest technical challenges the team is facing right now that I could help solve?\"</li><li style='margin-bottom:10px;'>\"How does Barclays' engineering culture support continuous learning and staying current with rapidly evolving technologies like GenAI?\"</li></ol><div class='tip'><strong>�� Tip:</strong> Asking thoughtful questions demonstrates genuine interest and strategic thinking. Avoid asking about salary, benefits, or vacation in the first interview. Reference specific Barclays initiatives (AI platform, Eagle Labs, Open Banking) in your questions to show you've done your research.</div>"}
+    ]
+  }
+];
+
+// ─── TAG COLOR MAP ────────────────────────────────────────────────────────────
+var TAG_COLORS = {
+  bl:'t-bl', gd:'t-gd', gn:'t-gn', rd:'t-rd',
+  pp:'t-pp', tl:'t-tl', or:'t-or', gy:'t-gy'
+};
+
+// ─── TOGGLE FUNCTIONS ─────────────────────────────────────────────────────────
+function toggleSection(el) {
+  var sec = el.parentElement;
+  if (sec.classList.contains('open')) {
+    sec.classList.remove('open');
+  } else {
+    sec.classList.add('open');
+  }
+}
+
+function toggleQ(el) {
+  var card = el.parentElement;
+  var tog = el.querySelector('.qtoggle');
+  if (card.classList.contains('open')) {
+    card.classList.remove('open');
+    if (tog) tog.textContent = '▼ Show';
+  } else {
+    card.classList.add('open');
+    if (tog) tog.textContent = '▲ Hide';
+  }
+}
+
+var allOpen = false;
+function toggleAll() {
+  allOpen = !allOpen;
+  var sections = document.querySelectorAll('.section');
+  var cards = document.querySelectorAll('.qcard');
+  var btn = document.getElementById('expandBtn');
+  sections.forEach(function(s) {
+    if (allOpen) s.classList.add('open');
+    else s.classList.remove('open');
+  });
+  cards.forEach(function(c) {
+    var tog = c.querySelector('.qtoggle');
+    if (allOpen) {
+      c.classList.add('open');
+      if (tog) tog.textContent = '▲ Hide';
+    } else {
+      c.classList.remove('open');
+      if (tog) tog.textContent = '▼ Show';
+    }
+  });
+  if (btn) btn.textContent = allOpen ? '⊖ Collapse All' : '⊕ Expand All Answers';
+}
+
+function jumpTo(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.add('open');
+  }
+}
+
+// ─── RENDER ───────────────────────────────────────────────────────────────────
+function renderTags(tags) {
+  return tags.map(function(t) {
+    var cls = TAG_COLORS[t[1]] || 't-gy';
+    return '<span class="tag ' + cls + '">' + t[0] + '</span>';
+  }).join('');
+}
+
+function renderQuestion(q, isFirst) {
+  var openClass = isFirst ? ' open' : '';
+  var togText = isFirst ? '▲ Hide' : '▼ Show';
+  return '<div class="qcard' + openClass + '">' +
+    '<div class="q-head" onclick="toggleQ(this)">' +
+      '<div class="qno">' + q.n + '</div>' +
+      '<div class="qwrap">' +
+        '<div class="qtext">' + q.q + '</div>' +
+        '<div class="qtags">' + renderTags(q.tags) + '</div>' +
+      '</div>' +
+      '<div class="qtoggle">' + togText + '</div>' +
+    '</div>' +
+    '<div class="q-body">' +
+      '<div class="ans-label">Model Answer</div>' +
+      '<div class="ans">' + q.a + '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderSection(sec, idx) {
+  var isOpen = idx === 0 ? ' open' : '';
+  var qHTML = sec.qs.map(function(q, qi) {
+    return renderQuestion(q, idx === 0 && qi === 0);
+  }).join('');
+  return '<div class="section' + isOpen + '" id="' + sec.id + '">' +
+    '<div class="sec-head" onclick="toggleSection(this)">' +
+      '<div class="sec-icon ' + sec.ico + '">' + sec.icon + '</div>' +
+      '<div class="sec-info">' +
+        '<div class="sec-cat">' + sec.cat + '</div>' +
+        '<div class="sec-title">' + sec.title + '</div>' +
+      '</div>' +
+      '<div class="sec-right">' +
+        '<span class="qcount">' + sec.qs.length + ' Qs</span>' +
+        '<span class="diff ' + sec.dc + '">' + sec.diff + '</span>' +
+        '<span class="arrow">▼</span>' +
+      '</div>' +
+    '</div>' +
+    '<div class="sec-body">' + qHTML + '</div>' +
+  '</div>';
+}
+
+function init() {
+  var nav = document.getElementById('nav');
+  var navHTML = '';
+  SECTIONS.forEach(function(s) {
+    navHTML += '<button onclick="jumpTo(\'' + s.id + '\')">' +
+      '<span>' + s.icon + '</span> ' + s.title.split('—')[0].trim() +
+      ' <span class="cnt">' + s.qs.length + '</span>' +
+    '</button>';
+  });
+  nav.innerHTML = navHTML;
+
+  var container = document.getElementById('container');
+  var html = '';
+  SECTIONS.forEach(function(sec, idx) {
+    html += renderSection(sec, idx);
+  });
+  container.innerHTML = html;
+}
+
+window.onload = init;
+</script>
+</body>
+</html>

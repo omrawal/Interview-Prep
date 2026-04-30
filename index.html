@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Prep Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .card-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-link:hover {
+            opacity: 0.9;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.1em;
+            padding: 40px;
+        }
+
+        .error {
+            background: white;
+            color: #d32f2f;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        .card.bank {
+            border-top: 4px solid #2196F3;
+        }
+
+        .card.bank .card-header {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+        }
+
+        .card.bank .card-link {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+        }
+
+        .card.programming {
+            border-top: 4px solid #4CAF50;
+        }
+
+        .card.programming .card-header {
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+        }
+
+        .card.programming .card-link {
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .card-category {
+            display: inline-block;
+            font-size: 0.75em;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-left: auto;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Interview Prep Resources</h1>
+            <p>Comprehensive preparation guides for major financial institutions and tech interviews</p>
+        </header>
+
+        <div id="content" class="loading">
+            Loading resources...
+        </div>
+
+        <footer>
+            <p>Last updated: <span id="lastUpdated"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // File descriptions with metadata (easily updateable)
+        const resources = [
+            {
+                file: 'bank_of_america_interview_prep.html',
+                name: 'Bank of America',
+                description: 'Technical questions, behavioral interviews, and role-specific tips for one of the world\'s largest financial institutions.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'barclays_interview_prep.html',
+                name: 'Barclays',
+                description: 'Comprehensive guide to Barclays\' assessment process, common questions, and interview structure.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'blackrock_interview_prep.html',
+                name: 'BlackRock',
+                description: 'Preparation guide focused on technical depth, investment knowledge, and quantitative analysis.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'bnp_paribas_interview_prep.html',
+                name: 'BNP Paribas',
+                description: 'European banking perspective with emphasis on technical skills and multicultural interview dynamics.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'detusche_bank_interview_prep.html',
+                name: 'Deutsche Bank',
+                description: 'Focus on quantitative and technical skills with strategies for their rigorous assessment process.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'jp_interview_prep.html',
+                name: 'JPMorgan Chase',
+                description: 'Guide to JPMorgan\'s rigorous interview process, technical assessments, and behavioral expectations.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'morgan_stanley_interview_prep.html',
+                name: 'Morgan Stanley',
+                description: 'Emphasis on analytical skills, trading knowledge, and their competitive interview structure.',
+                type: 'bank',
+                icon: '🏦'
+            },
+            {
+                file: 'python_interview_prep.html',
+                name: 'Python Programming',
+                description: 'Comprehensive guide to algorithms, data structures, coding best practices, and Python-specific optimization.',
+                type: 'programming',
+                icon: '🐍'
+            }
+        ];
+
+        async function loadResources() {
+            try {
+                const contentDiv = document.getElementById('content');
+                
+                // Sort resources alphabetically by name
+                const sortedResources = resources.sort((a, b) => a.name.localeCompare(b.name));
+
+                if (sortedResources.length === 0) {
+                    contentDiv.innerHTML = '<div class="error">No interview prep resources found.</div>';
+                    return;
+                }
+
+                // Create grid HTML
+                let gridHTML = '<div class="grid">';
+                
+                sortedResources.forEach(resource => {
+                    gridHTML += `
+                        <a href="${resource.file}" class="card ${resource.type}">
+                            <div class="card-header">
+                                <span class="card-icon">${resource.icon}</span>
+                                <span>${resource.name}</span>
+                                <span class="card-category">${resource.type}</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-description">${resource.description}</p>
+                                <a href="${resource.file}" class="card-link">View Guide →</a>
+                            </div>
+                        </a>
+                    `;
+                });
+                
+                gridHTML += '</div>';
+                contentDiv.innerHTML = gridHTML;
+
+                // Update last modified date
+                document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+
+            } catch (error) {
+                document.getElementById('content').innerHTML = `
+                    <div class="error">
+                        <p>Error loading resources. Please refresh the page.</p>
+                        <p style="font-size: 0.9em; margin-top: 10px;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load resources when page loads
+        window.addEventListener('load', loadResources);
+    </script>
+</body>
+</html>

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morgan Stanley Interview Prep — 100 Questions</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Arial,sans-serif;background:#f0f2f5;color:#333;font-size:15px;line-height:1.6}
+
+/* HEADER */
+header{background:#003087;color:#fff;padding:0 30px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.logo{font-size:18px;font-weight:800;color:#fff}.logo em{font-style:normal;color:#c8a951}
+.hbadge{background:#c8a951;color:#003087;font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#003087,#001f5b);color:#fff;padding:44px 30px 36px}
+.hero-eye{display:inline-block;background:rgba(200,169,81,.15);border:1px solid rgba(200,169,81,.4);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;color:#c8a951;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:32px;font-weight:900;margin-bottom:10px;line-height:1.15}
+.hero h1 em{font-style:normal;color:#c8a951}
+.hero p{font-size:14px;color:rgba(255,255,255,.7);max-width:620px;margin-bottom:20px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:12px;color:rgba(255,255,255,.8)}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 16px;text-align:center}
+.stat .n{font-size:20px;font-weight:900;color:#c8a951;line-height:1}
+.stat .l{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+/* LAYOUT */
+.layout{max-width:1080px;margin:0 auto;padding:22px 30px 60px;display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:start}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:72px}
+.scard{background:#fff;border:1px solid #dde1ea;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:12px}
+.shead{background:#003087;color:#fff;padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.snav{padding:4px 0}
+.snav button{display:flex;align-items:center;gap:8px;width:100%;padding:7px 12px;font-size:12px;color:#6b7694;background:none;border:none;cursor:pointer;text-align:left;border-left:3px solid transparent;transition:all .15s}
+.snav button:hover{background:#e6eef8;color:#003087;border-left-color:#003087}
+.snav button .cnt{margin-left:auto;background:#f0f2f5;color:#9aa3b8;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px}
+.sbody{padding:12px 14px}
+.prow{margin-bottom:8px}
+.plabel{display:flex;justify-content:space-between;font-size:11px;color:#9aa3b8;margin-bottom:3px}
+.pbar{height:4px;background:#e0e4ea;border-radius:2px;overflow:hidden}
+.pfill{height:100%;border-radius:2px}
+.p-bl{background:#003087}.p-gd{background:#c8a951}.p-gn{background:#0a7c4e}
+.stl{font-size:11.5px;color:#6b7694;line-height:1.8}
+.stl p{padding:2px 0}
+.expand-btn{width:100%;background:#003087;color:#fff;border:none;padding:9px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer}
+.expand-btn:hover{background:#001f5b}
+
+/* CONTENT */
+.content{min-width:0}
+.info-box{background:#e6eef8;border:1px solid rgba(0,48,135,.2);border-left:4px solid #003087;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:12.5px;color:#4a5270}
+.info-box strong{color:#003087}
+
+/* SECTION */
+.section{background:#fff;border:1px solid #dde1ea;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:16px;overflow:hidden}
+.sec-head{padding:15px 20px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;border-bottom:2px solid transparent;transition:background .15s}
+.sec-head:hover{background:#f7f8fa}
+.section.open .sec-head{border-bottom-color:#003087}
+.sec-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.si-bl{background:#e6eef8}.si-gd{background:#fdf6e3}.si-gn{background:#d4f0e4}.si-rd{background:#fde8e6}.si-pp{background:#ede5f8}.si-tl{background:#d4f0f5}.si-or{background:#fef0e0}.si-gy{background:#f0f2f5}
+.sec-info{flex:1}
+.sec-cat{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#c4cad8;margin-bottom:1px}
+.sec-title{font-size:14px;font-weight:700;color:#001f5b}
+.sec-right{display:flex;align-items:center;gap:7px}
+.qcount{background:#003087;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.diff{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;text-transform:uppercase}
+.d-h{background:#fde8e6;color:#c0392b}.d-m{background:#fef0e0;color:#c05c00}.d-e{background:#d4f0e4;color:#0a7c4e}
+.arrow{font-size:11px;color:#c4cad8;transition:transform .3s;flex-shrink:0}
+.section.open .arrow{transform:rotate(180deg)}
+.sec-body{display:none;padding:4px 20px 18px}
+.section.open .sec-body{display:block}
+
+/* QUESTION CARD */
+.qcard{border:1px solid #dde1ea;border-radius:7px;margin-top:11px;overflow:hidden}
+.q-head{padding:11px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;background:#f7f8fa;transition:background .15s}
+.qcard.open .q-head{background:#e6eef8}
+.qno{width:23px;height:23px;border-radius:50%;background:#003087;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.qwrap{flex:1;min-width:0}
+.qtext{font-size:13px;font-weight:600;color:#001f5b;line-height:1.4}
+.qtags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase}
+.t-bl{background:#e6eef8;color:#003087}.t-gd{background:#fdf6e3;color:#7a5c00}.t-gn{background:#d4f0e4;color:#0a7c4e}.t-rd{background:#fde8e6;color:#c0392b}.t-pp{background:#ede5f8;color:#5b2d8e}.t-tl{background:#d4f0f5;color:#0a6b7c}.t-or{background:#fef0e0;color:#c05c00}.t-gy{background:#f0f2f5;color:#6b7694}
+.qtoggle{font-size:11px;color:#003087;font-weight:700;white-space:nowrap;flex-shrink:0;background:#e6eef8;padding:2px 8px;border-radius:4px;margin-top:1px}
+.q-body{display:none;padding:13px 14px;background:#fff;border-top:1px solid #dde1ea}
+.qcard.open .q-body{display:block}
+.ans-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#003087;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ans-label::after{content:'';flex:1;height:1px;background:#e6eef8}
+.ans{font-size:13px;color:#4a5270;line-height:1.72}
+.ans strong{color:#001f5b}
+.ans ul,.ans ol{margin:6px 0 6px 18px}
+.ans li{margin-bottom:4px}
+.ans code{background:#f0f2f5;border:1px solid #dde1ea;border-radius:3px;padding:1px 5px;font-family:'Courier New',monospace;font-size:12px;color:#001f5b}
+.ans pre{background:#1a1f38;color:#e8eaf0;border-radius:6px;padding:11px 13px;font-family:'Courier New',monospace;font-size:11.5px;line-height:1.65;overflow-x:auto;margin:8px 0;white-space:pre-wrap;word-break:break-word}
+.tip{background:#e6eef8;border-left:3px solid #003087;border-radius:0 5px 5px 0;padding:8px 12px;margin-top:10px;font-size:12.5px;color:#001f5b;line-height:1.6}
+.tip strong{color:#003087}
+.warn{background:#fdf6e3;border-left:3px solid #c8a951;border-radius:0 5px 5px 0;padding:8px 12px;margin-top:10px;font-size:12.5px;color:#7a5c00;line-height:1.6}
+
+footer{background:#001f5b;color:rgba(255,255,255,.5);text-align:center;padding:18px;font-size:12px}
+footer strong{color:#fff}
+@media(max-width:820px){.layout{grid-template-columns:1fr;padding:14px}.sidebar{position:static}.hero{padding:26px 16px}.hero h1{font-size:24px}header{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Morgan <em>Stanley</em> <span style="font-size:11px;font-weight:400;color:rgba(255,255,255,.5);margin-left:8px">Interview Prep</span></div>
+  <span class="hbadge">100 Questions · 2025–26</span>
+</header>
+
+<div class="hero">
+  <div class="hero-eye">�� Based on Real GFG · LeetCode · Glassdoor · Blind Reports</div>
+  <h1>Crack the <em>Morgan Stanley</em><br>Technology Interview</h1>
+  <p>100 deep-dive questions based on real Morgan Stanley interview experiences — covering every round from OA to final onsite. MS heavily emphasizes DSA, system design for financial systems, and behavioral rounds.</p>
+  <div class="pills">
+    <span class="pill">�� DSA & Algorithms</span>
+    <span class="pill">�� Python / Java</span>
+    <span class="pill">��️ System Design</span>
+    <span class="pill">�� Finance & Trading</span>
+    <span class="pill">��️ SQL & Databases</span>
+    <span class="pill">�� Behavioral / HR</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">100</div><div class="l">Questions</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">Categories</div></div>
+    <div class="stat"><div class="n">4–5</div><div class="l">Rounds</div></div>
+    <div class="stat"><div class="n">2026</div><div class="l">Aligned</div></div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="scard">
+      <div class="shead">�� Jump to Category</div>
+      <nav class="snav" id="nav"></nav>
+    </div>
+    <div class="scard">
+      <div class="shead">�� Round Weightage</div>
+      <div class="sbody">
+        <div class="prow"><div class="plabel"><span>DSA / Coding</span><span>35%</span></div><div class="pbar"><div class="pfill p-bl" style="width:35%"></div></div></div>
+        <div class="prow"><div class="plabel"><span>System Design</span><span>25%</span></div><div class="pbar"><div class="pfill p-gd" style="width:25%"></div></div></div>
+        <div class="prow"><div class="plabel"><span>Behavioral</span><span>25%</span></div><div class="pbar"><div class="pfill p-gn" style="width:25%"></div></div></div>
+        <div class="prow"><div class="plabel"><span>Domain / Python</span><span>15%</span></div><div class="pbar"><div class="pfill p-bl" style="width:15%"></div></div></div>
+      </div>
+    </div>
+    <div class="scard">
+      <div class="shead">�� MS Interview Process</div>
+      <div class="sbody stl">
+        <p>�� <strong>Round 1:</strong> Online Assessment — 2 DSA problems, 90 min</p>
+        <p>�� <strong>Round 2:</strong> Technical Phone Screen — DSA + Python/Java</p>
+        <p>��️ <strong>Round 3:</strong> System Design (Senior roles)</p>
+        <p>�� <strong>Round 4:</strong> Technical Deep Dive — Projects + Code</p>
+        <p>�� <strong>Round 5:</strong> HR / Behavioral + Culture Fit</p>
+      </div>
+    </div>
+    <div class="scard">
+      <div class="shead">�� MS-Specific Tips</div>
+      <div class="sbody stl">
+        <p>✅ MS loves <strong>LeetCode Medium</strong> problems</p>
+        <p>✅ Expect <strong>finance-themed</strong> coding scenarios</p>
+        <p>✅ Know <strong>AI @ Morgan Stanley</strong> initiative</p>
+        <p>✅ Prepare <strong>STAR stories</strong> with measurable impact</p>
+        <p>✅ System design: focus on <strong>low-latency trading</strong></p>
+        <p>✅ Know <strong>investment banking</strong> basics</p>
+      </div>
+    </div>
+    <button class="expand-btn" id="expandBtn" onclick="toggleAll()">⊕ Expand All Answers</button>
+  </aside>
+
+  <main class="content">
+    <div class="info-box">
+      <strong>How to use this guide:</strong> Click any <strong>section header</strong> (blue bar) to expand that category. Then click any <strong>question</strong> to reveal the model answer. Use "Expand All Answers" to open everything at once.
+    </div>
+    <div id="container"></div>
+  </main>
+</div>
+
+<footer>
+  <strong>Morgan Stanley Interview Preparation Guide</strong> · Om Rawal<br>
+  <span>100 questions · 8 categories · Based on real GFG/LeetCode/Glassdoor reports · 2025–26 Edition</span>
+</footer>
+
+<script>
+// ─── ALL QUESTIONS DATA ───────────────────────────────────────────────────────
+var SECTIONS = [
+  {
+    id:"s1", icon:"��", ico:"si-bl",
+    cat:"Most Tested · OA + Technical Rounds",
+    title:"Data Structures, Algorithms & Coding",
+    diff:"Highest Priority", dc:"d-h",
+    qs:[
+      { n:1,
+        q:"Given an array of stock prices, find the maximum profit with at most 2 transactions. (MS OA — frequently reported on GFG)",
+        tags:[["Arrays","bl"],["DP","rd"],["MS OA","gd"]],
+        a:"LeetCode 123 — Best Time to Buy and Sell Stock III. Use DP with 4 states.<br><br><pre>def maxProfit(prices):\n    buy1 = buy2 = float('-inf')\n    sell1 = sell2 = 0\n    for p in prices:\n        buy1  = max(buy1,  -p)\n        sell1 = max(sell1, buy1 + p)\n        buy2  = max(buy2,  sell1 - p)\n        sell2 = max(sell2, buy2 + p)\n    return sell2\n# Time: O(n), Space: O(1)</pre><strong>Intuition:</strong> Track best profit after each of 4 state transitions in a single pass.<div class='tip'><strong>�� MS Tip:</strong> This exact problem or its variant (k transactions) appears frequently in MS OAs. Also know LC 121 (single transaction) and LC 122 (unlimited). MS frames these as trading strategy problems.</div>"
+      },
+      { n:2,
+        q:"Find the longest substring without repeating characters. Optimize for O(n) time. (Reported multiple times on GFG for MS)",
+        tags:[["Sliding Window","bl"],["HashMap","gn"],["MS Reported","gd"]],
+        a:"<pre>def lengthOfLongestSubstring(s):\n    char_idx = {}\n    left = max_len = 0\n    for right, ch in enumerate(s):\n        if ch in char_idx and char_idx[ch] >= left:\n            left = char_idx[ch] + 1\n        char_idx[ch] = right\n        max_len = max(max_len, right - left + 1)\n    return max_len\n# Time: O(n), Space: O(min(m,n))</pre><strong>Pattern:</strong> Sliding window with HashMap tracking last seen index. Move left pointer past the duplicate when found.<div class='tip'><strong>�� Tip:</strong> Follow-ups: 'Only lowercase letters?' (array of 26). 'Unicode?' (dict). Always discuss space complexity. MS interviewers love follow-up questions.</div>"
+      },
+      { n:3,
+        q:"Implement LRU Cache with O(1) get and put operations. (Very commonly reported at Morgan Stanley — GFG, Glassdoor)",
+        tags:[["Design","bl"],["HashMap+DLL","gn"],["MS Classic","gd"]],
+        a:"Use a <strong>doubly linked list</strong> (O(1) removal) + <strong>HashMap</strong> (O(1) lookup).<br><br><pre>from collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.cap = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        if key not in self.cache: return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        if key in self.cache:\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.cap:\n            self.cache.popitem(last=False)\n# Both get/put: O(1) amortized</pre><div class='tip'><strong>�� MS Tip:</strong> Know the manual DLL implementation too — MS interviewers may ask you to implement without OrderedDict. The key insight: HashMap stores node pointers; DLL maintains order.</div>"
+      },
+      { n:4,
+        q:"Merge all overlapping intervals. (Reported on GFG for MS — very common)",
+        tags:[["Intervals","bl"],["Sorting","gn"],["MS Classic","gd"]],
+        a:"<pre>def merge(intervals):\n    if not intervals: return []\n    intervals.sort(key=lambda x: x[0])\n    merged = [intervals[0]]\n    for start, end in intervals[1:]:\n        if start <= merged[-1][1]:\n            merged[-1][1] = max(merged[-1][1], end)\n        else:\n            merged.append([start, end])\n    return merged\n# Time: O(n log n), Space: O(n)</pre><strong>Finance use case:</strong> Merging trading windows, consolidating time ranges for market data analysis."
+      },
+      { n:5,
+        q:"Find the kth largest element in an unsorted array. Compare Heap vs QuickSelect approaches. (Reported on GFG for MS)",
+        tags:[["Heap","bl"],["QuickSelect","gn"],["MS Reported","gd"]],
+        a:"<strong>Min-Heap O(n log k):</strong><br><pre>import heapq\ndef findKthLargest(nums, k):\n    return heapq.nlargest(k, nums)[-1]</pre><strong>QuickSelect O(n) average:</strong><br><pre>def findKthLargest(nums, k):\n    pivot = nums[len(nums)//2]\n    left  = [x for x in nums if x > pivot]\n    mid   = [x for x in nums if x == pivot]\n    right = [x for x in nums if x < pivot]\n    if k <= len(left): return findKthLargest(left, k)\n    if k <= len(left)+len(mid): return pivot\n    return findKthLargest(right, k-len(left)-len(mid))</pre><strong>Trade-offs:</strong> Heap = O(n log k) time, O(k) space — good for streaming. QuickSelect = O(n) avg, O(n²) worst — good for in-memory."
+      },
+      { n:6,
+        q:"Serialize and deserialize a binary tree. (Reported multiple times in MS interviews on GFG)",
+        tags:[["Trees","bl"],["BFS/DFS","gn"],["MS Classic","gd"]],
+        a:"<pre>class Codec:\n    def serialize(self, root):\n        if not root: return '#'\n        return f\"{root.val},{self.serialize(root.left)},{self.serialize(root.right)}\"\n\n    def deserialize(self, data):\n        vals = iter(data.split(','))\n        def build():\n            v = next(vals)\n            if v == '#': return None\n            node = TreeNode(int(v))\n            node.left  = build()\n            node.right = build()\n            return node\n        return build()</pre><div class='tip'><strong>�� Tip:</strong> Why preorder not inorder? Inorder serialization is ambiguous without structure markers — preorder with null markers uniquely identifies the tree.</div>"
+      },
+      { n:7,
+        q:"Number of islands in a matrix. Extend: what if the grid is distributed across machines?",
+        tags:[["Graphs","bl"],["BFS/DFS","gn"],["Union-Find","tl"]],
+        a:"<pre>def numIslands(grid):\n    if not grid: return 0\n    rows, cols = len(grid), len(grid[0])\n    count = 0\n    def dfs(r, c):\n        if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != '1': return\n        grid[r][c] = '0'\n        for dr, dc in [(0,1),(0,-1),(1,0),(-1,0)]: dfs(r+dr, c+dc)\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == '1': dfs(r, c); count += 1\n    return count</pre><strong>Distributed:</strong> Partition grid into chunks. Process each independently. Use Union-Find to merge islands spanning partition boundaries."
+      },
+      { n:8,
+        q:"Find the median of a data stream in real-time. (Reported in MS senior interviews on Glassdoor)",
+        tags:[["Heap","bl"],["Hard","rd"],["MS Senior","gd"]],
+        a:"Two heaps: max-heap for lower half, min-heap for upper half.<br><br><pre>import heapq\n\nclass MedianFinder:\n    def __init__(self):\n        self.lo = []  # max-heap (negate)\n        self.hi = []  # min-heap\n\n    def addNum(self, num):\n        heapq.heappush(self.lo, -num)\n        heapq.heappush(self.hi, -heapq.heappop(self.lo))\n        if len(self.hi) > len(self.lo):\n            heapq.heappush(self.lo, -heapq.heappop(self.hi))\n\n    def findMedian(self):\n        if len(self.lo) > len(self.hi): return -self.lo[0]\n        return (-self.lo[0] + self.hi[0]) / 2\n# addNum: O(log n), findMedian: O(1)</pre><div class='tip'><strong>�� Finance Context:</strong> MS may frame this as 'find the median transaction amount in a real-time payment stream.'</div>"
+      },
+      { n:9,
+        q:"Minimum number of conference rooms required for a list of meeting intervals. (Reported on GFG for MS)",
+        tags:[["Intervals","bl"],["Heap","gn"],["MS Reported","gd"]],
+        a:"<pre>import heapq\n\ndef minMeetingRooms(intervals):\n    if not intervals: return 0\n    intervals.sort(key=lambda x: x[0])\n    heap = []\n    for start, end in intervals:\n        if heap and heap[0] <= start:\n            heapq.heapreplace(heap, end)\n        else:\n            heapq.heappush(heap, end)\n    return len(heap)\n# Time: O(n log n), Space: O(n)</pre><strong>Intuition:</strong> Sort by start. Min-heap of end times. If earliest-ending meeting ended before new one starts, reuse that room."
+      },
+      { n:10,
+        q:"Design a data structure supporting insert, delete, and getRandom in O(1) time. (Reported on LeetCode Discuss for MS)",
+        tags:[["Design","bl"],["HashMap+Array","gn"],["MS Reported","gd"]],
+        a:"<pre>import random\n\nclass RandomizedSet:\n    def __init__(self):\n        self.val_to_idx = {}\n        self.vals = []\n\n    def insert(self, val):\n        if val in self.val_to_idx: return False\n        self.vals.append(val)\n        self.val_to_idx[val] = len(self.vals) - 1\n        return True\n\n    def remove(self, val):\n        if val not in self.val_to_idx: return False\n        idx = self.val_to_idx[val]\n        last = self.vals[-1]\n        self.vals[idx] = last\n        self.val_to_idx[last] = idx\n        self.vals.pop()\n        del self.val_to_idx[val]\n        return True\n\n    def getRandom(self):\n        return random.choice(self.vals)</pre><strong>Key insight:</strong> Swap element to delete with last element, then pop — O(1) delete without gaps."
+      },
+      { n:11,
+        q:"Implement a Trie. Add search and startsWith. When is Trie better than HashMap?",
+        tags:[["Trie","bl"],["String","gn"]],
+        a:"<pre>class TrieNode:\n    def __init__(self): self.children = {}; self.is_end = False\n\nclass Trie:\n    def __init__(self): self.root = TrieNode()\n\n    def insert(self, word):\n        node = self.root\n        for ch in word: node = node.children.setdefault(ch, TrieNode())\n        node.is_end = True\n\n    def search(self, word):\n        node = self.root\n        for ch in word:\n            if ch not in node.children: return False\n            node = node.children[ch]\n        return node.is_end\n\n    def startsWith(self, prefix):\n        node = self.root\n        for ch in prefix:\n            if ch not in node.children: return False\n            node = node.children[ch]\n        return True</pre><strong>Trie vs HashMap:</strong> Trie is better for prefix queries, autocomplete, and enumerating all words with a given prefix."
+      },
+      { n:12,
+        q:"Minimum edit distance (Levenshtein distance) between two strings. (Reported on GFG for MS)",
+        tags:[["DP","rd"],["String","bl"]],
+        a:"<pre>def minDistance(word1, word2):\n    m, n = len(word1), len(word2)\n    dp = list(range(n+1))\n    for i in range(1, m+1):\n        prev = dp[0]; dp[0] = i\n        for j in range(1, n+1):\n            temp = dp[j]\n            if word1[i-1] == word2[j-1]: dp[j] = prev\n            else: dp[j] = 1 + min(prev, dp[j], dp[j-1])\n            prev = temp\n    return dp[n]\n# Time: O(mn), Space: O(n)</pre><div class='tip'><strong>�� Finance Use Case:</strong> Fuzzy matching customer names or company names in financial records — a real MS use case.</div>"
+      },
+      { n:13,
+        q:"Shortest path in a weighted graph (Dijkstra). When would you use Bellman-Ford instead?",
+        tags:[["Graphs","bl"],["Dijkstra","rd"],["MS Reported","gd"]],
+        a:"<pre>import heapq\n\ndef dijkstra(graph, src):\n    dist = {node: float('inf') for node in graph}\n    dist[src] = 0; pq = [(0, src)]\n    while pq:\n        d, u = heapq.heappop(pq)\n        if d > dist[u]: continue\n        for v, w in graph[u]:\n            if dist[u] + w < dist[v]:\n                dist[v] = dist[u] + w\n                heapq.heappush(pq, (dist[v], v))\n    return dist</pre><strong>Dijkstra vs Bellman-Ford:</strong> Dijkstra O((V+E)logV), non-negative weights only. Bellman-Ford O(VE), handles negative weights, detects negative cycles.<br><strong>Finance:</strong> Bellman-Ford for currency arbitrage detection (negative cycle = arbitrage opportunity)."
+      },
+      { n:14,
+        q:"Find all anagrams of a pattern in a string. Return starting indices.",
+        tags:[["Sliding Window","bl"],["HashMap","gn"]],
+        a:"<pre>from collections import Counter\n\ndef findAnagrams(s, p):\n    result = []; p_count = Counter(p); window = Counter(s[:len(p)])\n    if window == p_count: result.append(0)\n    for i in range(len(p), len(s)):\n        window[s[i]] += 1\n        left = s[i - len(p)]\n        window[left] -= 1\n        if window[left] == 0: del window[left]\n        if window == p_count: result.append(i - len(p) + 1)\n    return result\n# Time: O(n), Space: O(1)</pre>"
+      },
+      { n:15,
+        q:"Word Break Problem: given a string and a dictionary, can the string be segmented into dictionary words?",
+        tags:[["DP","rd"],["String","bl"],["MS Reported","gd"]],
+        a:"<pre>def wordBreak(s, wordDict):\n    word_set = set(wordDict)\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n    for i in range(1, n + 1):\n        for j in range(i):\n            if dp[j] and s[j:i] in word_set:\n                dp[i] = True; break\n    return dp[n]\n# Time: O(n^2), Space: O(n)</pre><strong>Optimization:</strong> Use Trie for word_set to speed up substring lookups. Memoized recursion is also valid."
+      },
+      { n:16,
+        q:"Given a matrix, find the longest increasing path. (Reported on GFG for MS — hard level)",
+        tags:[["DFS","bl"],["Memoization","gn"],["Hard","rd"]],
+        a:"<pre>def longestIncreasingPath(matrix):\n    if not matrix: return 0\n    rows, cols = len(matrix), len(matrix[0])\n    memo = {}\n\n    def dfs(r, c):\n        if (r, c) in memo: return memo[(r, c)]\n        best = 1\n        for dr, dc in [(0,1),(0,-1),(1,0),(-1,0)]:\n            nr, nc = r+dr, c+dc\n            if 0 <= nr < rows and 0 <= nc < cols and matrix[nr][nc] > matrix[r][c]:\n                best = max(best, 1 + dfs(nr, nc))\n        memo[(r, c)] = best\n        return best\n\n    return max(dfs(r, c) for r in range(rows) for c in range(cols))\n# Time: O(mn), Space: O(mn)</pre>"
+      },
+      { n:17,
+        q:"Implement a rate limiter that allows N requests per second per user. (MS system design + coding hybrid)",
+        tags:[["Design","bl"],["Sliding Window","tl"],["MS Reported","gd"]],
+        a:"<pre>import time\nfrom collections import defaultdict, deque\n\nclass RateLimiter:\n    def __init__(self, max_requests, window_sec):\n        self.max_req = max_requests\n        self.window  = window_sec\n        self.users   = defaultdict(deque)\n\n    def is_allowed(self, user_id):\n        now = time.time()\n        q = self.users[user_id]\n        while q and now - q[0] >= self.window:\n            q.popleft()\n        if len(q) < self.max_req:\n            q.append(now)\n            return True\n        return False</pre><strong>Follow-up:</strong> For distributed rate limiting, use Redis with atomic INCR + EXPIRE. Discuss: fixed window vs sliding window vs token bucket trade-offs."
+      },
+      { n:18,
+        q:"Given a list of transactions, detect suspicious ones: same user, amount within 10%, within 1 hour. (MS domain-specific coding)",
+        tags:[["MS Domain","gd"],["Finance","tl"],["Sorting","bl"]],
+        a:"<pre>from collections import defaultdict\n\ndef find_suspicious(transactions):\n    user_txns = defaultdict(list)\n    for t in transactions:\n        user_txns[t['user']].append(t)\n    suspicious = []\n    for user, txns in user_txns.items():\n        txns.sort(key=lambda x: x['time'])\n        left = 0\n        for right in range(1, len(txns)):\n            while txns[right]['time'] - txns[left]['time'] > 3600: left += 1\n            for i in range(left, right):\n                a1, a2 = txns[i]['amount'], txns[right]['amount']\n                if abs(a1-a2)/max(a1,a2) <= 0.1:\n                    suspicious.append((txns[i], txns[right]))\n    return suspicious</pre><strong>Scale:</strong> Partition by user_id across Spark workers — no cross-partition communication needed."
+      }
+    ]
+  },
+  {
+    id:"s2", icon:"��", ico:"si-gd",
+    cat:"Technical Round",
+    title:"Python, Java & Core Programming",
+    diff:"Medium–Hard", dc:"d-m",
+    qs:[
+      { n:19,
+        q:"What is Python's GIL? How does it affect multi-threaded applications? How do you handle CPU-bound parallelism?",
+        tags:[["GIL","bl"],["Concurrency","gn"]],
+        a:"The GIL (Global Interpreter Lock) allows only one thread to execute Python bytecode at a time, even on multi-core systems.<br><br><strong>Impact:</strong><ul><li><strong>I/O-bound tasks:</strong> Threading still helps — GIL released during I/O waits (network, file, DB)</li><li><strong>CPU-bound tasks:</strong> Threading provides NO speedup — use <code>multiprocessing</code> instead</li></ul><strong>Solutions for CPU-bound parallelism:</strong><ul><li><code>multiprocessing</code> — separate processes, each with own GIL</li><li><code>concurrent.futures.ProcessPoolExecutor</code> — high-level API</li><li>NumPy/SciPy — release GIL for C-level operations</li><li>Numba with <code>parallel=True</code> — releases GIL for JIT-compiled loops</li><li>PySpark — distributed processing bypasses GIL entirely</li></ul><div class='tip'><strong>�� MS Context:</strong> Risk calculations (Monte Carlo simulations) are CPU-bound → multiprocessing. Market data ingestion is I/O-bound → asyncio or threading.</div>"
+      },
+      { n:20,
+        q:"What are Python decorators? Write one that logs execution time and handles exceptions.",
+        tags:[["Decorators","bl"],["Python","gn"]],
+        a:"A decorator is a higher-order function that wraps another function to extend its behavior without modifying it.<br><br><pre>import time, logging, functools\n\ndef timed_logger(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        try:\n            result = func(*args, **kwargs)\n            logging.info(f\"{func.__name__} took {time.perf_counter()-start:.3f}s\")\n            return result\n        except Exception as e:\n            logging.error(f\"{func.__name__} failed: {e}\")\n            raise\n    return wrapper</pre><strong>Key:</strong> Always use <code>@functools.wraps(func)</code> to preserve the original function's metadata."
+      },
+      { n:21,
+        q:"Explain Python's memory model. Explain mutable vs immutable objects and how assignment works under the hood.",
+        tags:[["Python Internals","bl"],["Memory","gn"]],
+        a:"In Python, <strong>everything is an object</strong>. Variables are references (pointers) to objects, not containers.<br><br><strong>Immutable:</strong> int, float, str, tuple — cannot be changed after creation. Reassignment creates a new object.<br><strong>Mutable:</strong> list, dict, set — can be modified in place. Multiple variables can reference the same object.<br><br><pre># Mutable — shared reference!\na = [1,2,3]; b = a; b.append(4)\n# a is now [1,2,3,4] — same object!\n\n# Python interns small ints (-5 to 256)\na = 256; b = 256; print(a is b)  # True\na = 257; b = 257; print(a is b)  # False</pre><div class='tip'><strong>�� MS Tip:</strong> Interviewers test if you understand <code>is</code> vs <code>==</code> and implications for function arguments (pass by object reference).</div>"
+      },
+      { n:22,
+        q:"What are generators and when would you use them in a financial data pipeline?",
+        tags:[["Python","bl"],["Memory Efficiency","gn"]],
+        a:"A generator is a special iterator created with <code>yield</code> — it lazily produces values one at a time, holding state between calls. Constant memory usage regardless of dataset size.<br><br><pre>def read_transactions(file, chunk_size=10000):\n    for chunk in pd.read_csv(file, chunksize=chunk_size):\n        yield chunk\n\n# Process large files without loading into memory\nfor chunk in read_transactions('transactions.csv'):\n    process(chunk)\n    load_to_db(chunk)</pre><strong>Generator expressions:</strong> <code>(x*2 for x in range(1_000_000))</code> — lazy, vs list comprehension which is eager.<br><strong>Use generators when:</strong> Data is too large for memory, you only need one pass, streaming processing."
+      },
+      { n:23,
+        q:"What is the difference between asyncio, threading, and multiprocessing? When would you use each at Morgan Stanley?",
+        tags:[["Concurrency","bl"],["Async","gn"]],
+        a:"<table style='width:100%;border-collapse:collapse;font-size:12px;margin:8px 0'><tr style='background:#e6eef8'><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Model</th><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>Best For</th><th style='padding:7px;border:1px solid #dde1ea;text-align:left'>GIL Impact</th></tr><tr><td style='padding:7px;border:1px solid #dde1ea'><strong>threading</strong></td><td style='padding:7px;border:1px solid #dde1ea'>I/O-bound (DB calls, HTTP)</td><td style='padding:7px;border:1px solid #dde1ea'>Released during I/O</td></tr><tr style='background:#f7f8fa'><td style='padding:7px;border:1px solid #dde1ea'><strong>multiprocessing</strong></td><td style='padding:7px;border:1px solid #dde1ea'>CPU-bound (ML, data processing)</td><td style='padding:7px;border:1px solid #dde1ea'>Bypassed (separate processes)</td></tr><tr><td style='padding:7px;border:1px solid #dde1ea'><strong>asyncio</strong></td><td style='padding:7px;border:1px solid #dde1ea'>High-concurrency I/O (APIs, WebSockets)</td><td style='padding:7px;border:1px solid #dde1ea'>Single thread, no GIL issue</td></tr></table><strong>MS context:</strong> Real-time trading systems use asyncio for low-latency market data feeds. Risk calculation engines use multiprocessing for parallel Monte Carlo simulations."
+      },
+      { n:24,
+        q:"How do you use Pydantic for data validation in financial APIs? Why use Decimal instead of float for money?",
+        tags:[["Python","bl"],["Validation","tl"],["Finance","gd"]],
+        a:"<pre>from pydantic import BaseModel, field_validator, Field\nfrom decimal import Decimal\n\nclass Transaction(BaseModel):\n    id: str = Field(pattern=r'^TXN\\d{10}$')\n    amount: Decimal = Field(gt=0, decimal_places=2)\n    currency: str = Field(min_length=3, max_length=3)\n\n    @field_validator('currency')\n    @classmethod\n    def validate_currency(cls, v):\n        if v not in {'USD', 'EUR', 'GBP', 'JPY'}:\n            raise ValueError('Invalid currency')\n        return v</pre><strong>Why Decimal not float:</strong> Float has precision issues — <code>0.1 + 0.2 != 0.3</code> in floating point. Financial calculations require exact decimal arithmetic. Always use <code>Decimal</code> for monetary amounts."
+      },
+      { n:25,
+        q:"What are Python's abstract base classes (ABCs)? How do they enforce interfaces in a financial system?",
+        tags:[["Python OOP","bl"],["Design","gn"]],
+        a:"ABCs define interfaces that subclasses must implement. Unlike duck typing (runtime check), ABCs enforce contracts at class definition time.<br><br><pre>from abc import ABC, abstractmethod\n\nclass RiskModel(ABC):\n    @abstractmethod\n    def calculate_var(self, portfolio, confidence): ...\n\n    @abstractmethod\n    def validate(self): ...\n\n    def report(self):  # Concrete method\n        return f\"VaR: {self.calculate_var(None, 0.95)}\"\n\nclass CreditRiskModel(RiskModel):\n    def calculate_var(self, portfolio, confidence): return 0.0\n    def validate(self): return True</pre><strong>ABCs vs Duck Typing:</strong> ABCs are explicit contracts — fail at class definition if abstract methods aren't implemented. Better for large teams and financial systems where interface compliance is critical."
+      },
+      { n:26,
+        q:"Explain SOLID principles with examples from a financial trading system. (Reported on Glassdoor for MS)",
+        tags:[["SOLID","bl"],["OOP","gn"],["MS Reported","gd"]],
+        a:"<strong>S — Single Responsibility:</strong> Each class has one reason to change.<br><pre>class Trade:           # Core domain logic only\n    def execute(self): ...\n\nclass TradeRepository:  # Persistence\n    def save(self, trade): ...\n\nclass TradeNotifier:    # Notifications\n    def notify(self, trade): ...</pre><strong>O — Open/Closed:</strong> Open for extension, closed for modification. Add new instrument types without modifying existing code.<br><strong>L — Liskov Substitution:</strong> Subclasses must be substitutable for their base class.<br><strong>I — Interface Segregation:</strong> Don't force clients to implement interfaces they don't use.<br><strong>D — Dependency Inversion:</strong> Depend on abstractions, not concretions. Inject dependencies rather than creating them.<div class='tip'><strong>�� MS Tip:</strong> MS interviewers love SOLID questions. Always give concrete financial examples — don't just define the principles abstractly.</div>"
+      },
+      { n:27,
+        q:"What is the difference between shallow copy and deep copy in Python? Give a scenario where using the wrong one caused a bug.",
+        tags:[["Python","bl"],["Tricky","rd"]],
+        a:"<strong>Shallow copy</strong> (<code>copy.copy()</code> or <code>list[:]</code>) creates a new container but references the same nested objects.<br><strong>Deep copy</strong> (<code>copy.deepcopy()</code>) recursively copies all nested objects.<br><br><pre>import copy\n\n# Bug scenario: portfolio config with nested lists\nconfig = {'weights': [0.3, 0.3, 0.4]}\nconfig_copy = config.copy()  # Shallow!\n\n# Modifying nested list affects original!\nconfig_copy['weights'].append(0.1)\nprint(config['weights'])  # [0.3, 0.3, 0.4, 0.1] — BUG!\n\n# Fix: use deepcopy\nconfig_copy = copy.deepcopy(config)\nconfig_copy['weights'].append(0.1)\nprint(config['weights'])  # [0.3, 0.3, 0.4] — Correct!</pre><strong>Especially dangerous</strong> in multi-threaded environments where shared mutable state causes race conditions."
+      },
+      { n:28,
+        q:"How do you write thread-safe code in Python? What synchronization primitives does Python provide?",
+        tags:[["Concurrency","bl"],["Thread Safety","rd"]],
+        a:"<strong>Python synchronization primitives:</strong> Lock, RLock, Semaphore, Event, Condition, Queue (thread-safe FIFO).<br><br><pre>import threading\n\nclass PortfolioManager:\n    def __init__(self):\n        self._balance = 0\n        self._lock = threading.Lock()\n\n    def deposit(self, amount):\n        with self._lock:  # Context manager ensures release\n            self._balance += amount\n\n    def get_balance(self):\n        with self._lock:\n            return self._balance</pre><strong>Note:</strong> Python's GIL provides some protection for simple operations, but compound operations (check-then-act) are NOT atomic and require explicit locking."
+      },
+      { n:29,
+        q:"What is functools.lru_cache? Implement memoization from scratch. What are its limitations?",
+        tags:[["Python","bl"],["Optimization","gn"]],
+        a:"<pre>def memoize(func):\n    cache = {}\n    def wrapper(*args):\n        if args not in cache:\n            cache[args] = func(*args)\n        return cache[args]\n    return wrapper\n\n@memoize\ndef fib(n):\n    if n < 2: return n\n    return fib(n-1) + fib(n-2)</pre><strong>lru_cache vs cache (Python 3.9+):</strong> <code>lru_cache(maxsize=N)</code> is bounded with LRU eviction. <code>cache</code> = <code>lru_cache(maxsize=None)</code> — unbounded, slightly faster.<br><strong>Limitations:</strong> Only works with hashable arguments. Not thread-safe by default for custom implementations. Memory grows unboundedly without maxsize."
+      },
+      { n:30,
+        q:"How do you handle large-scale data processing in Python without running out of memory?",
+        tags:[["Data Engineering","bl"],["Performance","gn"]],
+        a:"<strong>Strategies:</strong><ul><li><strong>Generators:</strong> Lazy evaluation — process one record at a time</li><li><strong>Pandas chunking:</strong> <code>pd.read_csv(chunksize=100_000)</code></li><li><strong>Polars:</strong> Rust-based DataFrame library — 10-100x faster than Pandas for large data, lazy evaluation</li><li><strong>Dask:</strong> Parallel DataFrames that spill to disk when needed</li><li><strong>PySpark:</strong> Distributed processing across a cluster</li><li><strong>Columnar formats:</strong> Parquet/Arrow — read only needed columns</li></ul><strong>MS context:</strong> Processing millions of daily transactions requires streaming approaches. Kafka + Python consumers for real-time; Spark for batch historical analysis."
+      },
+      { n:31,
+        q:"What is the difference between @classmethod and @staticmethod? When would you use each in a financial application?",
+        tags:[["Python OOP","bl"],["Design","gn"]],
+        a:"<pre>class Trade:\n    _registry = {}\n\n    def __init__(self, ticker, quantity, price):\n        self.ticker = ticker\n        self.quantity = quantity\n        self.price = price\n\n    @classmethod\n    def from_dict(cls, data):\n        # Factory method — can be overridden by subclasses\n        return cls(data['ticker'], data['quantity'], data['price'])\n\n    @staticmethod\n    def validate_ticker(ticker):\n        # Pure utility — no access to class or instance\n        return len(ticker) <= 5 and ticker.isalpha()\n\n    @property\n    def notional(self):\n        return self.quantity * self.price</pre><strong>@classmethod:</strong> Receives class as first arg (<code>cls</code>). Used for factory methods. Can be overridden by subclasses (polymorphic).<br><strong>@staticmethod:</strong> No implicit first arg. Pure utility function. Cannot be overridden polymorphically."
+      }
+    ]
+  },
+  {
+    id:"s3", icon:"��️", ico:"si-pp",
+    cat:"Senior Roles · Round 3",
+    title:"System Design — Financial Systems at Scale",
+    diff:"Hard", dc:"d-h",
+    qs:[
+      { n:32,
+        q:"Design a real-time trading platform that handles 100,000 orders per second with sub-millisecond latency. (Classic MS system design — reported on Glassdoor)",
+        tags:[["System Design","pp"],["Finance","gd"],["MS Classic","bl"]],
+        a:"<strong>Requirements:</strong> 100K OPS, &lt;1ms latency, exactly-once order execution, 99.99% availability.<br><br><strong>Architecture:</strong><ul><li><strong>Order Gateway:</strong> FIX protocol ingestion, load balancing, authentication (mTLS). Co-located with exchanges for minimal network latency.</li><li><strong>Order Management System (OMS):</strong> Stateless microservices, horizontal scaling. In-memory order book using lock-free data structures.</li><li><strong>Risk Engine:</strong> Pre-trade risk checks (position limits, credit limits, market risk). Must complete in &lt;100 microseconds. Uses FPGA for ultra-low latency.</li><li><strong>Matching Engine:</strong> Price-time priority matching. Single-threaded for determinism. Partitioned by instrument.</li><li><strong>Market Data:</strong> Multicast for broadcast to all subscribers. Binary protocol (FAST/SBE) instead of JSON.</li><li><strong>Persistence:</strong> Event sourcing — every order state change is an immutable event. Kafka for durability.</li></ul><strong>Latency optimizations:</strong> Kernel bypass (DPDK), CPU pinning, NUMA-aware memory allocation, lock-free queues, pre-allocated object pools.<div class='tip'><strong>�� MS Tip:</strong> Morgan Stanley is a major market maker. Showing knowledge of FIX protocol, co-location, and FPGA acceleration demonstrates genuine financial technology expertise.</div>"
+      },
+      { n:33,
+        q:"Design a fraud detection system that flags suspicious transactions in real-time (&lt;50ms) while processing millions per day.",
+        tags:[["System Design","pp"],["ML","tl"],["MS Domain","gd"]],
+        a:"<strong>Two-tier approach:</strong><br><br><strong>Tier 1 — Real-time rules engine (&lt;5ms):</strong><ul><li>Rule-based checks: velocity limits, geographic anomalies, blacklisted merchants</li><li>In-memory Redis for user transaction history (last 24h)</li><li>Bloom filters for known fraudulent patterns</li></ul><strong>Tier 2 — ML scoring (&lt;50ms):</strong><ul><li>Feature store (Redis) with pre-computed user features</li><li>Lightweight ML model (XGBoost) served via FastAPI</li><li>Features: amount, merchant category, time, location delta, velocity</li></ul><strong>Async enrichment:</strong> Kafka stream for deep analysis (graph neural networks). Feedback loop: confirmed fraud → retrain models.<br><strong>Decision:</strong> Block (high score), flag for review (medium), allow (low score)."
+      },
+      { n:34,
+        q:"Design a distributed cache system. How do you handle cache invalidation, consistency, and eviction?",
+        tags:[["System Design","pp"],["Caching","bl"]],
+        a:"<strong>Architecture:</strong> Redis Cluster with consistent hashing for key distribution.<br><br><strong>Cache invalidation strategies:</strong><ul><li><strong>TTL-based:</strong> Simple, eventual consistency</li><li><strong>Write-through:</strong> Update cache and DB simultaneously — strong consistency</li><li><strong>Write-behind:</strong> Update cache first, async DB write — low latency, risk of data loss</li><li><strong>Cache-aside:</strong> Read from cache; on miss, load from DB and populate</li><li><strong>Event-driven:</strong> DB change events (CDC) trigger cache invalidation</li></ul><strong>Eviction policies:</strong> LRU (most common), LFU, TTL, Random.<br><strong>Financial data:</strong> Use write-through with short TTL. Never cache account balances without invalidation on update.<br><strong>Thundering herd:</strong> Use mutex on cache miss to prevent multiple DB queries for the same key."
+      },
+      { n:35,
+        q:"Design a URL shortener service. Scale it to handle 100M URLs and 10B redirects per month.",
+        tags:[["System Design","pp"],["Classic","bl"]],
+        a:"<strong>Core design:</strong><ul><li><strong>Short code:</strong> Base62 encoding of auto-increment ID (6 chars = 62^6 = 56B URLs)</li><li><strong>Write path:</strong> API → ID generator (Snowflake ID) → encode → store in DB</li><li><strong>Read path:</strong> Short URL → Redis cache → DB fallback → 301 redirect</li></ul><strong>Scale:</strong> 10B redirects/month = ~3,858 RPS avg, ~40K RPS peak. Read:Write = 100:1.<br><strong>Database:</strong> Cassandra for URL mappings (high write throughput). Redis for hot URL cache (99% hit rate target).<br><strong>CDN:</strong> Cache redirects at edge for popular URLs — sub-10ms globally."
+      },
+      { n:36,
+        q:"What is the CAP theorem? How does it apply to Morgan Stanley's trading systems?",
+        tags:[["Distributed Systems","pp"],["Theory","tl"]],
+        a:"<strong>CAP Theorem:</strong> Consistency, Availability, Partition Tolerance — choose 2. Since partitions are inevitable, the real choice is CP vs AP.<br><br><strong>MS's choices by use case:</strong><ul><li><strong>Order execution (CP):</strong> Must be consistent — cannot have two systems thinking different orders were executed. Use distributed consensus (Raft/Paxos).</li><li><strong>Market data display (AP):</strong> Showing slightly stale price on a dashboard is acceptable. Use eventual consistency (Redis with async replication).</li><li><strong>Position data (CP):</strong> Must be consistent — a trader must see the same positions as the risk system. Stale positions = wrong risk.</li><li><strong>Analytics dashboards (AP):</strong> Slight staleness acceptable. Availability is more important than perfect freshness.</li></ul><div class='tip'><strong>�� MS Tip:</strong> 'For core trading operations, we choose CP — consistency is non-negotiable. For read-heavy analytics, we can tolerate AP.'</div>"
+      },
+      { n:37,
+        q:"Design a real-time risk monitoring system that computes portfolio VaR for thousands of portfolios every minute.",
+        tags:[["System Design","pp"],["Risk","gd"],["MS Domain","bl"]],
+        a:"<strong>Architecture:</strong><ul><li><strong>Market Data Feed:</strong> WebSocket connections to exchanges → Kafka topics (partitioned by ticker)</li><li><strong>Position Service:</strong> Real-time position aggregation. Redis for current positions (sub-millisecond reads). Event sourcing for position changes.</li><li><strong>Risk Calculator:</strong> Streaming Spark/Flink for continuous risk metrics. Pre-computed factor exposures updated on position changes. Monte Carlo VaR computed in parallel.</li><li><strong>Limit Engine:</strong> Rules engine evaluating limits: VaR limits, concentration limits, sector limits, beta limits. Redis for limit storage.</li><li><strong>Alert Service:</strong> Priority queue for alerts (CRITICAL, WARNING, INFO). Multi-channel delivery: email, SMS, Bloomberg terminal, in-app.</li></ul><strong>Latency targets:</strong> Market data → risk update: &lt;100ms. Risk update → alert: &lt;500ms."
+      },
+      { n:38,
+        q:"Design a microservices architecture for a banking application. How do you handle distributed transactions?",
+        tags:[["Microservices","pp"],["Finance","gd"]],
+        a:"<strong>Core services:</strong> Account, Transaction, Notification, Auth, Audit, Reporting.<br><br><strong>Distributed transaction patterns:</strong><ul><li><strong>2PC:</strong> Strong consistency but blocking — not suitable for high-throughput</li><li><strong>Saga Pattern (preferred):</strong> Chain of local transactions with compensating transactions for rollback</li></ul><strong>Saga — Money Transfer:</strong><ol><li>Debit source account → success</li><li>Credit destination account → success</li><li>Send notification → success</li><li>If step 2 fails → compensating: credit back source account</li></ol><strong>Choreography vs Orchestration:</strong> Choreography (event-driven, decoupled) for simple flows; Orchestration (central coordinator) for complex flows."
+      },
+      { n:39,
+        q:"Design a notification system that sends alerts to millions of users across email, SMS, and push with priority queuing.",
+        tags:[["System Design","pp"],["Messaging","tl"]],
+        a:"<strong>Architecture:</strong><ul><li><strong>Notification API:</strong> Accepts requests, validates, enqueues</li><li><strong>Priority Queues (Kafka):</strong> CRITICAL (margin calls, trade failures), HIGH (order confirmations), NORMAL (statements)</li><li><strong>Channel Workers:</strong> Separate consumer groups for Email (SendGrid), SMS (Twilio), Push (FCM/APNs)</li><li><strong>User Preferences Service:</strong> Channel preferences, quiet hours, opt-outs</li><li><strong>Delivery Tracking:</strong> Track sent/delivered/failed status</li><li><strong>Retry Logic:</strong> Exponential backoff for failed deliveries</li></ul><strong>MS context:</strong> Margin call alerts must be CRITICAL priority — delivered within seconds regardless of load."
+      },
+      { n:40,
+        q:"What is event sourcing and CQRS? When would you use them in a financial application?",
+        tags:[["Architecture","pp"],["Finance","gd"]],
+        a:"<strong>Event Sourcing:</strong> Store state as a sequence of immutable events. Current state = replay of all events.<br><strong>CQRS:</strong> Separate read and write models. Commands (writes) → write model; Queries (reads) → optimized read models (projections).<br><br><strong>Financial use cases:</strong><ul><li><strong>Account ledger:</strong> Every debit/credit is an event. Balance = sum of all events. Perfect audit trail.</li><li><strong>Trade lifecycle:</strong> Order placed → filled → settled — each state change is an event</li><li><strong>Regulatory replay:</strong> Reconstruct account state at any point in time for audits</li></ul><strong>Trade-offs:</strong><ul><li>✅ Complete audit trail, temporal queries, event replay</li><li>❌ Eventual consistency for read models, event schema evolution complexity</li></ul>"
+      },
+      { n:41,
+        q:"How would you design a system to detect and prevent insider trading at Morgan Stanley?",
+        tags:[["Compliance","pp"],["MS Domain","gd"],["System Design","bl"]],
+        a:"<strong>Insider trading:</strong> Trading on material non-public information (MNPI) — illegal and a major compliance risk for investment banks.<br><br><strong>Detection system:</strong><ul><li><strong>Information Barrier Monitoring:</strong> Track which employees have access to MNPI (deal teams, research analysts). Maintain 'restricted list' of securities where MNPI exists.</li><li><strong>Trade Surveillance:</strong> Monitor all employee trades. Flag trades in restricted securities. Detect unusual timing (trades before major announcements).</li><li><strong>Pattern Detection:</strong> ML model detecting suspicious patterns: trades consistently before M&A announcements, unusual options activity, correlated trades across accounts.</li><li><strong>Communication Monitoring:</strong> NLP analysis of emails, chats for MNPI leakage. Keyword detection for deal names, financial terms.</li><li><strong>Audit Trail:</strong> Immutable log of who accessed what information and when. Required for regulatory investigations (SEC, FCA).</li></ul><strong>Prevention:</strong> Chinese walls (information barriers), pre-clearance for employee trades, restricted list enforcement."
+      },
+      { n:42,
+        q:"Design a data pipeline for end-of-day trade reconciliation across multiple exchanges and asset classes.",
+        tags:[["Data Pipeline","pp"],["MS Domain","gd"],["Finance","tl"]],
+        a:"<strong>Pipeline stages:</strong><ol><li><strong>Ingestion:</strong> Pull from exchanges (FIX, REST, SFTP). Normalize to internal format.</li><li><strong>Validation:</strong> Schema validation, business rule checks</li><li><strong>Matching:</strong> Match internal trades against exchange confirmations. Flag breaks.</li><li><strong>Enrichment:</strong> Add market data, counterparty details, regulatory classifications</li><li><strong>P&L Calculation:</strong> Realized/unrealized P&L per trade, portfolio, desk</li><li><strong>Reporting:</strong> Regulatory reports (MiFID II, Dodd-Frank), internal dashboards</li><li><strong>Exception Handling:</strong> Route breaks to operations team</li></ol><strong>Technology:</strong> Apache Spark for processing, Airflow for orchestration, PostgreSQL for reconciliation state, S3 for raw data archival."
+      }
+    ]
+  },
+  {
+    id:"s4", icon:"��️", ico:"si-tl",
+    cat:"Technical Round",
+    title:"SQL, Databases & Data Engineering",
+    diff:"Medium", dc:"d-m",
+    qs:[
+      { n:43,
+        q:"Find customers who made transactions in every month of 2024. (MS SQL round — reported on GFG)",
+        tags:[["SQL","tl"],["MS Reported","gd"]],
+        a:"<pre>SELECT customer_id\nFROM transactions\nWHERE YEAR(transaction_date) = 2024\nGROUP BY customer_id\nHAVING COUNT(DISTINCT MONTH(transaction_date)) = 12;</pre><strong>With CTE for clarity:</strong><pre>WITH monthly_activity AS (\n    SELECT customer_id,\n           COUNT(DISTINCT MONTH(transaction_date)) AS active_months\n    FROM transactions\n    WHERE transaction_date >= '2024-01-01'\n      AND transaction_date < '2025-01-01'\n    GROUP BY customer_id\n)\nSELECT customer_id FROM monthly_activity WHERE active_months = 12;</pre>"
+      },
+      { n:44,
+        q:"Find the second highest salary in each department. Handle ties and departments with fewer than 2 employees. (MS SQL classic — GFG)",
+        tags:[["SQL","tl"],["Window Functions","bl"],["MS Classic","gd"]],
+        a:"<pre>WITH ranked AS (\n    SELECT department_id, employee_id, salary,\n           DENSE_RANK() OVER (\n               PARTITION BY department_id\n               ORDER BY salary DESC\n           ) AS rnk\n    FROM employees\n)\nSELECT department_id, employee_id, salary\nFROM ranked WHERE rnk = 2;</pre><strong>Why DENSE_RANK vs RANK:</strong> DENSE_RANK handles ties correctly — if two employees share the highest salary, the next distinct salary is rank 2 (not rank 3 as with RANK)."
+      },
+      { n:45,
+        q:"Detect accounts with unusual patterns: more than 3 transactions within 1 hour exceeding $10,000 each. (MS domain SQL — reported on GFG)",
+        tags:[["SQL","tl"],["MS Domain","gd"],["Fraud","rd"]],
+        a:"<pre>WITH large_txns AS (\n    SELECT account_id, transaction_id, amount, transaction_time,\n           COUNT(*) OVER (\n               PARTITION BY account_id\n               ORDER BY transaction_time\n               RANGE BETWEEN INTERVAL '1 HOUR' PRECEDING AND CURRENT ROW\n           ) AS txns_in_window\n    FROM transactions\n    WHERE amount > 10000\n)\nSELECT DISTINCT account_id FROM large_txns WHERE txns_in_window > 3;</pre><strong>Key:</strong> <code>RANGE BETWEEN INTERVAL '1 HOUR' PRECEDING AND CURRENT ROW</code> creates a sliding time window — a powerful SQL pattern for financial analysis."
+      },
+      { n:46,
+        q:"Calculate a running total and 7-day moving average of transaction amounts per account.",
+        tags:[["SQL","tl"],["Window Functions","bl"]],
+        a:"<pre>SELECT\n    account_id, transaction_date, amount,\n    SUM(amount) OVER (\n        PARTITION BY account_id\n        ORDER BY transaction_date\n        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n    ) AS running_total,\n    AVG(amount) OVER (\n        PARTITION BY account_id\n        ORDER BY transaction_date\n        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW\n    ) AS moving_avg_7d\nFROM transactions\nORDER BY account_id, transaction_date;</pre>"
+      },
+      { n:47,
+        q:"What are database indexes? Explain B-tree vs Hash indexes. When would you use a composite index?",
+        tags:[["Database","tl"],["Performance","bl"]],
+        a:"<strong>B-tree index:</strong> Balanced tree. Supports range queries (&lt;, &gt;, BETWEEN), ORDER BY, equality. Default in PostgreSQL/MySQL.<br><strong>Hash index:</strong> Only supports equality (=). O(1) lookup but no range queries.<br><br><strong>Composite index — leftmost prefix rule:</strong> Index on (A, B, C) can be used for queries on A, (A,B), or (A,B,C) but NOT B alone.<br><br><pre>-- Optimal for 'get recent transactions for account'\nCREATE INDEX idx_account_date\nON transactions(account_id, transaction_date DESC);\n\n-- Uses index: WHERE account_id = ? AND transaction_date > ?\n-- Uses index: WHERE account_id = ?\n-- Does NOT use index: WHERE transaction_date > ?</pre>"
+      },
+      { n:48,
+        q:"Explain ACID properties and database isolation levels. What are dirty read, non-repeatable read, and phantom read?",
+        tags:[["Database","tl"],["ACID","rd"]],
+        a:"<strong>ACID:</strong> Atomicity, Consistency, Isolation, Durability.<br><br><strong>Isolation levels (weakest to strongest):</strong><br><strong>READ UNCOMMITTED:</strong> Dirty read — T1 reads uncommitted data from T2. T2 rolls back. T1 saw data that never existed.<br><strong>READ COMMITTED:</strong> Prevents dirty reads. Non-repeatable read — T1 reads balance=$1000. T2 commits debit. T1 reads again=$500.<br><strong>REPEATABLE READ:</strong> Prevents non-repeatable reads. Phantom read — T1 counts 10 rows. T2 inserts one. T1 counts 11.<br><strong>SERIALIZABLE:</strong> Prevents all anomalies. Highest isolation, lowest concurrency.<br><br><strong>MS recommendation:</strong> READ COMMITTED for most operations. SERIALIZABLE for critical financial operations (balance transfers)."
+      },
+      { n:49,
+        q:"What is database sharding vs partitioning? How would you shard a transactions table for a global investment bank?",
+        tags:[["Database","tl"],["Scalability","bl"]],
+        a:"<strong>Partitioning:</strong> Splitting a table within a single DB instance (range, list, hash).<br><strong>Sharding:</strong> Splitting data across multiple DB instances (servers).<br><br><strong>Sharding strategy for global transactions:</strong><ul><li><strong>Shard key:</strong> <code>account_id</code> — all transactions for an account on same shard (no cross-shard joins)</li><li><strong>Hash sharding:</strong> <code>shard = hash(account_id) % num_shards</code> — even distribution</li><li><strong>Geographic sharding:</strong> EU accounts → EU shards (data residency compliance)</li></ul><strong>Challenges:</strong> Cross-shard queries require scatter-gather, rebalancing when adding shards, hot spots with skewed distribution."
+      },
+      { n:50,
+        q:"Write a SQL query to find the top 5 traders by total trading volume in each asset class for last quarter, excluding traders with any compliance violations.",
+        tags:[["SQL","tl"],["Complex Query","bl"],["MS Domain","gd"]],
+        a:"<pre>WITH clean_traders AS (\n    SELECT DISTINCT trader_id FROM traders\n    WHERE trader_id NOT IN (\n        SELECT DISTINCT trader_id FROM compliance_violations\n        WHERE violation_date >= DATEADD(quarter, -1, GETDATE())\n    )\n),\nquarterly_volume AS (\n    SELECT t.trader_id, t.asset_class,\n           SUM(t.notional_value) AS total_volume,\n           RANK() OVER (\n               PARTITION BY t.asset_class\n               ORDER BY SUM(t.notional_value) DESC\n           ) AS rnk\n    FROM trades t\n    JOIN clean_traders ct ON t.trader_id = ct.trader_id\n    WHERE t.trade_date >= DATEADD(quarter, -1, GETDATE())\n    GROUP BY t.trader_id, t.asset_class\n)\nSELECT trader_id, asset_class, total_volume, rnk\nFROM quarterly_volume WHERE rnk <= 5\nORDER BY asset_class, rnk;</pre>"
+      },
+      { n:51,
+        q:"How do you detect and fix slow queries in PostgreSQL? Walk through your debugging process.",
+        tags:[["Performance","tl"],["Debugging","or"]],
+        a:"<strong>Step 1 — Identify:</strong> Enable <code>pg_stat_statements</code>. Check <code>slow_query_log</code> for queries exceeding threshold.<br><strong>Step 2 — Analyze:</strong> <code>EXPLAIN ANALYZE SELECT ...</code> — shows actual execution plan, row estimates vs actuals, time per node.<br><strong>Step 3 — Common fixes:</strong><ul><li>Missing index: Add index on WHERE/JOIN columns</li><li>Bad row estimates: Run <code>ANALYZE table_name</code> to update statistics</li><li>N+1 queries: Use JOINs or batch fetching</li><li>Lock contention: Check <code>pg_locks</code> for blocking queries</li><li>Sequential scan on large table: Verify index exists and is being used</li></ul><strong>Step 4 — Verify:</strong> Re-run EXPLAIN ANALYZE after fix to confirm improvement."
+      },
+      { n:52,
+        q:"Explain OLTP vs OLAP. How would you design a data warehouse for financial reporting at Morgan Stanley?",
+        tags:[["Data Warehouse","tl"],["MS Domain","gd"]],
+        a:"<strong>OLTP:</strong> Many small reads/writes, normalized schema, row-oriented. Examples: PostgreSQL, MySQL.<br><strong>OLAP:</strong> Few large reads, denormalized (star/snowflake schema), columnar. Examples: BigQuery, Snowflake.<br><br><strong>Star Schema design:</strong><ul><li><strong>Fact table:</strong> <code>fact_trades</code> — trade_id, amount, date_key, trader_key, instrument_key, desk_key</li><li><strong>Dimension tables:</strong> <code>dim_date</code>, <code>dim_trader</code>, <code>dim_instrument</code>, <code>dim_desk</code></li><li><strong>SCD Type 2:</strong> For trader attributes that change over time (preserve history)</li></ul><strong>ETL pipeline:</strong> OLTP → Kafka → Spark → Data Warehouse (daily batch + near-real-time streaming for critical metrics)."
+      }
+    ]
+  },
+  {
+    id:"s5", icon:"��", ico:"si-pp",
+    cat:"Growing Focus · 2025–26",
+    title:"AI/ML, GenAI & Data Science",
+    diff:"Medium–Hard", dc:"d-m",
+    qs:[
+      { n:53,
+        q:"How is Morgan Stanley using AI and GenAI? What is their AI strategy and how would you contribute?",
+        tags:[["GenAI","pp"],["MS Specific","gd"],["Must Know","rd"]],
+        a:"<strong>Morgan Stanley's AI initiatives:</strong><ul><li><strong>AI @ Morgan Stanley Assistant:</strong> GPT-4 powered chatbot for 16,000+ financial advisors — searches 100,000+ research reports and documents. One of the most advanced enterprise GenAI deployments in finance.</li><li><strong>Debrief:</strong> AI tool that automatically summarizes client meeting notes and suggests follow-up actions for financial advisors.</li><li><strong>Research AI:</strong> NLP models for analyzing earnings calls, news, and research reports to generate investment signals.</li><li><strong>Risk AI:</strong> ML models for credit risk, market risk, and operational risk assessment.</li><li><strong>Code Generation:</strong> GitHub Copilot-like tools for developer productivity.</li><li><strong>Wealth Management AI:</strong> Personalized portfolio recommendations for retail clients.</li></ul><strong>How I'd contribute:</strong> My RAG system experience at Citi directly maps to MS's AI @ Morgan Stanley Assistant. I'd apply similar architecture to financial document processing — research reports, client communications, regulatory filings — using MS's internal LLM infrastructure.<div class='tip'><strong>�� MS Tip:</strong> Research 'AI @ Morgan Stanley' and 'Debrief' specifically before your interview. Mentioning these by name shows genuine interest and preparation.</div>"
+      },
+      { n:54,
+        q:"What is RAG (Retrieval-Augmented Generation)? How would you build one for Morgan Stanley's internal document search?",
+        tags:[["RAG","pp"],["MS Domain","gd"]],
+        a:"<strong>RAG Architecture:</strong><ul><li><strong>Ingestion:</strong> Financial documents → chunked → embedded (768-dim) → stored in vector DB (FAISS/Pinecone)</li><li><strong>Retrieval:</strong> User query → embedded → cosine similarity search → top-k relevant chunks</li><li><strong>Generation:</strong> Retrieved chunks + query → LLM → grounded answer with citations</li></ul><strong>MS-specific considerations:</strong><ul><li><strong>Data sovereignty:</strong> All documents stay within MS's infrastructure — no external API calls for sensitive data</li><li><strong>Auditability:</strong> Every answer cites exact source documents — compliance can verify</li><li><strong>Access control:</strong> Users only retrieve documents they're authorized to see</li><li><strong>Hallucination prevention:</strong> Strict grounding — model instructed to only use retrieved context</li></ul><strong>My experience:</strong> Built exactly this at Citi — 100+ regulatory documents, FAISS, Gemini 2.0 Flash, 85% time reduction."
+      },
+      { n:55,
+        q:"Explain the bias-variance tradeoff. How do you detect and handle overfitting in a credit risk model?",
+        tags:[["ML Theory","pp"],["Finance","gd"]],
+        a:"<strong>Bias:</strong> Error from wrong assumptions — model too simple (underfitting). Misses patterns.<br><strong>Variance:</strong> Error from sensitivity to training data — model too complex (overfitting). Memorizes noise.<br><br><strong>Detecting overfitting in credit risk models:</strong><ul><li>Large gap between training AUC and validation AUC</li><li>Model performs well on historical data but poorly on recent data (temporal drift)</li></ul><strong>Handling overfitting:</strong><ul><li>Regularization: L1 (Lasso — feature selection), L2 (Ridge — weight shrinkage)</li><li>Cross-validation: Time-series CV for financial data (no data leakage)</li><li>Ensemble methods: Random Forest, XGBoost — reduce variance through averaging</li><li>Feature selection: Remove irrelevant features using SHAP values</li></ul>"
+      },
+      { n:56,
+        q:"What is precision vs recall? Which matters more for fraud detection and why?",
+        tags:[["ML Metrics","pp"],["Fraud","rd"]],
+        a:"<strong>Precision:</strong> Of all flagged as fraud, what % are actually fraud? (TP / (TP + FP))<br><strong>Recall:</strong> Of all actual fraud, what % did we catch? (TP / (TP + FN))<br><br><strong>For fraud detection — Recall matters more:</strong><ul><li>Missed fraud (false negative) = financial loss + customer harm + regulatory risk</li><li>False alarm (false positive) = customer inconvenience (blocked legitimate transaction)</li><li>Cost of missing fraud >> cost of false alarm</li></ul><strong>But precision still matters:</strong> Too many false positives → customers frustrated, call center overwhelmed, churn.<br><strong>Solution:</strong> Use F-beta score with β &gt; 1 (weights recall higher). Or optimize for specific precision threshold (e.g., maintain 95% precision while maximizing recall)."
+      },
+      { n:57,
+        q:"How do you prevent data leakage in a time-series financial model? What is the correct cross-validation approach?",
+        tags:[["ML","pp"],["Critical","rd"],["Finance","gd"]],
+        a:"<strong>Data leakage:</strong> When future information leaks into training data, causing artificially high performance.<br><br><strong>Common leakage sources:</strong><ul><li>Normalizing using statistics from the entire dataset (including test period)</li><li>Target encoding using the full dataset</li><li>Features computed using future information</li></ul><strong>Correct time-series cross-validation:</strong><ul><li><strong>Walk-forward validation:</strong> Train on months 1-12, test on 13. Then 1-13, test on 14. Never use future data for training.</li><li><strong>Purging:</strong> Remove samples near train/test boundary</li><li><strong>Embargo:</strong> Gap between train and test sets</li></ul><strong>Rule:</strong> All preprocessing (scaling, encoding) must be fit on training data only, then applied to test data."
+      },
+      { n:58,
+        q:"What is model explainability? Why is it critical in financial services? How do SHAP values work?",
+        tags:[["ML Explainability","pp"],["Regulatory","tl"]],
+        a:"<strong>Why explainability is critical in finance:</strong><ul><li><strong>ECOA:</strong> Banks must provide specific reasons for credit denial</li><li><strong>Fair lending:</strong> Must demonstrate models don't discriminate based on protected characteristics</li><li><strong>SR 11-7:</strong> Requires understanding of model behavior</li></ul><strong>SHAP (SHapley Additive exPlanations):</strong> Based on game theory — assigns each feature a contribution value for a specific prediction. Shows how much each feature moved the prediction from the baseline (average) to the actual prediction.<br><br><strong>Example credit denial explanation:</strong> 'Your score was reduced by: high utilization (-45 pts), recent delinquency (-30 pts), short credit history (-15 pts).'"
+      },
+      { n:59,
+        q:"How would you build a recommendation system for Morgan Stanley's wealth management clients?",
+        tags:[["ML System","pp"],["MS Domain","gd"]],
+        a:"<strong>Approaches:</strong><ul><li><strong>Collaborative filtering:</strong> 'Clients like you also invested in this.' Matrix factorization (SVD, ALS).</li><li><strong>Content-based filtering:</strong> Match client profile to investment features.</li><li><strong>Hybrid:</strong> Combine both — better cold start handling.</li></ul><strong>MS-specific considerations:</strong><ul><li><strong>Suitability:</strong> Investment recommendations must match risk tolerance (MiFID II suitability requirements)</li><li><strong>Regulatory compliance:</strong> No discriminatory recommendations based on protected characteristics</li><li><strong>Explainability:</strong> 'We recommend this because...' — required for financial advice</li><li><strong>Fiduciary duty:</strong> Recommendations must be in client's best interest, not MS's revenue interest</li></ul><strong>Evaluation:</strong> A/B testing — measure client satisfaction, portfolio performance, not just click-through rate."
+      },
+      { n:60,
+        q:"What is model drift? How do you monitor and retrain ML models in production at an investment bank?",
+        tags:[["MLOps","pp"],["Production","tl"]],
+        a:"<strong>Types of drift:</strong><ul><li><strong>Data drift (covariate shift):</strong> Input feature distribution changes. COVID caused spending patterns to shift dramatically — fraud models trained pre-COVID became less accurate.</li><li><strong>Concept drift:</strong> Relationship between features and target changes. Fraud patterns evolve as fraudsters adapt.</li></ul><strong>Monitoring:</strong><ul><li>PSI (Population Stability Index) for feature drift — alert when PSI &gt; 0.2</li><li>Track AUC, precision, recall on recent data with delayed labels</li><li>Shadow mode: Run new model alongside old, compare predictions</li></ul><strong>Retraining strategy:</strong> Scheduled (monthly/quarterly), triggered (when drift detected), or online learning (continuous updates).<br><strong>Governance:</strong> All retrained models go through validation and approval before deployment."
+      },
+      { n:61,
+        q:"How do you use NLP to analyze client communications and identify investment opportunities or risks?",
+        tags:[["NLP","pp"],["MS Domain","gd"]],
+        a:"<strong>Pipeline:</strong><ol><li><strong>Data collection:</strong> Earnings call transcripts, analyst reports, news feeds, SEC filings</li><li><strong>Preprocessing:</strong> Tokenization, stop word removal, PII redaction</li><li><strong>Sentiment analysis:</strong> FinBERT for financial text — classify as positive/negative/neutral</li><li><strong>Entity extraction:</strong> Identify companies, financial metrics, risk factors</li><li><strong>Topic modeling:</strong> BERTopic to identify themes (supply chain risk, regulatory changes, M&A activity)</li><li><strong>Signal generation:</strong> Aggregate sentiment scores into investment signals</li><li><strong>Portfolio integration:</strong> Use signals as factors in portfolio construction</li></ol><strong>Business value:</strong> Identify investment opportunities before they're priced in. Detect risk factors early. Generate alpha from information advantage."
+      },
+      { n:62,
+        q:"What is the difference between supervised, unsupervised, and reinforcement learning? Give financial examples of each.",
+        tags:[["ML Fundamentals","pp"],["Finance","gd"]],
+        a:"<strong>Supervised learning:</strong> Labeled training data. Learn mapping from inputs to outputs.<br><em>Financial examples:</em> Credit rating prediction (labels = actual ratings), fraud detection (labels = confirmed fraud), earnings surprise prediction.<br><br><strong>Unsupervised learning:</strong> No labels. Find structure in data.<br><em>Financial examples:</em> Market regime detection (cluster market states), portfolio clustering (group similar portfolios), anomaly detection (identify unusual trades).<br><br><strong>Reinforcement learning:</strong> Learn from rewards/penalties through interaction.<br><em>Financial examples:</em> Optimal trade execution (minimize market impact), market making (set bid/ask spreads), portfolio rebalancing (maximize risk-adjusted returns).<br><br><strong>Self-supervised learning:</strong> Generate labels from data itself.<br><em>Financial examples:</em> FinBERT (pre-trained on financial text, fine-tuned for sentiment), masked price prediction."
+      }
+    ]
+  },
+  {
+    id:"s6", icon:"��", ico:"si-gd",
+    cat:"Domain Knowledge · Differentiator",
+    title:"Finance Domain & Morgan Stanley Specific",
+    diff:"High Priority", dc:"d-h",
+    qs:[
+      { n:63,
+        q:"What do you know about Morgan Stanley? Why MS specifically over other banks or tech companies?",
+        tags:[["MS Research","gd"],["Must Know","rd"]],
+        a:"<strong>Key Morgan Stanley facts:</strong><ul><li>One of the world's leading investment banks, founded 1935</li><li>~80,000 employees globally, ~$1 trillion in client assets</li><li>4 business segments: Institutional Securities (investment banking, trading), Wealth Management, Investment Management, and Technology</li><li>CEO: Ted Pick (since 2024, succeeded James Gorman)</li><li>Major AI investments: AI @ Morgan Stanley Assistant (GPT-4 powered), Debrief tool for financial advisors</li><li>Acquired E*TRADE (2020) and Eaton Vance (2021) — major wealth management expansion</li><li>Technology division (~20,000 technologists) is one of the largest in finance</li></ul><strong>Why MS:</strong> 'Morgan Stanley's combination of elite investment banking and rapidly growing wealth management creates unique technology challenges — building systems that serve both institutional traders needing microsecond latency and retail clients needing intuitive interfaces. The AI @ Morgan Stanley initiative shows genuine commitment to AI transformation. My RAG and GenAI experience maps directly to what they're building.'<div class='warn'><strong>⚠️ Research tip:</strong> Before your interview, read MS's latest technology blog posts and AI announcements. Mentioning specific initiatives by name shows genuine interest.</div>"
+      },
+      { n:64,
+        q:"What is investment banking? What are the main divisions at Morgan Stanley and how does technology serve each?",
+        tags:[["Finance Structure","gd"],["MS Domain","bl"]],
+        a:"<strong>Morgan Stanley's main divisions:</strong><br><br><strong>Institutional Securities:</strong> Investment banking (M&A advisory, IPOs, debt/equity issuance), Sales & Trading (equities, fixed income, FX, commodities), Research.<br><em>Technology:</em> Trading platforms, order management systems (OMS), pricing engines, market data feeds, risk management systems.<br><br><strong>Wealth Management:</strong> Financial advisors serving high-net-worth individuals and families. E*TRADE for retail clients.<br><em>Technology:</em> Client portals, portfolio management tools, AI @ Morgan Stanley Assistant, Debrief, robo-advisory.<br><br><strong>Investment Management:</strong> Asset management for institutional clients (pension funds, sovereign wealth funds).<br><em>Technology:</em> Portfolio analytics, risk systems, performance attribution, regulatory reporting."
+      },
+      { n:65,
+        q:"What is the difference between equity and fixed income trading? How does technology differ between them?",
+        tags:[["Finance","gd"],["Trading","bl"]],
+        a:"<strong>Equity Trading:</strong> Buying and selling company shares. Exchange-traded (NYSE, NASDAQ). Highly standardized. High volume, lower complexity per trade.<br><em>Technology:</em> Direct Market Access (DMA), algorithmic execution (TWAP, VWAP, IS), dark pools, smart order routing.<br><br><strong>Fixed Income Trading:</strong> Buying and selling bonds (government, corporate, structured products). Mostly OTC (over-the-counter), not exchange-traded. Lower volume, higher complexity per trade. Less transparent pricing.<br><em>Technology:</em> Electronic trading platforms (Bloomberg, Tradeweb), pricing models (yield curve, credit spread), dealer-to-client platforms, regulatory reporting (TRACE).<br><br><strong>Key difference:</strong> Equities are highly liquid and exchange-traded — technology focuses on speed and execution quality. Fixed income is less liquid and OTC — technology focuses on pricing, risk management, and relationship management."
+      },
+      { n:66,
+        q:"What is algorithmic trading? How do latency requirements differ from typical web applications?",
+        tags:[["Finance","gd"],["Performance","bl"]],
+        a:"<strong>Algorithmic trading:</strong> Using computer programs to execute trades based on predefined rules or ML models.<br><br><strong>Types:</strong> HFT (microsecond latency), Statistical arbitrage, Market making, Execution algorithms (TWAP, VWAP).<br><br><strong>Latency requirements vs web apps:</strong><ul><li>Web app: 100ms–1s acceptable</li><li>Trading system: 1–100 microseconds for HFT</li><li>Techniques: Kernel bypass (DPDK), FPGA, co-location, binary protocols (FIX), lock-free data structures, CPU pinning</li></ul><strong>Python's role:</strong> Strategy development, backtesting, risk management — NOT the latency-critical execution layer (C++/Java for that)."
+      },
+      { n:67,
+        q:"What is KYC and AML? How does technology support these compliance processes at Morgan Stanley?",
+        tags:[["Compliance","gd"],["Finance","tl"]],
+        a:"<strong>KYC (Know Your Customer):</strong> Verifying customer identity before onboarding. Required to prevent fraud and financial crime.<br><strong>AML (Anti-Money Laundering):</strong> Detecting and preventing money laundering — disguising illegal funds as legitimate income.<br><br><strong>Technology solutions:</strong><ul><li><strong>Identity verification:</strong> Document OCR + liveness detection + sanctions list checks</li><li><strong>Transaction monitoring:</strong> Rule-based + ML models to flag suspicious patterns (structuring, layering)</li><li><strong>Network analysis:</strong> Graph algorithms to detect money laundering networks</li><li><strong>SAR filing:</strong> Automated Suspicious Activity Report generation to FinCEN</li><li><strong>Sanctions screening:</strong> Real-time check against OFAC, UN, EU sanctions lists</li></ul><strong>ML application:</strong> Graph neural networks for detecting complex laundering networks that rule-based systems miss."
+      },
+      { n:68,
+        q:"What is the difference between a bond, equity, and derivative? How would you model these in a database?",
+        tags:[["Finance Fundamentals","gd"],["Data Modeling","tl"]],
+        a:"<strong>Equity (Stock):</strong> Ownership stake. Returns: dividends + capital appreciation.<br><strong>Bond (Fixed Income):</strong> Loan to issuer. Returns: fixed coupon + principal at maturity.<br><strong>Derivative:</strong> Contract whose value derives from an underlying asset. Types: options, futures, swaps.<br><br><strong>Database modeling (polymorphic):</strong><pre>-- Base instrument table\ninstruments (id, isin, name, asset_class, currency, issuer_id)\n\n-- Asset-class specific tables\nequities (instrument_id, exchange, shares_outstanding, sector)\nbonds (instrument_id, coupon_rate, maturity_date, face_value, credit_rating)\noptions (instrument_id, underlying_id, strike_price, expiry, option_type)</pre><strong>Alternative:</strong> Single table with nullable columns (simpler) or JSON column for asset-specific attributes (flexible but harder to query)."
+      },
+      { n:69,
+        q:"What is Value at Risk (VaR)? How would you implement a VaR calculation system in Python?",
+        tags:[["Risk Management","gd"],["Quantitative","pp"]],
+        a:"<strong>VaR:</strong> Maximum loss expected over a given time period at a given confidence level. E.g., '1-day 99% VaR of $1M means 1% chance of losing more than $1M in a day.'<br><br><strong>Three methods:</strong> Historical simulation (no distributional assumptions), Parametric (assumes normal distribution, fast), Monte Carlo (most flexible, expensive).<br><br><pre>import numpy as np\nfrom scipy.stats import norm\n\ndef historical_var(returns, confidence=0.99):\n    return -np.percentile(returns, (1 - confidence) * 100)\n\ndef parametric_var(portfolio_value, volatility, confidence=0.99, days=1):\n    z_score = norm.ppf(1 - confidence)\n    return portfolio_value * volatility * z_score * np.sqrt(days)</pre><strong>Limitation:</strong> VaR doesn't tell you how bad losses can be beyond the threshold. Use CVaR (Expected Shortfall) for tail risk."
+      },
+      { n:70,
+        q:"What is GDPR and how does it affect how you store and process customer data at a global investment bank?",
+        tags:[["Compliance","gd"],["Privacy","rd"]],
+        a:"<strong>GDPR:</strong> EU regulation governing personal data processing. Applies to any organization processing EU residents' data.<br><br><strong>Key principles affecting development:</strong><ul><li><strong>Data minimization:</strong> Collect only what's necessary</li><li><strong>Right to erasure:</strong> System must support deleting all personal data — complex in event-sourced systems</li><li><strong>Data portability:</strong> Customers can request data in machine-readable format</li><li><strong>Data residency:</strong> EU customer data must stay in EU — affects cloud architecture</li><li><strong>Breach notification:</strong> Notify regulators within 72 hours of a data breach</li></ul><strong>Technical implementation:</strong> PII encryption and pseudonymization, data catalog with PII classification, automated retention/deletion policies, consent management platform."
+      },
+      { n:71,
+        q:"What is the front office, middle office, and back office in an investment bank? How does technology serve each?",
+        tags:[["Finance Structure","gd"],["MS Domain","bl"]],
+        a:"<strong>Front Office:</strong> Revenue-generating — traders, investment bankers, sales, relationship managers. Direct client interaction.<br><em>Technology:</em> Trading platforms, OMS, pricing engines, market data feeds, CRM.<br><br><strong>Middle Office:</strong> Risk management, compliance, trade validation. Ensures front office operates within risk limits.<br><em>Technology:</em> Risk management systems, P&L attribution, limit monitoring, regulatory reporting, model validation platforms.<br><br><strong>Back Office:</strong> Settlement, clearing, reconciliation, accounting.<br><em>Technology:</em> Settlement systems, reconciliation platforms, accounting systems, custody systems.<br><br><strong>My experience spans all three:</strong> Governance platform (middle office), ETL pipelines (back office data), MDD platform (middle office model risk)."
+      },
+      { n:72,
+        q:"What is the difference between buy-side and sell-side in finance? How does Morgan Stanley operate in both?",
+        tags:[["Finance Structure","gd"],["MS Domain","bl"]],
+        a:"<strong>Sell-side:</strong> Investment banks (Goldman Sachs, Morgan Stanley, JPMorgan) that sell financial products and services to investors. Revenue from: underwriting fees, trading commissions, advisory fees, market making.<br><br><strong>Buy-side:</strong> Asset managers (BlackRock, Vanguard, hedge funds) that buy securities for their own portfolios. Revenue from: management fees, performance fees.<br><br><strong>Morgan Stanley operates in both:</strong><ul><li><strong>Sell-side:</strong> Institutional Securities division — investment banking, sales & trading, market making</li><li><strong>Buy-side:</strong> Investment Management division — manages $1.4T+ in assets for institutional clients</li><li><strong>Wealth Management:</strong> Hybrid — financial advisors help clients invest (buy-side thinking) but MS earns fees (sell-side model)</li></ul><strong>Technology implication:</strong> MS needs systems that serve both sell-side (low-latency trading, market making) and buy-side (portfolio analytics, risk management) use cases."
+      }
+    ]
+  },
+  {
+    id:"s7", icon:"☁️", ico:"si-gn",
+    cat:"Technical Round",
+    title:"OOP, Design Patterns & Software Engineering",
+    diff:"Medium", dc:"d-m",
+    qs:[
+      { n:73,
+        q:"Implement the Observer pattern. How would you use it in a real-time trading alert system? (Reported on GFG for MS)",
+        tags:[["Design Patterns","gn"],["Finance","gd"],["MS Reported","bl"]],
+        a:"<pre>from abc import ABC, abstractmethod\n\nclass Observer(ABC):\n    @abstractmethod\n    def update(self, event): ...\n\nclass PriceSubject:\n    def __init__(self): self._observers = []\n\n    def subscribe(self, obs): self._observers.append(obs)\n    def unsubscribe(self, obs): self._observers.remove(obs)\n\n    def set_price(self, ticker, price):\n        for obs in self._observers:\n            obs.update({'ticker': ticker, 'price': price})\n\nclass AlertSystem(Observer):\n    def update(self, event):\n        if event['price'] > 1000:\n            print(f\"ALERT: {event['ticker']} hit ${event['price']}\")</pre><strong>Real-world use:</strong> Market data feed (Subject) notifies multiple systems (Observers): risk engine, P&L calculator, alert system, trading strategy — all independently without tight coupling."
+      },
+      { n:74,
+        q:"Implement the Strategy pattern for a payment processing system supporting multiple payment methods.",
+        tags:[["Design Patterns","gn"],["Finance","gd"]],
+        a:"<pre>from abc import ABC, abstractmethod\n\nclass PaymentStrategy(ABC):\n    @abstractmethod\n    def process(self, amount): ...\n\nclass CreditCardPayment(PaymentStrategy):\n    def process(self, amount): return f\"Charged ${amount} to credit card\"\n\nclass ACHPayment(PaymentStrategy):\n    def process(self, amount): return f\"ACH transfer of ${amount}\"\n\nclass WireTransfer(PaymentStrategy):\n    def process(self, amount): return f\"Wire transfer of ${amount}\"\n\nclass PaymentProcessor:\n    def __init__(self, strategy: PaymentStrategy):\n        self.strategy = strategy\n    def execute(self, amount): return self.strategy.process(amount)\n\n# Switch strategy at runtime\nprocessor = PaymentProcessor(CreditCardPayment())\nprocessor.strategy = WireTransfer()</pre>"
+      },
+      { n:75,
+        q:"What is the Factory pattern? Implement a financial instrument factory. (Reported on GFG for MS)",
+        tags:[["Design Patterns","gn"],["Finance","gd"],["MS Reported","bl"]],
+        a:"<pre>class InstrumentFactory:\n    _registry = {}\n\n    @classmethod\n    def register(cls, instrument_type):\n        def decorator(klass):\n            cls._registry[instrument_type] = klass\n            return klass\n        return decorator\n\n    @classmethod\n    def create(cls, instrument_type, **kwargs):\n        if instrument_type not in cls._registry:\n            raise ValueError(f\"Unknown: {instrument_type}\")\n        return cls._registry[instrument_type](**kwargs)\n\n@InstrumentFactory.register('equity')\nclass Equity:\n    def __init__(self, ticker, exchange): ...\n\n@InstrumentFactory.register('bond')\nclass Bond:\n    def __init__(self, isin, coupon, maturity): ...\n\nequity = InstrumentFactory.create('equity', ticker='AAPL', exchange='NASDAQ')</pre><strong>Advantage:</strong> Adding new instrument types requires only registering a new class — Open/Closed Principle."
+      },
+      { n:76,
+        q:"What is the difference between composition and inheritance? When should you prefer each?",
+        tags:[["OOP","gn"],["Design","bl"]],
+        a:"<strong>Inheritance:</strong> 'is-a' relationship. Subclass inherits behavior from parent. Creates tight coupling.<br><strong>Composition:</strong> 'has-a' relationship. Class contains instances of other classes. Loose coupling — components can be swapped independently.<br><br><pre># Inheritance (fragile — class explosion)\nclass PremiumSavingsAccount(SavingsAccount): ...\n\n# Composition (flexible)\nclass Account:\n    def __init__(self, interest_calc, overdraft_policy):\n        self.interest = interest_calc\n        self.overdraft = overdraft_policy</pre><strong>Rule:</strong> 'Favor composition over inheritance' (Gang of Four). Use inheritance only for true 'is-a' relationships."
+      },
+      { n:77,
+        q:"What is SOLID? Give a concrete example of violating and fixing the Single Responsibility Principle in a banking context.",
+        tags:[["SOLID","gn"],["OOP","bl"]],
+        a:"<strong>SRP Violation:</strong><pre>class Account:  # Does too much!\n    def deposit(self, amount): ...\n    def calculate_interest(self): ...\n    def generate_statement(self): ...\n    def send_email(self): ...\n    def save_to_db(self): ...</pre><strong>SRP Fix — each class has one reason to change:</strong><pre>class Account:           # Core domain logic only\n    def deposit(self, amount): ...\n\nclass InterestCalculator:  # Interest logic\n    def calculate(self, account): ...\n\nclass StatementGenerator:  # Reporting\n    def generate(self, account): ...\n\nclass AccountRepository:  # Persistence\n    def save(self, account): ...</pre>"
+      },
+      { n:78,
+        q:"What is clean code? What are code smells? Give examples from financial software. (Reported on Glassdoor for MS)",
+        tags:[["Code Quality","gn"],["Best Practices","bl"],["MS Reported","gd"]],
+        a:"<strong>Clean code:</strong> Readable, maintainable, testable, minimal duplication, clear naming, small functions with single purpose.<br><br><strong>Common code smells in financial software:</strong><ul><li><strong>Magic numbers:</strong> <code>if amount > 10000</code> → <code>SUSPICIOUS_AMOUNT_THRESHOLD = 10000</code></li><li><strong>Long methods:</strong> 500-line <code>process_trade()</code> — split into validate, enrich, execute, settle</li><li><strong>Primitive obsession:</strong> Using <code>float</code> for money → use <code>Decimal</code> or a <code>Money</code> value object</li><li><strong>God class:</strong> <code>TradeManager</code> that does everything — split by responsibility</li><li><strong>Shotgun surgery:</strong> Adding a new currency requires changes in 20 files — missing abstraction</li></ul><strong>Financial-specific:</strong> Never use <code>float</code> for monetary calculations. Always use <code>Decimal</code> with explicit precision."
+      },
+      { n:79,
+        q:"What is test-driven development (TDD)? How do you apply it in a financial application where correctness is critical?",
+        tags:[["Testing","gn"],["Finance","gd"]],
+        a:"<strong>TDD cycle:</strong> Red (write failing test) → Green (write minimal code to pass) → Refactor (improve without breaking tests).<br><br><strong>Benefits for financial software:</strong><ul><li>Tests document expected behavior — critical when regulatory requirements change</li><li>Regression safety — refactoring doesn't break existing calculations</li><li>Forces thinking about edge cases upfront (negative amounts, zero balance, currency conversion)</li></ul><pre>def test_transfer_insufficient_funds():\n    acc = Account(balance=Decimal('100.00'))\n    with pytest.raises(InsufficientFundsError):\n        acc.debit(Decimal('150.00'))\n\ndef test_transfer_exact_balance():\n    acc = Account(balance=Decimal('100.00'))\n    acc.debit(Decimal('100.00'))\n    assert acc.balance == Decimal('0.00')</pre><strong>Property-based testing:</strong> Use Hypothesis to generate random financial scenarios — finds edge cases you didn't think of."
+      },
+      { n:80,
+        q:"How do you approach code reviews? What do you look for as a reviewer and how do you respond to feedback?",
+        tags:[["Process","gn"],["Collaboration","bl"]],
+        a:"<strong>As a reviewer, I look for:</strong><ul><li><strong>Correctness:</strong> Does it do what it's supposed to? Edge cases handled?</li><li><strong>Security:</strong> Input validation, SQL injection, secrets management</li><li><strong>Performance:</strong> N+1 queries, unnecessary loops, memory issues</li><li><strong>Financial correctness:</strong> Decimal vs float, rounding modes, currency handling</li><li><strong>Tests:</strong> Are edge cases covered? Are tests meaningful?</li></ul><strong>How I give feedback:</strong> Distinguish blocking issues from suggestions ('Must fix' vs 'Consider'). Explain the why. Acknowledge good code. Ask questions rather than make demands.<br><br><strong>Receiving feedback:</strong> I treat code review feedback as a gift. Never take it personally. If I disagree, I explain my reasoning — the best argument wins, not seniority."
+      },
+      { n:81,
+        q:"What is the difference between synchronous and asynchronous programming? When would you use message queues vs direct API calls?",
+        tags:[["Architecture","gn"],["Async","bl"]],
+        a:"<strong>Synchronous:</strong> Caller waits for response. Simple, easy to reason about. Risk: caller blocked if downstream is slow/down.<br><strong>Asynchronous:</strong> Caller sends request and continues. More complex but resilient.<br><br><strong>Direct API calls (sync) when:</strong> Response needed immediately (user is waiting), simple request-response, low latency required. Example: Check account balance, validate card.<br><br><strong>Message queues (async) when:</strong> Processing can be deferred, need to decouple producer from consumer, handle traffic spikes, need guaranteed delivery and retry. Example: Send confirmation email, generate monthly statement, fraud analysis.<br><br><strong>MS context:</strong> Trade execution is sync (trader waits for confirmation). Downstream processing (settlement, notifications, reporting) is async via Kafka."
+      },
+      { n:82,
+        q:"How do you design for high availability and disaster recovery? What is RTO and RPO?",
+        tags:[["HA/DR","gn"],["Finance","gd"]],
+        a:"<strong>RTO (Recovery Time Objective):</strong> Maximum acceptable downtime after failure.<br><strong>RPO (Recovery Point Objective):</strong> Maximum acceptable data loss.<br><br><strong>HA strategies:</strong><ul><li><strong>Active-Active:</strong> Multiple regions serving traffic simultaneously. Zero RTO, near-zero RPO. Highest cost.</li><li><strong>Active-Passive:</strong> Primary active, standby ready. RTO = failover time (minutes). Lower cost.</li><li><strong>Multi-AZ:</strong> Within a region, span multiple availability zones.</li></ul><strong>For MS trading systems:</strong> Active-Active across 3 regions (US, EU, APAC). RPO = 0 (synchronous replication). RTO &lt; 30 seconds (automated failover). Meets regulatory requirements for systemically important financial institutions (SIFIs)."
+      }
+    ]
+  },
+  {
+    id:"s8", icon:"��", ico:"si-or",
+    cat:"Final Round · Culture Fit",
+    title:"Behavioral, HR & Leadership Questions",
+    diff:"High Priority", dc:"d-h",
+    qs:[
+      { n:83,
+        q:"Tell me about yourself. Why Morgan Stanley specifically? (Opening — must be perfect)",
+        tags:[["Opening","or"],["Must Prepare","rd"]],
+        a:"\"I'm a Full Stack Python Developer with 4 years of experience at the intersection of AI and financial services. Currently at Citi, I've built a GenAI platform that reduced regulatory documentation time by 85% — processing 100+ regulatory documents through a RAG system I architected from scratch. Before that, I led data engineering at MSCI, migrating 37TB of financial data to BigQuery with 99.9% accuracy.<br><br>I'm drawn to Morgan Stanley specifically because of the AI @ Morgan Stanley initiative. What you've built — a GPT-4 powered assistant for 16,000+ financial advisors searching 100,000+ research documents — is exactly the kind of high-impact AI application I want to work on. My RAG system experience at Citi maps directly to what you're building and expanding.<br><br>I'm also excited about MS's unique position spanning both elite investment banking and rapidly growing wealth management. The technology challenges of serving both institutional traders needing microsecond latency and retail clients needing intuitive interfaces are exactly the kind of complex, high-stakes problems I want to solve.\"<div class='tip'><strong>�� Tip:</strong> Mention 'AI @ Morgan Stanley' and 'Debrief' specifically. Show you understand MS's unique position spanning both institutional and wealth management.</div>"
+      },
+      { n:84,
+        q:"Tell me about the most impactful project you've delivered. What was your role and the measurable outcome?",
+        tags:[["STAR","or"],["Must Prepare","rd"]],
+        a:"<strong>Situation:</strong> Model risk analysts at Citi were spending 40+ hours per Model Development Document — a critical regulatory requirement. With dozens of CCAR models requiring annual documentation, this was a significant bottleneck.<br><br><strong>Task:</strong> Lead end-to-end development of an AI solution to automate this process.<br><br><strong>Action:</strong> Architected a RAG system using FAISS + Gemini 2.0 Flash, processing 100+ regulatory documents. Built microservices architecture with Streamlit UI. Implemented enterprise authentication, singleton patterns for performance, and a human review gate for compliance.<br><br><strong>Result:</strong> Reduced MDD time from 40+ hours to &lt;6 hours — 85% reduction and 700%+ efficiency gain. Achieved 99.9% system availability. Enabled the team to process significantly more models within regulatory deadlines.<br><br><strong>MS connection:</strong> This is directly analogous to what AI @ Morgan Stanley does — using AI to help financial professionals access and synthesize large document repositories while maintaining accuracy and compliance."
+      },
+      { n:85,
+        q:"Describe a time you had to make a difficult technical decision with incomplete information. What was your process?",
+        tags:[["STAR","or"],["Decision Making","bl"]],
+        a:"<strong>Situation:</strong> When designing the RAG system at Citi, I had to choose between FAISS (open-source, on-premise) and a managed vector database (Pinecone/Weaviate) without clear performance benchmarks for our specific use case.<br><br><strong>Task:</strong> Make a technology decision that would affect system performance, cost, and compliance for years.<br><br><strong>Action:</strong> (1) Listed decision criteria: data sovereignty, latency, cost, maintenance overhead, scalability. (2) Built a proof-of-concept with both options using a sample of our regulatory documents. (3) Benchmarked retrieval latency, accuracy, and operational complexity. (4) Consulted with Citi's security team on data residency requirements. (5) Documented trade-offs and presented to stakeholders with a clear recommendation.<br><br><strong>Result:</strong> Chose FAISS — data sovereignty was non-negotiable for regulatory documents, and performance was comparable. The structured decision process gave stakeholders confidence in the choice. Lesson: when uncertain, build small experiments to generate data rather than debating in the abstract."
+      },
+      { n:86,
+        q:"Tell me about a time you had to work under extreme pressure with a tight deadline. How did you manage it?",
+        tags:[["STAR","or"],["Pressure","bl"]],
+        a:"<strong>Situation:</strong> At MSCI, a critical production ETL pipeline failed 3 days before a major regulatory reporting deadline. The pipeline processed data for 50+ client reports.<br><br><strong>Task:</strong> Fix the pipeline and ensure all client reports were delivered on time.<br><br><strong>Action:</strong> Immediately assessed impact — identified which reports were affected and their deadlines. Communicated transparently with stakeholders. Divided the problem: I focused on root cause analysis while a colleague manually processed the most critical reports as backup. Root cause: schema change in source system. Fixed within 4 hours. Ran pipeline in accelerated mode to catch up on backlog.<br><br><strong>Result:</strong> All reports delivered on time. Zero client impact. Added schema change detection to prevent recurrence. Lesson: always have a manual fallback plan for critical processes."
+      },
+      { n:87,
+        q:"Describe a time you proactively identified an opportunity to improve a process or system. What was the outcome?",
+        tags:[["STAR","or"],["Initiative","bl"]],
+        a:"<strong>Situation:</strong> At MSCI, I noticed BigQuery queries were running slowly and costs were increasing month-over-month, but no one had been assigned to investigate.<br><br><strong>Task:</strong> Self-initiated — no one asked me to do this.<br><br><strong>Action:</strong> Analyzed BigQuery query logs to identify the most expensive queries. Found most were doing full table scans on a 37TB table. Proposed and implemented: date partitioning, clustering on frequently filtered columns, materialized views for common aggregations, query optimization for top 10 most expensive queries.<br><br><strong>Result:</strong> 85% reduction in query execution time, 27% reduction in processing costs. This initiative was recognized with the Rockstar Rookie Award. Lesson: always look beyond your assigned tasks for opportunities to add value."
+      },
+      { n:88,
+        q:"Tell me about a time you failed. What did you learn and how did you recover?",
+        tags:[["STAR","or"],["Growth Mindset","bl"]],
+        a:"<strong>Situation:</strong> Early in my career at MSCI, I deployed a data transformation change to production without adequate testing. The change caused incorrect financial calculations in client reports for 2 hours before detection.<br><br><strong>Task:</strong> Fix the issue, communicate with stakeholders, and prevent recurrence.<br><br><strong>Action:</strong> Immediately rolled back the change. Identified all affected reports and clients. Communicated transparently with my manager — no hiding. Worked overtime to regenerate all affected reports. Conducted a thorough post-mortem: root cause was insufficient test coverage for edge cases.<br><br><strong>Result:</strong> All clients received corrected reports within 4 hours. Implemented mandatory staging environment validation and expanded test coverage to 95%. This failure made me a much more rigorous engineer.<div class='tip'><strong>�� Tip:</strong> MS values honesty and accountability. A genuine failure story with clear learnings is more impressive than claiming you've never failed.</div>"
+      },
+      { n:89,
+        q:"Tell me about a time you mentored a junior developer. What was your approach?",
+        tags:[["STAR","or"],["Leadership","bl"]],
+        a:"<strong>Situation:</strong> A junior developer on my team at MSCI was struggling with PySpark — making inefficient queries causing pipeline slowdowns.<br><br><strong>Task:</strong> Help them improve without undermining their confidence or creating dependency.<br><br><strong>Action:</strong> Pair programming sessions — worked through their code together, asking questions rather than giving answers. Shared a curated learning path. Code reviews with detailed explanations — not just 'this is wrong' but 'here's why and here's the pattern.' Gave them ownership of a specific pipeline optimization.<br><br><strong>Result:</strong> Within 2 months, they were independently optimizing queries and caught a performance issue I had missed. They became the team's go-to person for Spark questions. Lesson: the best mentoring builds independence, not dependency."
+      },
+      { n:90,
+        q:"How do you stay current with rapidly evolving technologies like GenAI? What have you learned recently?",
+        tags:[["Learning","or"],["GenAI","pp"]],
+        a:"<strong>How I stay current:</strong><ul><li>arXiv for AI research papers — follow key researchers</li><li>Hacker News for engineering discussions</li><li>LeetCode for algorithmic skills (active profile)</li><li>GitHub — contribute to and study open-source projects</li><li>Personal projects: SahakarBot, Personal Finance Tracker — learn by building</li><li>Morgan Stanley's own technology blog and AI announcements</li></ul><strong>Recent exciting developments:</strong><ul><li><strong>Agentic AI:</strong> LangGraph and multi-agent systems — autonomous agents that plan and execute complex tasks. Directly applicable to automating financial workflows like what MS is doing with AI @ Morgan Stanley.</li><li><strong>Gemini 2.0 Flash multimodal:</strong> Processing financial charts and tables in documents, not just text.</li><li><strong>Reasoning models (o1/o3):</strong> Chain-of-thought for complex financial calculations and regulatory interpretation.</li><li><strong>MCP (Model Context Protocol):</strong> Standardizing how AI agents interact with tools — could transform financial system data exposure to AI.</li></ul>"
+      },
+      { n:91,
+        q:"How do you prioritize when you have multiple competing deadlines? Give a specific example.",
+        tags:[["STAR","or"],["Time Management","bl"]],
+        a:"<strong>Framework:</strong> Impact × urgency matrix. Regulatory deadlines are non-negotiable — they take priority. Within discretionary work, prioritize by business impact and dependencies (what's blocking others).<br><br><strong>Example:</strong> At Citi, I simultaneously had: (1) A CCAR model documentation deadline (regulatory, fixed date), (2) A new ETL pipeline feature request, (3) A production bug in the governance platform.<br><br><strong>Action:</strong> Fixed the production bug first — it was blocking users. Communicated to the modeling team that the ETL feature would be delayed by 1 week with a revised timeline. Focused entirely on CCAR documentation until the deadline. Delivered the ETL feature the following week.<br><br><strong>Result:</strong> All three delivered. Key was transparent communication — stakeholders knew the plan and weren't surprised by delays."
+      },
+      { n:92,
+        q:"What are Morgan Stanley's core values and how do they align with your personal values?",
+        tags:[["Culture Fit","or"],["MS Values","gd"],["Must Know","rd"]],
+        a:"<strong>Morgan Stanley's core values:</strong> Doing the right thing, putting clients first, leading with exceptional ideas, committing to diversity and inclusion, giving back.<br><br><strong>How to connect:</strong><br>\"Morgan Stanley's emphasis on 'doing the right thing' resonates deeply with me — in financial services, a single ethical lapse can have systemic consequences. In my work, I've always prioritized doing things right over doing things fast. When I discovered the data precision issue during the MSCI migration, I could have ignored it — it was subtle and unlikely to be caught. Instead, I stopped the migration, fixed it properly, and implemented validation to prevent recurrence. That's the kind of integrity Morgan Stanley's clients deserve.<br><br>'Leading with exceptional ideas' also aligns with my approach — my MDD platform wasn't just an incremental improvement, it was a fundamentally different approach to regulatory documentation that achieved a 700%+ efficiency gain. I'm always looking for the exceptional solution, not just the adequate one.\""
+      },
+      { n:93,
+        q:"Where do you see yourself in 5 years? How does Morgan Stanley fit into your career trajectory?",
+        tags:[["Career","or"],["HR","bl"]],
+        a:"\"In 5 years, I see myself as a technical lead or principal engineer specializing in AI-powered financial systems — someone who can architect solutions that operate at Morgan Stanley's scale and complexity.<br><br>This role is a perfect next step because Morgan Stanley's unique position — spanning elite investment banking and rapidly growing wealth management — creates technology challenges that don't exist anywhere else. Building systems that serve both institutional traders needing microsecond latency and retail clients needing intuitive interfaces requires exactly the kind of cross-domain expertise I want to develop.<br><br>I'm also excited about the AI @ Morgan Stanley initiative — being part of a team that's genuinely transforming how 16,000+ financial advisors work is the kind of high-impact work I want to be doing.\""
+      },
+      { n:94,
+        q:"What is your greatest weakness? How are you working to improve it?",
+        tags:[["HR","or"],["Self-Awareness","bl"]],
+        a:"\"Early in my career, I tended to dive deep into technical implementation before fully validating requirements with stakeholders — sometimes building the right solution to the wrong problem. I learned this lesson during a project where I built a sophisticated feature that the business users didn't actually need.<br><br>I've actively worked on this by: (1) Always starting with a requirements document that stakeholders sign off on, (2) Building proof-of-concepts for validation before full development, (3) Scheduling regular check-ins during development rather than only at the end.<br><br>This has made me a much more effective developer — my MDD platform succeeded partly because I spent the first week understanding exactly what model risk analysts needed before writing a single line of code.\""
+      },
+      { n:95,
+        q:"Describe a time you had to explain a complex technical concept to a non-technical business stakeholder.",
+        tags:[["STAR","or"],["Communication","bl"]],
+        a:"<strong>Situation:</strong> A senior model risk manager asked me to explain why the RAG system sometimes retrieved 'wrong' documents and what we were doing about it.<br><br><strong>Task:</strong> Explain vector similarity search and retrieval quality to someone with no ML background, in a way that built confidence in the system.<br><br><strong>Action:</strong> Used an analogy: 'Imagine you're searching a library. Keyword search finds books with the exact words you typed. Our system is like a librarian who understands what you mean — it finds books about the same topic even if they use different words. Sometimes the librarian makes a judgment call that doesn't match yours — that's what we're improving.' Then showed concrete examples of good and bad retrievals, explained the metrics we track, and described the improvements we were making.<br><br><strong>Result:</strong> The manager understood the system's capabilities and limitations. They became a more effective user — asking better questions that played to the system's strengths."
+      },
+      { n:96,
+        q:"How do you handle working with legacy code that has no tests and poor documentation?",
+        tags:[["Technical","or"],["Legacy","bl"]],
+        a:"<strong>My approach:</strong><ol><li><strong>Understand before changing:</strong> Read the code, run it, trace execution paths with a debugger</li><li><strong>Characterization tests:</strong> Write tests capturing current behavior — even if wrong. These become your safety net.</li><li><strong>Document as you go:</strong> Add docstrings and comments as you understand each function</li><li><strong>Boy Scout Rule:</strong> Leave the code better than you found it — in small, safe increments</li><li><strong>Refactor with tests:</strong> Never refactor without tests. Extract methods, rename variables, verify behavior unchanged.</li><li><strong>Strangler Fig:</strong> For large rewrites, replace incrementally rather than big-bang rewrite</li></ol><strong>At MSCI:</strong> Inherited Oracle PL/SQL procedures with no documentation. Spent 2 weeks writing characterization tests before touching any code. This investment paid off — zero regressions during the migration to Python."
+      },
+      { n:97,
+        q:"Why should we hire you over other candidates? What makes you uniquely qualified for this role?",
+        tags:[["Closing","or"],["Must Prepare","rd"]],
+        a:"\"Three things make me uniquely qualified:<br><br><strong>1. I sit at the exact intersection Morgan Stanley needs.</strong> Most Python developers don't understand financial regulations and trading systems. Most finance professionals don't know RAG systems and modern AI. I bring both — and I've demonstrated I can translate between technical and business stakeholders effectively.<br><br><strong>2. I've proven I can deliver measurable impact in exactly this domain.</strong> My MDD platform achieved an 85% reduction in documentation time and 700%+ efficiency gain — not a prototype, a production system with 99.9% availability. My ETL work handled 37TB with 99.9% accuracy. These aren't theoretical — they're delivered results.<br><br><strong>3. I'm genuinely excited about Morgan Stanley's specific challenges.</strong> AI @ Morgan Stanley, the Debrief tool, the wealth management technology transformation — these are problems I've been thinking about and have directly relevant experience for. I'm not just qualified for this role — I'm excited about it.\""
+      },
+      { n:98,
+        q:"How do you approach estimating project timelines? How do you handle scope creep?",
+        tags:[["Project Management","or"],["Process","bl"]],
+        a:"<strong>Estimation approach:</strong><ul><li><strong>Break down into tasks:</strong> Decompose until each task is &lt;2 days. Larger tasks have hidden complexity.</li><li><strong>Three-point estimation:</strong> Optimistic, realistic, pessimistic. Use weighted average: (O + 4R + P) / 6</li><li><strong>Add buffer:</strong> 20-30% for unknowns, integration issues, code review cycles</li><li><strong>Spike first:</strong> For uncertain tasks, timebox a 1-2 day investigation before estimating</li></ul><strong>Handling scope creep:</strong><ul><li>Clear requirements document signed off before development starts</li><li>Change request process: new requirements go through formal assessment</li><li>Communicate impact: 'We can add this feature, but it will push the deadline by 1 week'</li><li>Prioritize ruthlessly: MVP first, nice-to-haves in next sprint</li></ul>"
+      },
+      { n:99,
+        q:"Describe a time you disagreed with your manager or team. How did you handle it?",
+        tags:[["STAR","or"],["Conflict","bl"]],
+        a:"<strong>Situation:</strong> My manager wanted a template-based approach for MDD generation. I believed a RAG + LLM approach would be significantly more effective but required more upfront investment.<br><br><strong>Task:</strong> Advocate for my technical position while respecting the decision-making hierarchy.<br><br><strong>Action:</strong> Prepared a structured comparison. Built a 3-day proof-of-concept demonstrating the quality difference with real regulatory documents. Quantified the business case: if RAG saves 30 more hours per MDD vs templates, the ROI justified the extra 2 weeks of development. Presented to manager and business users together — let them see the quality difference directly.<br><br><strong>Result:</strong> Manager approved the RAG approach after seeing the demo. Final system achieved 85% time reduction. Lesson: data and demos are more persuasive than arguments."
+      },
+      { n:100,
+        q:"What questions do you have for us? (Always prepare 3-5 thoughtful questions)",
+        tags:[["Closing","or"],["Must Prepare","rd"]],
+        a:"<strong>Recommended Questions to Ask:</strong><ol><li style='margin-bottom:10px;'>\"What does the team's AI roadmap look like for the next 12 months, and where would someone in this role have the most impact — particularly around expanding AI @ Morgan Stanley?\"</li><li style='margin-bottom:10px;'>\"What does success look like for this role at the 6-month and 1-year marks?\"</li><li style='margin-bottom:10px;'>\"How does the team balance innovation (new AI approaches) with the stability requirements of systems serving institutional traders and wealth management clients?\"</li><li style='margin-bottom:10px;'>\"What are the biggest technical challenges the team is facing right now that I could help solve?\"</li><li style='margin-bottom:10px;'>\"How does Morgan Stanley's engineering culture support continuous learning and staying current with rapidly evolving technologies like GenAI?\"</li></ol><div class='tip'><strong>�� Tip:</strong> Asking thoughtful questions demonstrates genuine interest and strategic thinking. Avoid asking about salary, benefits, or vacation in the first interview. Reference specific MS initiatives (AI @ Morgan Stanley, Debrief) in your questions to show you've done your research.</div>"
+      }
+    ]
+  }
+];
+
+// ─── TAG COLOR MAP ────────────────────────────────────────────────────────────
+var TAG_COLORS = {
+  bl:'t-bl', gd:'t-gd', gn:'t-gn', rd:'t-rd',
+  pp:'t-pp', tl:'t-tl', or:'t-or', gy:'t-gy'
+};
+
+// ─── TOGGLE FUNCTIONS ─────────────────────────────────────────────────────────
+function toggleSection(el) {
+  var sec = el.parentElement;
+  if (sec.classList.contains('open')) {
+    sec.classList.remove('open');
+  } else {
+    sec.classList.add('open');
+  }
+}
+
+function toggleQ(el) {
+  var card = el.parentElement;
+  var tog = el.querySelector('.qtoggle');
+  if (card.classList.contains('open')) {
+    card.classList.remove('open');
+    if (tog) tog.textContent = '▼ Show';
+  } else {
+    card.classList.add('open');
+    if (tog) tog.textContent = '▲ Hide';
+  }
+}
+
+var allOpen = false;
+function toggleAll() {
+  allOpen = !allOpen;
+  var sections = document.querySelectorAll('.section');
+  var cards = document.querySelectorAll('.qcard');
+  var btn = document.getElementById('expandBtn');
+  sections.forEach(function(s) {
+    if (allOpen) s.classList.add('open');
+    else s.classList.remove('open');
+  });
+  cards.forEach(function(c) {
+    var tog = c.querySelector('.qtoggle');
+    if (allOpen) {
+      c.classList.add('open');
+      if (tog) tog.textContent = '▲ Hide';
+    } else {
+      c.classList.remove('open');
+      if (tog) tog.textContent = '▼ Show';
+    }
+  });
+  if (btn) btn.textContent = allOpen ? '⊖ Collapse All' : '⊕ Expand All Answers';
+}
+
+function jumpTo(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.add('open');
+  }
+}
+
+// ─── RENDER ───────────────────────────────────────────────────────────────────
+function renderTags(tags) {
+  return tags.map(function(t) {
+    var cls = TAG_COLORS[t[1]] || 't-gy';
+    return '<span class="tag ' + cls + '">' + t[0] + '</span>';
+  }).join('');
+}
+
+function renderQuestion(q, isFirst) {
+  var openClass = isFirst ? ' open' : '';
+  var togText = isFirst ? '▲ Hide' : '▼ Show';
+  return '<div class="qcard' + openClass + '">' +
+    '<div class="q-head" onclick="toggleQ(this)">' +
+      '<div class="qno">' + q.n + '</div>' +
+      '<div class="qwrap">' +
+        '<div class="qtext">' + q.q + '</div>' +
+        '<div class="qtags">' + renderTags(q.tags) + '</div>' +
+      '</div>' +
+      '<div class="qtoggle">' + togText + '</div>' +
+    '</div>' +
+    '<div class="q-body">' +
+      '<div class="ans-label">Model Answer</div>' +
+      '<div class="ans">' + q.a + '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderSection(sec, idx) {
+  var isOpen = idx === 0 ? ' open' : '';
+  var qHTML = sec.qs.map(function(q, qi) {
+    return renderQuestion(q, idx === 0 && qi === 0);
+  }).join('');
+
+  return '<div class="section' + isOpen + '" id="' + sec.id + '">' +
+    '<div class="sec-head" onclick="toggleSection(this)">' +
+      '<div class="sec-icon ' + sec.ico + '">' + sec.icon + '</div>' +
+      '<div class="sec-info">' +
+        '<div class="sec-cat">' + sec.cat + '</div>' +
+        '<div class="sec-title">' + sec.title + '</div>' +
+      '</div>' +
+      '<div class="sec-right">' +
+        '<span class="qcount">' + sec.qs.length + ' Qs</span>' +
+        '<span class="diff ' + sec.dc + '">' + sec.diff + '</span>' +
+        '<span class="arrow">▼</span>' +
+      '</div>' +
+    '</div>' +
+    '<div class="sec-body">' + qHTML + '</div>' +
+  '</div>';
+}
+
+function init() {
+  // Build sidebar nav
+  var nav = document.getElementById('nav');
+  var navHTML = '';
+  SECTIONS.forEach(function(s) {
+    navHTML += '<button onclick="jumpTo(\'' + s.id + '\')">' +
+      '<span>' + s.icon + '</span> ' + s.title.split('—')[0].trim() +
+      ' <span class="cnt">' + s.qs.length + '</span>' +
+    '</button>';
+  });
+  nav.innerHTML = navHTML;
+
+  // Build sections
+  var container = document.getElementById('container');
+  var html = '';
+  SECTIONS.forEach(function(sec, idx) {
+    html += renderSection(sec, idx);
+  });
+  container.innerHTML = html;
+}
+
+// Run on load
+window.onload = init;
+</script>
+</body>
+</html>

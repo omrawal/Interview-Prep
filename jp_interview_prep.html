@@ -1,0 +1,2940 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMC Interview Prep — Om Rawal | 100 Questions</title>
+<style>
+  :root {
+    --jpmc-blue: #003087;
+    --jpmc-blue-dark: #001f5b;
+    --jpmc-blue-mid: #0050a0;
+    --jpmc-blue-light: #e6eef8;
+    --jpmc-gold: #c8a951;
+    --jpmc-gold-light: #fdf6e3;
+    --white: #ffffff;
+    --gray-50: #f7f8fa;
+    --gray-100: #eef0f4;
+    --gray-200: #dde1ea;
+    --gray-300: #c4cad8;
+    --gray-400: #9aa3b8;
+    --gray-500: #6b7694;
+    --gray-600: #4a5270;
+    --gray-700: #2e3450;
+    --gray-800: #1a1f38;
+    --green: #0a7c4e;
+    --green-light: #d4f0e4;
+    --red: #c0392b;
+    --red-light: #fde8e6;
+    --orange: #c05c00;
+    --orange-light: #fef0e0;
+    --purple: #5b2d8e;
+    --purple-light: #ede5f8;
+    --teal: #0a6b7c;
+    --teal-light: #d4f0f5;
+    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --transition: 200ms ease;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font); background: var(--gray-50); color: var(--gray-700); font-size: 15px; line-height: 1.6; }
+
+  /* HEADER */
+  header { background: var(--jpmc-blue-dark); color: white; padding: 0 40px; position: sticky; top: 0; z-index: 200; height: 62px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .jpmc-logo-text { font-size: 20px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+  .jpmc-logo-text span { color: var(--jpmc-gold); }
+  .header-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
+  .header-subtitle { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.04em; text-transform: uppercase; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .badge { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .badge-gold { background: var(--jpmc-gold); color: var(--jpmc-blue-dark); }
+  .badge-outline { border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--jpmc-blue) 0%, var(--jpmc-blue-dark) 60%, #000d2e 100%); color: white; padding: 52px 40px 44px; position: relative; overflow: hidden; }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+  .hero-glow { position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,81,0.12) 0%, transparent 70%); }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,169,81,0.15); border: 1px solid rgba(200,169,81,0.3); border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 700; color: var(--jpmc-gold); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; }
+  .hero h1 em { font-style: normal; color: var(--jpmc-gold); }
+  .hero-desc { font-size: 15.5px; color: rgba(255,255,255,0.72); max-width: 700px; line-height: 1.65; margin-bottom: 30px; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+  .pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 5px 14px; font-size: 12px; color: rgba(255,255,255,0.8); font-weight: 500; }
+  .hero-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+  .stat-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 14px 22px; text-align: center; min-width: 100px; }
+  .stat-box .num { font-size: 26px; font-weight: 800; color: var(--jpmc-gold); line-height: 1; }
+  .stat-box .lbl { font-size: 10px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+  /* LAYOUT */
+  .layout { max-width: 1200px; margin: 0 auto; padding: 28px 40px 64px; display: grid; grid-template-columns: 255px 1fr; gap: 24px; align-items: start; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 78px; }
+  .side-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 14px; }
+  .side-head { background: var(--jpmc-blue); color: white; padding: 10px 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+  .side-nav { padding: 6px 0; }
+  .side-nav a { display: flex; align-items: center; gap: 10px; padding: 8px 14px; font-size: 12.5px; color: var(--gray-600); text-decoration: none; transition: var(--transition); border-left: 3px solid transparent; }
+  .side-nav a:hover { background: var(--jpmc-blue-light); color: var(--jpmc-blue); border-left-color: var(--jpmc-blue); }
+  .side-nav a .cnt { margin-left: auto; background: var(--gray-100); color: var(--gray-500); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; }
+  .side-nav a:hover .cnt { background: var(--jpmc-blue-light); color: var(--jpmc-blue); }
+  .side-body { padding: 14px 16px; }
+  .prog-row { margin-bottom: 10px; }
+  .prog-label { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--gray-500); margin-bottom: 5px; }
+  .prog-bar { height: 5px; background: var(--gray-200); border-radius: 3px; overflow: hidden; }
+  .prog-fill { height: 100%; border-radius: 3px; }
+  .fill-blue { background: var(--jpmc-blue); }
+  .fill-gold { background: var(--jpmc-gold); }
+  .fill-green { background: var(--green); }
+  .tip-list { font-size: 12px; color: var(--gray-600); line-height: 1.8; }
+  .tip-list p { padding: 3px 0; }
+  .expand-btn { width: 100%; background: var(--jpmc-blue); color: white; border: none; padding: 10px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; transition: background var(--transition); }
+  .expand-btn:hover { background: var(--jpmc-blue-dark); }
+
+  /* CONTENT */
+  .content { min-width: 0; }
+  .alert-banner { background: var(--jpmc-gold-light); border: 1px solid rgba(200,169,81,0.4); border-left: 4px solid var(--jpmc-gold); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start; }
+  .alert-icon { font-size: 20px; flex-shrink: 0; }
+  .alert-text h4 { font-size: 13px; font-weight: 700; color: var(--jpmc-blue-dark); margin-bottom: 3px; }
+  .alert-text p { font-size: 12.5px; color: var(--gray-600); line-height: 1.6; }
+
+  /* SECTION */
+  .section { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); box-shadow: var(--shadow-sm); margin-bottom: 20px; overflow: hidden; animation: fadeUp 0.4s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .section:nth-child(1){animation-delay:0.05s} .section:nth-child(2){animation-delay:0.1s} .section:nth-child(3){animation-delay:0.15s} .section:nth-child(4){animation-delay:0.2s} .section:nth-child(5){animation-delay:0.25s} .section:nth-child(6){animation-delay:0.3s} .section:nth-child(7){animation-delay:0.35s} .section:nth-child(8){animation-delay:0.4s}
+  .sec-header { padding: 18px 24px; display: flex; align-items: center; gap: 14px; cursor: pointer; user-select: none; transition: background var(--transition); border-bottom: 2px solid transparent; }
+  .sec-header:hover { background: var(--gray-50); }
+  .section.open .sec-header { border-bottom-color: var(--jpmc-blue); }
+  .sec-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
+  .ic-blue{background:var(--jpmc-blue-light)} .ic-gold{background:var(--jpmc-gold-light)} .ic-green{background:var(--green-light)} .ic-red{background:var(--red-light)} .ic-purple{background:var(--purple-light)} .ic-teal{background:var(--teal-light)} .ic-orange{background:var(--orange-light)} .ic-gray{background:var(--gray-100)}
+  .sec-info { flex: 1; }
+  .sec-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-400); margin-bottom: 2px; }
+  .sec-title { font-size: 16px; font-weight: 700; color: var(--gray-800); }
+  .sec-meta { display: flex; align-items: center; gap: 8px; }
+  .q-badge { background: var(--jpmc-blue); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 12px; }
+  .diff-tag { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .diff-hard{background:var(--red-light);color:var(--red)} .diff-med{background:var(--orange-light);color:var(--orange)} .diff-easy{background:var(--green-light);color:var(--green)}
+  .chevron { font-size: 11px; color: var(--gray-400); transition: transform 0.3s ease; }
+  .section.open .chevron { transform: rotate(180deg); }
+  .sec-body { display: none; padding: 4px 24px 22px; }
+  .section.open .sec-body { display: block; }
+
+  /* QUESTION CARD */
+  .qcard { border: 1px solid var(--gray-200); border-radius: 7px; margin-top: 14px; overflow: hidden; transition: box-shadow var(--transition); }
+  .qcard:hover { box-shadow: var(--shadow-md); }
+  .qhead { padding: 13px 16px; display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--gray-50); transition: background var(--transition); }
+  .qcard.open .qhead { background: var(--jpmc-blue-light); }
+  .qnum { width: 26px; height: 26px; border-radius: 50%; background: var(--jpmc-blue); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .qmain { flex: 1; }
+  .qtext { font-size: 13.5px; font-weight: 600; color: var(--gray-800); line-height: 1.45; }
+  .qtags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 5px; }
+  .tag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .t-blue{background:var(--jpmc-blue-light);color:var(--jpmc-blue)} .t-gold{background:var(--jpmc-gold-light);color:#7a5c00} .t-green{background:var(--green-light);color:var(--green)} .t-red{background:var(--red-light);color:var(--red)} .t-purple{background:var(--purple-light);color:var(--purple)} .t-teal{background:var(--teal-light);color:var(--teal)} .t-orange{background:var(--orange-light);color:var(--orange)}
+  .qtoggle { font-size: 11px; color: var(--jpmc-blue); font-weight: 600; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .qbody { display: none; padding: 15px 16px; background: white; border-top: 1px solid var(--gray-200); }
+  .qcard.open .qbody { display: block; }
+  .ans-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--jpmc-blue); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .ans-label::after { content: ''; flex: 1; height: 1px; background: var(--jpmc-blue-light); }
+  .ans { font-size: 13.5px; color: var(--gray-700); line-height: 1.72; }
+  .ans strong { color: var(--gray-800); }
+  .ans ul { margin: 8px 0 8px 18px; }
+  .ans li { margin-bottom: 4px; }
+  .ans ol { margin: 8px 0 8px 18px; }
+  .ans code { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 4px; padding: 1px 6px; font-family: 'Courier New', monospace; font-size: 12.5px; color: var(--jpmc-blue-dark); }
+  .ans pre { background: #1a1f38; color: #e8eaf0; border-radius: 6px; padding: 14px 16px; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.6; overflow-x: auto; margin: 10px 0; white-space: pre-wrap; word-break: break-word; }
+  .ans pre .kw{color:#7ec8e3} .ans pre .fn{color:#ffd700} .ans pre .cm{color:#6b7694} .ans pre .st{color:#98d982}
+  .tip { background: var(--jpmc-blue-light); border-left: 3px solid var(--jpmc-blue); border-radius: 0 6px 6px 0; padding: 10px 14px; margin-top: 12px; font-size: 13px; color: var(--jpmc-blue-dark); line-height: 1.6; }
+  .tip strong { color: var(--jpmc-blue); }
+  .warn { background: var(--jpmc-gold-light); border-left: 3px solid var(--jpmc-gold); border-radius: 0 6px 6px 0; padding: 10px 14px; margin-top: 12px; font-size: 13px; color: #5a3e00; line-height: 1.6; }
+
+  /* FOOTER */
+  footer { background: var(--jpmc-blue-dark); color: rgba(255,255,255,0.55); text-align: center; padding: 22px; font-size: 12px; }
+  footer strong { color: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; padding: 16px; }
+    .sidebar { position: static; }
+    .hero { padding: 32px 20px; }
+    .hero h1 { font-size: 26px; }
+    header { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <div class="jpmc-logo-text">JP<span>Morgan</span></div>
+    <div class="header-divider"></div>
+    <div class="header-subtitle">Interview Preparation Guide</div>
+  </div>
+  <div class="header-right">
+    <span class="badge badge-gold">100 Questions</span>
+    <span class="badge badge-outline">2025–26 Edition</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">⚡ Based on Real JPMC Interview Reports · GFG · LeetCode · Glassdoor</div>
+    <h1>Crack the <em>JP Morgan Chase</em><br>Software Engineer Interview</h1>
+    <p class="hero-desc">100 meticulously researched questions drawn from real JPMC interview experiences — covering every round from OA to final onsite.</p>
+    <div class="hero-pills">
+      <span class="pill">   Online Assessment (OA)</span>
+      <span class="pill">   Technical Coding Round</span>
+      <span class="pill">  ️ System Design</span>
+      <span class="pill">   Python / DSA</span>
+      <span class="pill">   Finance Domain</span>
+      <span class="pill">   HR / Behavioral</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="num">100</div><div class="lbl">Questions</div></div>
+      <div class="stat-box"><div class="num">8</div><div class="lbl">Categories</div></div>
+      <div class="stat-box"><div class="num">4–5</div><div class="lbl">Interview Rounds</div></div>
+      <div class="stat-box"><div class="num">2026</div><div class="lbl">Market Aligned</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-head">   Jump to Category</div>
+      <nav class="side-nav">
+        <a href="#s1"><span>  </span> DSA & Algorithms <span class="cnt">18</span></a>
+        <a href="#s2"><span>  </span> Python Deep Dive <span class="cnt">12</span></a>
+        <a href="#s3"><span>  ️</span> System Design <span class="cnt">12</span></a>
+        <a href="#s4"><span>  ️</span> SQL & Databases <span class="cnt">10</span></a>
+        <a href="#s5"><span>  </span> GenAI / ML / Data <span class="cnt">10</span></a>
+        <a href="#s6"><span>  </span> Finance & JPMC Domain <span class="cnt">12</span></a>
+        <a href="#s7"><span>☁️</span> OOP & Design Patterns <span class="cnt">10</span></a>
+        <a href="#s8"><span>  </span> Behavioral / HR <span class="cnt">16</span></a>
+      </nav>
+    </div>
+    <div class="side-card">
+      <div class="side-head">   Round Weightage</div>
+      <div class="side-body">
+        <div class="prog-row"><div class="prog-label"><span>DSA / Coding</span><span>35%</span></div><div class="prog-bar"><div class="prog-fill fill-blue" style="width:35%"></div></div></div>
+        <div class="prog-row"><div class="prog-label"><span>System Design</span><span>25%</span></div><div class="prog-bar"><div class="prog-fill fill-gold" style="width:25%"></div></div></div>
+        <div class="prog-row"><div class="prog-label"><span>Behavioral</span><span>25%</span></div><div class="prog-bar"><div class="prog-fill fill-green" style="width:25%"></div></div></div>
+        <div class="prog-row"><div class="prog-label"><span>Domain / Python</span><span>15%</span></div><div class="prog-bar"><div class="prog-fill fill-blue" style="width:15%"></div></div></div>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-head">   JPMC Interview Process</div>
+      <div class="side-body tip-list">
+        <p>   <strong>Round 1:</strong> Online Assessment — 2 DSA problems, 90 min</p>
+        <p>   <strong>Round 2:</strong> Technical Phone Screen — Python + DSA</p>
+        <p>  ️ <strong>Round 3:</strong> System Design (Senior roles)</p>
+        <p>   <strong>Round 4:</strong> Technical Deep Dive — Projects + Code</p>
+        <p>   <strong>Round 5:</strong> HR / Behavioral + Culture Fit</p>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-head">   JPMC-Specific Tips</div>
+      <div class="side-body tip-list">
+        <p>✅ JPMC loves <strong>LeetCode Medium</strong> problems</p>
+        <p>✅ Expect <strong>finance-themed</strong> coding scenarios</p>
+        <p>✅ Know <strong>JPMC's values</strong>: integrity, client focus</p>
+        <p>✅ Prepare <strong>STAR stories</strong> with measurable impact</p>
+        <p>✅ System design: focus on <strong>scalability + reliability</strong></p>
+        <p>✅ Know <strong>REST API design</strong> deeply</p>
+        <p>✅ Be ready to <strong>optimize your code live</strong></p>
+      </div>
+    </div>
+    <button class="expand-btn" onclick="toggleAll()">⊕ Expand All Answers</button>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="alert-banner">
+      <div class="alert-icon">  </div>
+      <div class="alert-text">
+        <h4>JPMC Interview Intelligence — Based on Real Candidate Reports</h4>
+        <p>Questions sourced from GFG interview experiences, LeetCode Discuss threads, Glassdoor reviews, and Blind posts from 2023–2025. JPMC heavily emphasizes DSA (graphs, DP, arrays), system design for senior roles, and behavioral questions. Click any section to expand, click any question to reveal the model answer.</p>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 1: DSA ═══ -->
+    <div class="section open" id="s1">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-blue">  </div>
+        <div class="sec-info"><div class="sec-cat">Most Tested · OA + Technical Rounds</div><div class="sec-title">Data Structures, Algorithms & Coding</div></div>
+        <div class="sec-meta"><span class="q-badge">18 Qs</span><span class="diff-tag diff-hard">Highest Priority</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard open">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">1</div>
+            <div class="qmain"><div class="qtext">Given an array of stock prices, find the maximum profit with at most 2 transactions. (JPMC OA — frequently reported)</div><div class="qtags"><span class="tag t-blue">Arrays</span><span class="tag t-red">DP</span><span class="tag t-gold">JPMC OA</span></div></div>
+            <div class="qtoggle">▲ Hide</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              LeetCode 123 — Best Time to Buy and Sell Stock III. Use DP with 4 states.<br><br>
+              <pre><span class="kw">def</span> <span class="fn">maxProfit</span>(prices):
+    buy1 = buy2 = float(<span class="st">'-inf'</span>)
+    sell1 = sell2 = 0
+    <span class="kw">for</span> p <span class="kw">in</span> prices:
+        buy1  = max(buy1,  -p)
+        sell1 = max(sell1, buy1 + p)
+        buy2  = max(buy2,  sell1 - p)
+        sell2 = max(sell2, buy2 + p)
+    <span class="kw">return</span> sell2
+<span class="cm"># Time: O(n), Space: O(1)</span></pre>
+              <strong>Intuition:</strong> Track best profit after each of 4 state transitions in a single pass.
+              <div class="tip"><strong>   JPMC Tip:</strong> This exact problem or its variant (k transactions) appears frequently in JPMC OAs. Also know LC 121 (single transaction) and LC 122 (unlimited).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">2</div>
+            <div class="qmain"><div class="qtext">Find the longest substring without repeating characters. Optimize for O(n) time.</div><div class="qtags"><span class="tag t-blue">Sliding Window</span><span class="tag t-green">HashMap</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">lengthOfLongestSubstring</span>(s):
+    char_idx = {}
+    left = max_len = 0
+    <span class="kw">for</span> right, ch <span class="kw">in</span> enumerate(s):
+        <span class="kw">if</span> ch <span class="kw">in</span> char_idx <span class="kw">and</span> char_idx[ch] >= left:
+            left = char_idx[ch] + 1
+        char_idx[ch] = right
+        max_len = max(max_len, right - left + 1)
+    <span class="kw">return</span> max_len
+<span class="cm"># Time: O(n), Space: O(min(m,n))</span></pre>
+              <strong>Pattern:</strong> Sliding window with HashMap tracking last seen index. Move left pointer past the duplicate when found.
+              <div class="tip"><strong>   Tip:</strong> Follow-ups: "Only lowercase letters?" (array of 26). "Unicode?" (dict). Always discuss space complexity.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">3</div>
+            <div class="qmain"><div class="qtext">Implement LRU Cache with O(1) get and put operations. (Very commonly reported at JPMC)</div><div class="qtags"><span class="tag t-blue">Design</span><span class="tag t-green">HashMap+DLL</span><span class="tag t-gold">JPMC Classic</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              Use a <strong>doubly linked list</strong> (O(1) removal) + <strong>HashMap</strong> (O(1) lookup).<br><br>
+              <pre><span class="kw">from</span> collections <span class="kw">import</span> OrderedDict
+
+<span class="kw">class</span> <span class="fn">LRUCache</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, capacity):
+        self.cap = capacity
+        self.cache = OrderedDict()
+
+    <span class="kw">def</span> <span class="fn">get</span>(self, key):
+        <span class="kw">if</span> key <span class="kw">not in</span> self.cache: <span class="kw">return</span> -1
+        self.cache.move_to_end(key)
+        <span class="kw">return</span> self.cache[key]
+
+    <span class="kw">def</span> <span class="fn">put</span>(self, key, value):
+        <span class="kw">if</span> key <span class="kw">in</span> self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        <span class="kw">if</span> len(self.cache) > self.cap:
+            self.cache.popitem(last=False)
+<span class="cm"># Both get/put: O(1) amortized</span></pre>
+              <div class="tip"><strong>   Tip:</strong> Know the manual DLL implementation too — interviewers may ask you to implement without OrderedDict.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">4</div>
+            <div class="qmain"><div class="qtext">Implement a rate limiter that allows N requests per second per user. (JPMC system design + coding hybrid)</div><div class="qtags"><span class="tag t-blue">Design</span><span class="tag t-teal">Sliding Window</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">import</span> time
+<span class="kw">from</span> collections <span class="kw">import</span> defaultdict, deque
+
+<span class="kw">class</span> <span class="fn">RateLimiter</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, max_requests, window_sec):
+        self.max_req = max_requests
+        self.window  = window_sec
+        self.users   = defaultdict(deque)
+
+    <span class="kw">def</span> <span class="fn">is_allowed</span>(self, user_id):
+        now = time.time()
+        q = self.users[user_id]
+        <span class="kw">while</span> q <span class="kw">and</span> now - q[0] >= self.window:
+            q.popleft()
+        <span class="kw">if</span> len(q) < self.max_req:
+            q.append(now)
+            <span class="kw">return True</span>
+        <span class="kw">return False</span></pre>
+              <strong>Follow-up:</strong> For distributed rate limiting, use Redis with atomic INCR + EXPIRE. Discuss: fixed window vs sliding window vs token bucket trade-offs.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">5</div>
+            <div class="qmain"><div class="qtext">Find the kth largest element in an unsorted array. Compare Heap vs QuickSelect approaches.</div><div class="qtags"><span class="tag t-blue">Heap</span><span class="tag t-green">QuickSelect</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Min-Heap O(n log k):</strong><br>
+              <pre><span class="kw">import</span> heapq
+<span class="kw">def</span> <span class="fn">findKthLargest</span>(nums, k):
+    <span class="kw">return</span> heapq.nlargest(k, nums)[-1]</pre>
+              <strong>QuickSelect O(n) average:</strong><br>
+              <pre><span class="kw">def</span> <span class="fn">findKthLargest</span>(nums, k):
+    pivot = nums[len(nums)//2]
+    left  = [x <span class="kw">for</span> x <span class="kw">in</span> nums <span class="kw">if</span> x > pivot]
+    mid   = [x <span class="kw">for</span> x <span class="kw">in</span> nums <span class="kw">if</span> x == pivot]
+    right = [x <span class="kw">for</span> x <span class="kw">in</span> nums <span class="kw">if</span> x < pivot]
+    <span class="kw">if</span> k <= len(left): <span class="kw">return</span> findKthLargest(left, k)
+    <span class="kw">if</span> k <= len(left)+len(mid): <span class="kw">return</span> pivot
+    <span class="kw">return</span> findKthLargest(right, k-len(left)-len(mid))</pre>
+              <strong>Trade-offs:</strong> Heap = O(n log k) time, O(k) space — good for streaming. QuickSelect = O(n) avg, O(n²) worst — good for in-memory.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">6</div>
+            <div class="qmain"><div class="qtext">Serialize and deserialize a binary tree. (Reported multiple times in JPMC interviews)</div><div class="qtags"><span class="tag t-blue">Trees</span><span class="tag t-green">BFS/DFS</span><span class="tag t-gold">JPMC Classic</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">class</span> <span class="fn">Codec</span>:
+    <span class="kw">def</span> <span class="fn">serialize</span>(self, root):
+        <span class="kw">if not</span> root: <span class="kw">return</span> <span class="st">'#'</span>
+        <span class="kw">return</span> f<span class="st">"{root.val},{self.serialize(root.left)},{self.serialize(root.right)}"</span>
+
+    <span class="kw">def</span> <span class="fn">deserialize</span>(self, data):
+        vals = iter(data.split(<span class="st">','</span>))
+        <span class="kw">def</span> <span class="fn">build</span>():
+            v = next(vals)
+            <span class="kw">if</span> v == <span class="st">'#'</span>: <span class="kw">return None</span>
+            node = TreeNode(int(v))
+            node.left  = build()
+            node.right = build()
+            <span class="kw">return</span> node
+        <span class="kw">return</span> build()</pre>
+              <div class="tip"><strong>   Tip:</strong> Why preorder not inorder? Inorder serialization is ambiguous without structure markers — preorder with null markers uniquely identifies the tree.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">7</div>
+            <div class="qmain"><div class="qtext">Number of islands in a matrix. Extend: what if the grid is distributed across machines?</div><div class="qtags"><span class="tag t-blue">Graphs</span><span class="tag t-green">BFS/DFS</span><span class="tag t-teal">Union-Find</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">numIslands</span>(grid):
+    <span class="kw">if not</span> grid: <span class="kw">return</span> 0
+    rows, cols = len(grid), len(grid[0])
+    count = 0
+    <span class="kw">def</span> <span class="fn">dfs</span>(r, c):
+        <span class="kw">if</span> r < 0 <span class="kw">or</span> r >= rows <span class="kw">or</span> c < 0 <span class="kw">or</span> c >= cols <span class="kw">or</span> grid[r][c] != <span class="st">'1'</span>: <span class="kw">return</span>
+        grid[r][c] = <span class="st">'0'</span>
+        <span class="kw">for</span> dr, dc <span class="kw">in</span> [(0,1),(0,-1),(1,0),(-1,0)]: dfs(r+dr, c+dc)
+    <span class="kw">for</span> r <span class="kw">in</span> range(rows):
+        <span class="kw">for</span> c <span class="kw">in</span> range(cols):
+            <span class="kw">if</span> grid[r][c] == <span class="st">'1'</span>: dfs(r, c); count += 1
+    <span class="kw">return</span> count</pre>
+              <strong>Distributed:</strong> Partition grid into chunks. Process each independently. Use Union-Find to merge islands spanning partition boundaries.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">8</div>
+            <div class="qmain"><div class="qtext">Find the median of a data stream in real-time. (Reported in JPMC senior interviews)</div><div class="qtags"><span class="tag t-blue">Heap</span><span class="tag t-red">Hard</span><span class="tag t-gold">JPMC Senior</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              Two heaps: max-heap for lower half, min-heap for upper half.<br><br>
+              <pre><span class="kw">import</span> heapq
+
+<span class="kw">class</span> <span class="fn">MedianFinder</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self.lo = []  <span class="cm"># max-heap (negate)</span>
+        self.hi = []  <span class="cm"># min-heap</span>
+
+    <span class="kw">def</span> <span class="fn">addNum</span>(self, num):
+        heapq.heappush(self.lo, -num)
+        heapq.heappush(self.hi, -heapq.heappop(self.lo))
+        <span class="kw">if</span> len(self.hi) > len(self.lo):
+            heapq.heappush(self.lo, -heapq.heappop(self.hi))
+
+    <span class="kw">def</span> <span class="fn">findMedian</span>(self):
+        <span class="kw">if</span> len(self.lo) > len(self.hi): <span class="kw">return</span> -self.lo[0]
+        <span class="kw">return</span> (-self.lo[0] + self.hi[0]) / 2
+<span class="cm"># addNum: O(log n), findMedian: O(1)</span></pre>
+              <div class="tip"><strong>   Finance Context:</strong> JPMC may frame this as "find the median transaction amount in a real-time payment stream."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">9</div>
+            <div class="qmain"><div class="qtext">Minimum number of conference rooms required for a list of meeting intervals.</div><div class="qtags"><span class="tag t-blue">Intervals</span><span class="tag t-green">Heap</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">import</span> heapq
+
+<span class="kw">def</span> <span class="fn">minMeetingRooms</span>(intervals):
+    <span class="kw">if not</span> intervals: <span class="kw">return</span> 0
+    intervals.sort(key=<span class="kw">lambda</span> x: x[0])
+    heap = []
+    <span class="kw">for</span> start, end <span class="kw">in</span> intervals:
+        <span class="kw">if</span> heap <span class="kw">and</span> heap[0] <= start:
+            heapq.heapreplace(heap, end)
+        <span class="kw">else</span>:
+            heapq.heappush(heap, end)
+    <span class="kw">return</span> len(heap)
+<span class="cm"># Time: O(n log n), Space: O(n)</span></pre>
+              <strong>Intuition:</strong> Sort by start. Min-heap of end times. If earliest-ending meeting ended before new one starts, reuse that room.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">10</div>
+            <div class="qmain"><div class="qtext">Design a data structure supporting insert, delete, and getRandom in O(1) time.</div><div class="qtags"><span class="tag t-blue">Design</span><span class="tag t-green">HashMap+Array</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">import</span> random
+
+<span class="kw">class</span> <span class="fn">RandomizedSet</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self.val_to_idx = {}
+        self.vals = []
+
+    <span class="kw">def</span> <span class="fn">insert</span>(self, val):
+        <span class="kw">if</span> val <span class="kw">in</span> self.val_to_idx: <span class="kw">return False</span>
+        self.vals.append(val)
+        self.val_to_idx[val] = len(self.vals) - 1
+        <span class="kw">return True</span>
+
+    <span class="kw">def</span> <span class="fn">remove</span>(self, val):
+        <span class="kw">if</span> val <span class="kw">not in</span> self.val_to_idx: <span class="kw">return False</span>
+        idx = self.val_to_idx[val]
+        last = self.vals[-1]
+        self.vals[idx] = last
+        self.val_to_idx[last] = idx
+        self.vals.pop()
+        <span class="kw">del</span> self.val_to_idx[val]
+        <span class="kw">return True</span>
+
+    <span class="kw">def</span> <span class="fn">getRandom</span>(self):
+        <span class="kw">return</span> random.choice(self.vals)</pre>
+              <strong>Key insight:</strong> Swap element to delete with last element, then pop — O(1) delete without gaps.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">11</div>
+            <div class="qmain"><div class="qtext">Implement a Trie. Add search and startsWith. When is Trie better than HashMap?</div><div class="qtags"><span class="tag t-blue">Trie</span><span class="tag t-green">String</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">class</span> <span class="fn">TrieNode</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self): self.children = {}; self.is_end = False
+
+<span class="kw">class</span> <span class="fn">Trie</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self): self.root = TrieNode()
+
+    <span class="kw">def</span> <span class="fn">insert</span>(self, word):
+        node = self.root
+        <span class="kw">for</span> ch <span class="kw">in</span> word: node = node.children.setdefault(ch, TrieNode())
+        node.is_end = True
+
+    <span class="kw">def</span> <span class="fn">search</span>(self, word):
+        node = self.root
+        <span class="kw">for</span> ch <span class="kw">in</span> word:
+            <span class="kw">if</span> ch <span class="kw">not in</span> node.children: <span class="kw">return False</span>
+            node = node.children[ch]
+        <span class="kw">return</span> node.is_end
+
+    <span class="kw">def</span> <span class="fn">startsWith</span>(self, prefix):
+        node = self.root
+        <span class="kw">for</span> ch <span class="kw">in</span> prefix:
+            <span class="kw">if</span> ch <span class="kw">not in</span> node.children: <span class="kw">return False</span>
+            node = node.children[ch]
+        <span class="kw">return True</span></pre>
+              <strong>Trie vs HashMap:</strong> Trie is better for prefix queries, autocomplete, and enumerating all words with a given prefix.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">12</div>
+            <div class="qmain"><div class="qtext">Minimum edit distance (Levenshtein distance) between two strings.</div><div class="qtags"><span class="tag t-red">DP</span><span class="tag t-blue">String</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">minDistance</span>(word1, word2):
+    m, n = len(word1), len(word2)
+    dp = list(range(n+1))
+    <span class="kw">for</span> i <span class="kw">in</span> range(1, m+1):
+        prev = dp[0]; dp[0] = i
+        <span class="kw">for</span> j <span class="kw">in</span> range(1, n+1):
+            temp = dp[j]
+            <span class="kw">if</span> word1[i-1] == word2[j-1]: dp[j] = prev
+            <span class="kw">else</span>: dp[j] = 1 + min(prev, dp[j], dp[j-1])
+            prev = temp
+    <span class="kw">return</span> dp[n]
+<span class="cm"># Time: O(mn), Space: O(n)</span></pre>
+              <div class="tip"><strong>   Finance Use Case:</strong> Fuzzy matching customer names or company names in financial records.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">13</div>
+            <div class="qmain"><div class="qtext">Shortest path in a weighted graph (Dijkstra). When would you use Bellman-Ford instead?</div><div class="qtags"><span class="tag t-blue">Graphs</span><span class="tag t-red">Dijkstra</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">import</span> heapq
+
+<span class="kw">def</span> <span class="fn">dijkstra</span>(graph, src):
+    dist = {node: float(<span class="st">'inf'</span>) <span class="kw">for</span> node <span class="kw">in</span> graph}
+    dist[src] = 0; pq = [(0, src)]
+    <span class="kw">while</span> pq:
+        d, u = heapq.heappop(pq)
+        <span class="kw">if</span> d > dist[u]: <span class="kw">continue</span>
+        <span class="kw">for</span> v, w <span class="kw">in</span> graph[u]:
+            <span class="kw">if</span> dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                heapq.heappush(pq, (dist[v], v))
+    <span class="kw">return</span> dist</pre>
+              <strong>Dijkstra vs Bellman-Ford:</strong> Dijkstra O((V+E)logV), non-negative weights only. Bellman-Ford O(VE), handles negative weights, detects negative cycles.<br>
+              <strong>Finance:</strong> Bellman-Ford for currency arbitrage detection (negative cycle = arbitrage opportunity).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">14</div>
+            <div class="qmain"><div class="qtext">Find all anagrams of a pattern in a string. Return starting indices.</div><div class="qtags"><span class="tag t-blue">Sliding Window</span><span class="tag t-green">HashMap</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">from</span> collections <span class="kw">import</span> Counter
+
+<span class="kw">def</span> <span class="fn">findAnagrams</span>(s, p):
+    result = []; p_count = Counter(p); window = Counter(s[:len(p)])
+    <span class="kw">if</span> window == p_count: result.append(0)
+    <span class="kw">for</span> i <span class="kw">in</span> range(len(p), len(s)):
+        window[s[i]] += 1
+        left = s[i - len(p)]
+        window[left] -= 1
+        <span class="kw">if</span> window[left] == 0: <span class="kw">del</span> window[left]
+        <span class="kw">if</span> window == p_count: result.append(i - len(p) + 1)
+    <span class="kw">return</span> result
+<span class="cm"># Time: O(n), Space: O(1)</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">15</div>
+            <div class="qmain"><div class="qtext">Find the first and last position of a target in a sorted array using binary search.</div><div class="qtags"><span class="tag t-blue">Binary Search</span><span class="tag t-green">Arrays</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">searchRange</span>(nums, target):
+    <span class="kw">def</span> <span class="fn">find_bound</span>(is_left):
+        lo, hi, bound = 0, len(nums)-1, -1
+        <span class="kw">while</span> lo <= hi:
+            mid = (lo + hi) // 2
+            <span class="kw">if</span> nums[mid] == target:
+                bound = mid
+                <span class="kw">if</span> is_left: hi = mid - 1
+                <span class="kw">else</span>: lo = mid + 1
+            <span class="kw">elif</span> nums[mid] < target: lo = mid + 1
+            <span class="kw">else</span>: hi = mid - 1
+        <span class="kw">return</span> bound
+    <span class="kw">return</span> [find_bound(True), find_bound(False)]</pre>
+              <strong>Common pitfalls:</strong> Integer overflow (use <code>lo + (hi-lo)//2</code>), infinite loop, off-by-one errors.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">16</div>
+            <div class="qmain"><div class="qtext">Given a list of transactions, detect suspicious ones: same user, amount within 10%, within 1 hour. Optimize for large datasets.</div><div class="qtags"><span class="tag t-gold">JPMC Domain</span><span class="tag t-teal">Finance</span><span class="tag t-blue">Sorting</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">from</span> collections <span class="kw">import</span> defaultdict
+
+<span class="kw">def</span> <span class="fn">find_suspicious</span>(transactions):
+    user_txns = defaultdict(list)
+    <span class="kw">for</span> t <span class="kw">in</span> transactions:
+        user_txns[t[<span class="st">'user'</span>]].append(t)
+    suspicious = []
+    <span class="kw">for</span> user, txns <span class="kw">in</span> user_txns.items():
+        txns.sort(key=<span class="kw">lambda</span> x: x[<span class="st">'time'</span>])
+        left = 0
+        <span class="kw">for</span> right <span class="kw">in</span> range(1, len(txns)):
+            <span class="kw">while</span> txns[right][<span class="st">'time'</span>] - txns[left][<span class="st">'time'</span>] > 3600: left += 1
+            <span class="kw">for</span> i <span class="kw">in</span> range(left, right):
+                a1, a2 = txns[i][<span class="st">'amount'</span>], txns[right][<span class="st">'amount'</span>]
+                <span class="kw">if</span> abs(a1-a2)/max(a1,a2) <= 0.1:
+                    suspicious.append((txns[i], txns[right]))
+    <span class="kw">return</span> suspicious</pre>
+              <strong>Scale:</strong> Partition by user_id across Spark workers — no cross-partition communication needed.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">17</div>
+            <div class="qmain"><div class="qtext">Minimum removals to make parentheses valid.</div><div class="qtags"><span class="tag t-blue">Stack</span><span class="tag t-green">Greedy</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">minRemoveToMakeValid</span>(s):
+    stack = []; s = list(s)
+    <span class="kw">for</span> i, ch <span class="kw">in</span> enumerate(s):
+        <span class="kw">if</span> ch == <span class="st">'('</span>: stack.append(i)
+        <span class="kw">elif</span> ch == <span class="st">')'</span>:
+            <span class="kw">if</span> stack: stack.pop()
+            <span class="kw">else</span>: s[i] = <span class="st">''</span>
+    <span class="kw">for</span> i <span class="kw">in</span> stack: s[i] = <span class="st">''</span>
+    <span class="kw">return</span> <span class="st">''</span>.join(s)
+<span class="cm"># Time: O(n), Space: O(n)</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">18</div>
+            <div class="qmain"><div class="qtext">Word Break Problem: given a string and a dictionary, can the string be segmented into dictionary words?</div><div class="qtags"><span class="tag t-red">DP</span><span class="tag t-blue">String</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">wordBreak</span>(s, wordDict):
+    word_set = set(wordDict)
+    n = len(s)
+    dp = [False] * (n + 1)
+    dp[0] = True
+    <span class="kw">for</span> i <span class="kw">in</span> range(1, n + 1):
+        <span class="kw">for</span> j <span class="kw">in</span> range(i):
+            <span class="kw">if</span> dp[j] <span class="kw">and</span> s[j:i] <span class="kw">in</span> word_set:
+                dp[i] = True; <span class="kw">break</span>
+    <span class="kw">return</span> dp[n]
+<span class="cm"># Time: O(n^2), Space: O(n)</span></pre>
+              <strong>Optimization:</strong> Use Trie for word_set to speed up substring lookups. Memoized recursion is also valid.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 2: PYTHON ═══ -->
+    <div class="section" id="s2">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-gold">  </div>
+        <div class="sec-info"><div class="sec-cat">Technical Round</div><div class="sec-title">Python Deep Dive — Internals & Best Practices</div></div>
+        <div class="sec-meta"><span class="q-badge">12 Qs</span><span class="diff-tag diff-med">Medium–Hard</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">19</div>
+            <div class="qmain"><div class="qtext">What is Python's memory model? Explain mutable vs immutable objects and how assignment works under the hood.</div><div class="qtags"><span class="tag t-gold">Python Internals</span><span class="tag t-blue">Memory</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              In Python, <strong>everything is an object</strong>. Variables are references (pointers) to objects, not containers.<br><br>
+              <strong>Immutable:</strong> int, float, str, tuple — cannot be changed after creation. Reassignment creates a new object.<br>
+              <strong>Mutable:</strong> list, dict, set — can be modified in place. Multiple variables can reference the same object.<br><br>
+              <pre><span class="cm"># Mutable — shared reference!</span>
+a = [1,2,3]; b = a; b.append(4)
+<span class="cm"># a is now [1,2,3,4] — same object!</span>
+
+<span class="cm"># Python interns small ints (-5 to 256)</span>
+a = 256; b = 256; print(a <span class="kw">is</span> b)  <span class="cm"># True</span>
+a = 257; b = 257; print(a <span class="kw">is</span> b)  <span class="cm"># False</span></pre>
+              <div class="tip"><strong>   JPMC Tip:</strong> Interviewers test if you understand <code>is</code> vs <code>==</code> and implications for function arguments (pass by object reference).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">20</div>
+            <div class="qmain"><div class="qtext">What are Python decorators? Write one that logs execution time and handles exceptions.</div><div class="qtags"><span class="tag t-gold">Python</span><span class="tag t-blue">Decorators</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              A decorator is a higher-order function that wraps another function to extend its behavior without modifying it.<br><br>
+              <pre><span class="kw">import</span> time, logging, functools
+
+<span class="kw">def</span> <span class="fn">timed_logger</span>(func):
+    @functools.wraps(func)
+    <span class="kw">def</span> <span class="fn">wrapper</span>(*args, **kwargs):
+        start = time.perf_counter()
+        <span class="kw">try</span>:
+            result = func(*args, **kwargs)
+            logging.info(f<span class="st">"{func.__name__} took {time.perf_counter()-start:.3f}s"</span>)
+            <span class="kw">return</span> result
+        <span class="kw">except</span> Exception <span class="kw">as</span> e:
+            logging.error(f<span class="st">"{func.__name__} failed: {e}"</span>)
+            <span class="kw">raise</span>
+    <span class="kw">return</span> wrapper</pre>
+              <strong>Key:</strong> Always use <code>@functools.wraps(func)</code> to preserve the original function's metadata.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">21</div>
+            <div class="qmain"><div class="qtext">Explain Python's GIL. How does it affect multi-threaded applications? How do you handle CPU-bound parallelism?</div><div class="qtags"><span class="tag t-gold">Concurrency</span><span class="tag t-blue">GIL</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              The GIL (Global Interpreter Lock) is a mutex in CPython that allows only one thread to execute Python bytecode at a time, even on multi-core systems.<br><br>
+              <strong>Impact:</strong>
+              <ul>
+                <li><strong>I/O-bound tasks:</strong> Threading still helps — GIL is released during I/O waits (network, file, DB)</li>
+                <li><strong>CPU-bound tasks:</strong> Threading provides NO speedup — use <code>multiprocessing</code> instead</li>
+              </ul>
+              <strong>Solutions for CPU-bound parallelism:</strong>
+              <ul>
+                <li><code>multiprocessing</code> — separate processes, each with own GIL</li>
+                <li><code>concurrent.futures.ProcessPoolExecutor</code> — high-level API</li>
+                <li>NumPy/SciPy — release GIL for C-level operations</li>
+                <li>Cython with <code>nogil</code> blocks</li>
+                <li>PySpark — distributed processing bypasses GIL entirely</li>
+              </ul>
+              <div class="tip"><strong>   JPMC Context:</strong> Risk calculations (Monte Carlo simulations) are CPU-bound → multiprocessing. Market data ingestion is I/O-bound → asyncio or threading.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">22</div>
+            <div class="qmain"><div class="qtext">What are generators and when would you use them in a financial data pipeline?</div><div class="qtags"><span class="tag t-gold">Python</span><span class="tag t-blue">Memory Efficiency</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              A generator is a special iterator created with <code>yield</code> — it lazily produces values one at a time, holding state between calls. Constant memory usage regardless of dataset size.<br><br>
+              <pre><span class="kw">def</span> <span class="fn">read_transactions</span>(file, chunk_size=10000):
+    <span class="kw">for</span> chunk <span class="kw">in</span> pd.read_csv(file, chunksize=chunk_size):
+        <span class="kw">yield</span> chunk
+
+<span class="cm"># Process 37TB without loading into memory</span>
+<span class="kw">for</span> chunk <span class="kw">in</span> read_transactions(<span class="st">'transactions.csv'</span>):
+    process(chunk)
+    load_to_bigquery(chunk)</pre>
+              <strong>Generator expressions:</strong> <code>(x*2 for x in range(1_000_000))</code> — lazy, vs list comprehension which is eager.<br>
+              <strong>Use generators when:</strong> Data is too large for memory, you only need one pass, streaming processing.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">23</div>
+            <div class="qmain"><div class="qtext">What is asyncio? How does it differ from threading? When would you use async/await?</div><div class="qtags"><span class="tag t-gold">Async</span><span class="tag t-blue">FastAPI</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <code>asyncio</code> uses a single-threaded event loop with cooperative multitasking — coroutines voluntarily yield control at <code>await</code> points. Threading uses OS-level threads with preemptive switching.<br><br>
+              <strong>Key differences:</strong>
+              <ul>
+                <li>asyncio: lower overhead, no race conditions, requires async-aware libraries</li>
+                <li>threading: works with any blocking code, but has GIL and race condition risks</li>
+              </ul>
+              <pre><span class="kw">import</span> asyncio, aiohttp
+
+<span class="kw">async def</span> <span class="fn">fetch_price</span>(session, ticker):
+    <span class="kw">async with</span> session.get(f<span class="st">"/api/price/{ticker}"</span>) <span class="kw">as</span> resp:
+        <span class="kw">return await</span> resp.json()
+
+<span class="kw">async def</span> <span class="fn">fetch_all_prices</span>(tickers):
+    <span class="kw">async with</span> aiohttp.ClientSession() <span class="kw">as</span> session:
+        tasks = [fetch_price(session, t) <span class="kw">for</span> t <span class="kw">in</span> tickers]
+        <span class="kw">return await</span> asyncio.gather(*tasks)</pre>
+              <strong>Use asyncio when:</strong> High-concurrency I/O (APIs, WebSockets, DB queries). Use threading for legacy blocking code.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">24</div>
+            <div class="qmain"><div class="qtext">What are Python's abstract base classes (ABCs)? How do they enforce interfaces?</div><div class="qtags"><span class="tag t-gold">Python OOP</span><span class="tag t-blue">Design</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              ABCs define interfaces that subclasses must implement. Unlike duck typing (runtime check), ABCs enforce contracts at class definition time.<br><br>
+              <pre><span class="kw">from</span> abc <span class="kw">import</span> ABC, abstractmethod
+
+<span class="kw">class</span> <span class="fn">RiskModel</span>(ABC):
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">calculate_var</span>(self, portfolio, confidence): ...
+
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">validate</span>(self): ...
+
+    <span class="kw">def</span> <span class="fn">report</span>(self):  <span class="cm"># Concrete method</span>
+        <span class="kw">return</span> f<span class="st">"VaR: {self.calculate_var(None, 0.95)}"</span>
+
+<span class="kw">class</span> <span class="fn">CreditRiskModel</span>(RiskModel):
+    <span class="kw">def</span> <span class="fn">calculate_var</span>(self, portfolio, confidence): <span class="kw">return</span> 0.0
+    <span class="kw">def</span> <span class="fn">validate</span>(self): <span class="kw">return True</span></pre>
+              <strong>ABCs vs Duck Typing:</strong> ABCs are explicit contracts — fail at class definition if abstract methods aren't implemented. Better for large teams and financial systems where interface compliance is critical.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">25</div>
+            <div class="qmain"><div class="qtext">How do you use Pydantic for data validation in financial APIs? Why use Decimal instead of float for money?</div><div class="qtags"><span class="tag t-gold">Python</span><span class="tag t-teal">Validation</span><span class="tag t-blue">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">from</span> pydantic <span class="kw">import</span> BaseModel, field_validator, Field
+<span class="kw">from</span> decimal <span class="kw">import</span> Decimal
+
+<span class="kw">class</span> <span class="fn">Transaction</span>(BaseModel):
+    id: str = Field(pattern=<span class="st">r'^TXN\d{10}$'</span>)
+    amount: Decimal = Field(gt=0, decimal_places=2)
+    currency: str = Field(min_length=3, max_length=3)
+
+    @field_validator(<span class="st">'currency'</span>)
+    @classmethod
+    <span class="kw">def</span> <span class="fn">validate_currency</span>(cls, v):
+        <span class="kw">if</span> v <span class="kw">not in</span> {<span class="st">'USD'</span>, <span class="st">'EUR'</span>, <span class="st">'GBP'</span>, <span class="st">'JPY'</span>}:
+            <span class="kw">raise</span> ValueError(<span class="st">"Invalid currency"</span>)
+        <span class="kw">return</span> v</pre>
+              <strong>Why Decimal not float:</strong> Float has precision issues — <code>0.1 + 0.2 != 0.3</code> in floating point. Financial calculations require exact decimal arithmetic. Always use <code>Decimal</code> for monetary amounts.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">26</div>
+            <div class="qmain"><div class="qtext">What is Python's descriptor protocol? How do @property, @classmethod, and @staticmethod work internally?</div><div class="qtags"><span class="tag t-gold">Python Internals</span><span class="tag t-blue">Descriptors</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              A descriptor is any object implementing <code>__get__</code>, <code>__set__</code>, or <code>__delete__</code>. They control attribute access.<br><br>
+              <pre><span class="kw">class</span> <span class="fn">Transaction</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, amount): self._amount = amount
+
+    @property
+    <span class="kw">def</span> <span class="fn">amount</span>(self): <span class="kw">return</span> self._amount
+
+    @amount.setter
+    <span class="kw">def</span> <span class="fn">amount</span>(self, v):
+        <span class="kw">if</span> v < 0: <span class="kw">raise</span> ValueError(<span class="st">"Amount cannot be negative"</span>)
+        self._amount = v</pre>
+              <strong>@classmethod:</strong> Receives class as first arg (<code>cls</code>). Used for factory methods. Can be overridden by subclasses.<br>
+              <strong>@staticmethod:</strong> No implicit first arg. Pure utility function. Cannot be overridden polymorphically.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">27</div>
+            <div class="qmain"><div class="qtext">How do you write thread-safe code in Python? What synchronization primitives does Python provide?</div><div class="qtags"><span class="tag t-gold">Concurrency</span><span class="tag t-red">Thread Safety</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Python synchronization primitives:</strong> Lock, RLock, Semaphore, Event, Condition, Queue (thread-safe FIFO).<br><br>
+              <pre><span class="kw">import</span> threading
+
+<span class="kw">class</span> <span class="fn">PortfolioManager</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self._balance = 0
+        self._lock = threading.Lock()
+
+    <span class="kw">def</span> <span class="fn">deposit</span>(self, amount):
+        <span class="kw">with</span> self._lock:  <span class="cm"># Context manager ensures release</span>
+            self._balance += amount
+
+    <span class="kw">def</span> <span class="fn">get_balance</span>(self):
+        <span class="kw">with</span> self._lock:
+            <span class="kw">return</span> self._balance</pre>
+              <strong>Note:</strong> Python's GIL provides some protection for simple operations, but compound operations (check-then-act) are NOT atomic and require explicit locking.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">28</div>
+            <div class="qmain"><div class="qtext">What is functools.lru_cache? Implement memoization from scratch. What are its limitations?</div><div class="qtags"><span class="tag t-gold">Python</span><span class="tag t-blue">Optimization</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">def</span> <span class="fn">memoize</span>(func):
+    cache = {}
+    <span class="kw">def</span> <span class="fn">wrapper</span>(*args):
+        <span class="kw">if</span> args <span class="kw">not in</span> cache:
+            cache[args] = func(*args)
+        <span class="kw">return</span> cache[args]
+    <span class="kw">return</span> wrapper
+
+@memoize
+<span class="kw">def</span> <span class="fn">fib</span>(n):
+    <span class="kw">if</span> n < 2: <span class="kw">return</span> n
+    <span class="kw">return</span> fib(n-1) + fib(n-2)</pre>
+              <strong>lru_cache vs cache (Python 3.9+):</strong> <code>lru_cache(maxsize=N)</code> is bounded with LRU eviction. <code>cache</code> = <code>lru_cache(maxsize=None)</code> — unbounded, slightly faster.<br>
+              <strong>Limitations:</strong> Only works with hashable arguments. Not thread-safe by default for custom implementations. Memory grows unboundedly without maxsize.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">29</div>
+            <div class="qmain"><div class="qtext">What are Python's __slots__? When would you use them and what are the trade-offs?</div><div class="qtags"><span class="tag t-gold">Python Internals</span><span class="tag t-blue">Memory</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              By default, Python objects store attributes in a <code>__dict__</code> (a dictionary). <code>__slots__</code> replaces this with a fixed-size array — ~40-50% memory reduction per instance.<br><br>
+              <pre><span class="kw">class</span> <span class="fn">Trade</span>:
+    __slots__ = [<span class="st">'id'</span>, <span class="st">'amount'</span>, <span class="st">'currency'</span>, <span class="st">'timestamp'</span>]
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, id, amount, currency, timestamp):
+        self.id = id; self.amount = amount
+        self.currency = currency; self.timestamp = timestamp</pre>
+              <strong>Benefits:</strong> ~40-50% memory reduction, faster attribute access.<br>
+              <strong>Trade-offs:</strong> Cannot add new attributes dynamically, no <code>__dict__</code>, inheritance complications.<br>
+              <strong>When to use:</strong> Creating millions of instances (e.g., one object per trade in HFT system).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">30</div>
+            <div class="qmain"><div class="qtext">How do you handle large-scale data processing in Python without running out of memory?</div><div class="qtags"><span class="tag t-gold">Data Engineering</span><span class="tag t-blue">Performance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Strategies:</strong>
+              <ul>
+                <li><strong>Generators:</strong> Lazy evaluation — process one record at a time</li>
+                <li><strong>Pandas chunking:</strong> <code>pd.read_csv(chunksize=100_000)</code></li>
+                <li><strong>Polars:</strong> Rust-based DataFrame library — 10-100x faster than Pandas for large data, lazy evaluation</li>
+                <li><strong>Dask:</strong> Parallel DataFrames that spill to disk when needed</li>
+                <li><strong>PySpark:</strong> Distributed processing across a cluster</li>
+                <li><strong>Columnar formats:</strong> Parquet/Arrow — read only needed columns</li>
+                <li><strong>Memory mapping:</strong> <code>numpy.memmap</code> for large arrays</li>
+              </ul>
+              <strong>JPMC context:</strong> Processing millions of daily transactions requires streaming approaches. Kafka + Python consumers for real-time; Spark for batch historical analysis.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 3: SYSTEM DESIGN ═══ -->
+    <div class="section" id="s3">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-purple">  ️</div>
+        <div class="sec-info"><div class="sec-cat">Senior Roles · Round 3</div><div class="sec-title">System Design — Scalable Financial Systems</div></div>
+        <div class="sec-meta"><span class="q-badge">12 Qs</span><span class="diff-tag diff-hard">Hard</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">31</div>
+            <div class="qmain"><div class="qtext">Design a real-time payment processing system handling 100,000 TPS with exactly-once delivery. (Classic JPMC system design)</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-teal">Finance</span><span class="tag t-gold">JPMC Classic</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Architecture:</strong>
+              <ul>
+                <li><strong>API Gateway:</strong> Load balancing, rate limiting, authentication (OAuth2/mTLS)</li>
+                <li><strong>Kafka:</strong> Durable, ordered, partitioned by account_id for ordering guarantees</li>
+                <li><strong>Payment Service:</strong> Stateless microservices, horizontal scaling</li>
+                <li><strong>Idempotency Layer:</strong> Redis with idempotency keys — deduplicate retries</li>
+                <li><strong>Database:</strong> Sharded PostgreSQL (by account_id) + read replicas. Optimistic locking for balance updates.</li>
+                <li><strong>Saga Pattern:</strong> Distributed transactions — debit source → credit destination → notify</li>
+                <li><strong>Event Sourcing:</strong> Immutable transaction log — audit trail, replay capability</li>
+              </ul>
+              <strong>Exactly-once:</strong> Idempotency key + DB unique constraint on transaction_id. Kafka exactly-once semantics with transactional producers.<br>
+              <strong>Scale:</strong> 100K TPS → ~10 Kafka partitions, ~50 payment service instances, DB sharded across 20 nodes.
+              <div class="tip"><strong>   JPMC Tip:</strong> Always mention PCI-DSS compliance, audit logs, data residency. This shows financial domain awareness.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">32</div>
+            <div class="qmain"><div class="qtext">Design a fraud detection system flagging suspicious transactions in real-time (&lt;50ms) while processing millions per day.</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-teal">ML</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Two-tier approach:</strong><br><br>
+              <strong>Tier 1 — Real-time rules engine (&lt;5ms):</strong>
+              <ul>
+                <li>Rule-based checks: velocity limits, geographic anomalies, blacklisted merchants</li>
+                <li>In-memory Redis for user transaction history (last 24h)</li>
+                <li>Bloom filters for known fraudulent patterns</li>
+              </ul>
+              <strong>Tier 2 — ML scoring (&lt;50ms):</strong>
+              <ul>
+                <li>Feature store (Redis) with pre-computed user features</li>
+                <li>Lightweight ML model (XGBoost) served via FastAPI</li>
+                <li>Features: amount, merchant category, time, location delta, velocity</li>
+              </ul>
+              <strong>Async enrichment:</strong> Kafka stream for deep analysis (graph neural networks). Feedback loop: confirmed fraud → retrain models.<br>
+              <strong>Decision:</strong> Block (high score), flag for review (medium), allow (low score).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">33</div>
+            <div class="qmain"><div class="qtext">Design a distributed cache system. How do you handle cache invalidation, consistency, and eviction?</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-blue">Caching</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Architecture:</strong> Redis Cluster with consistent hashing for key distribution.<br><br>
+              <strong>Cache invalidation strategies:</strong>
+              <ul>
+                <li><strong>TTL-based:</strong> Simple, eventual consistency</li>
+                <li><strong>Write-through:</strong> Update cache and DB simultaneously — strong consistency</li>
+                <li><strong>Write-behind:</strong> Update cache first, async DB write — low latency, risk of data loss</li>
+                <li><strong>Cache-aside:</strong> Read from cache; on miss, load from DB and populate</li>
+                <li><strong>Event-driven:</strong> DB change events (CDC) trigger cache invalidation</li>
+              </ul>
+              <strong>Eviction policies:</strong> LRU (most common), LFU, TTL, Random.<br>
+              <strong>Financial data:</strong> Use write-through with short TTL. Never cache account balances without invalidation on update.<br>
+              <strong>Thundering herd:</strong> Use mutex on cache miss to prevent multiple DB queries for the same key.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">34</div>
+            <div class="qmain"><div class="qtext">Design a URL shortener service. Scale it to handle 100M URLs and 10B redirects per month.</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-blue">Classic</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Core design:</strong>
+              <ul>
+                <li><strong>Short code:</strong> Base62 encoding of auto-increment ID (6 chars = 62^6 = 56B URLs)</li>
+                <li><strong>Write path:</strong> API → ID generator (Snowflake ID) → encode → store in DB</li>
+                <li><strong>Read path:</strong> Short URL → Redis cache → DB fallback → 301 redirect</li>
+              </ul>
+              <strong>Scale:</strong> 10B redirects/month = ~3,858 RPS avg, ~40K RPS peak. Read:Write = 100:1.<br>
+              <strong>Database:</strong> Cassandra for URL mappings (high write throughput). Redis for hot URL cache (99% hit rate target).<br>
+              <strong>CDN:</strong> Cache redirects at edge for popular URLs — sub-10ms globally.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">35</div>
+            <div class="qmain"><div class="qtext">What is the CAP theorem? How does it apply to financial systems? Give examples of CP vs AP systems.</div><div class="qtags"><span class="tag t-purple">Distributed Systems</span><span class="tag t-teal">Theory</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>CAP:</strong> A distributed system can guarantee at most 2 of: Consistency, Availability, Partition Tolerance. Since partitions are inevitable, the real choice is CP vs AP.<br><br>
+              <strong>CP (Consistency + Partition Tolerance):</strong>
+              <ul>
+                <li>Returns error rather than stale data during partition</li>
+                <li>Examples: ZooKeeper, HBase, MongoDB (majority write concern)</li>
+                <li><strong>Financial use:</strong> Account balance updates, payment processing — MUST be consistent. Double-spend is catastrophic.</li>
+              </ul>
+              <strong>AP (Availability + Partition Tolerance):</strong>
+              <ul>
+                <li>Returns potentially stale data rather than error</li>
+                <li>Examples: Cassandra, DynamoDB, CouchDB</li>
+                <li><strong>Financial use:</strong> Transaction history display, analytics dashboards — slight staleness acceptable</li>
+              </ul>
+              <div class="tip"><strong>   JPMC Tip:</strong> "For core banking operations, we choose CP — consistency is non-negotiable. For read-heavy analytics, we can tolerate AP."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">36</div>
+            <div class="qmain"><div class="qtext">Design a stock market data feed distributing real-time price updates to millions of subscribers with sub-millisecond latency.</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-teal">Finance</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Architecture:</strong>
+              <ul>
+                <li><strong>Market Data Ingestion:</strong> Direct exchange connections (FIX protocol), co-located servers</li>
+                <li><strong>Normalization Layer:</strong> Convert exchange-specific formats to internal format</li>
+                <li><strong>Pub/Sub (Kafka):</strong> Partitioned by ticker symbol — ordering guaranteed per symbol</li>
+                <li><strong>Fan-out Service:</strong> WebSocket connections to clients, grouped by subscription</li>
+                <li><strong>Snapshot Service:</strong> New subscribers get current state before streaming updates</li>
+              </ul>
+              <strong>Latency optimizations:</strong>
+              <ul>
+                <li>Kernel bypass networking (DPDK)</li>
+                <li>Binary serialization (Protocol Buffers) instead of JSON</li>
+                <li>CPU pinning and NUMA-aware memory allocation</li>
+                <li>Multicast for broadcast to many subscribers simultaneously</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">37</div>
+            <div class="qmain"><div class="qtext">What is event sourcing and CQRS? When would you use them in a financial application?</div><div class="qtags"><span class="tag t-purple">Architecture</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Event Sourcing:</strong> Store state as a sequence of immutable events. Current state = replay of all events.<br>
+              <strong>CQRS:</strong> Separate read and write models. Commands (writes) → write model; Queries (reads) → optimized read models (projections).<br><br>
+              <strong>Financial use cases:</strong>
+              <ul>
+                <li><strong>Account ledger:</strong> Every debit/credit is an event. Balance = sum of all events. Perfect audit trail.</li>
+                <li><strong>Trade lifecycle:</strong> Order placed → filled → settled — each state change is an event</li>
+                <li><strong>Regulatory replay:</strong> Reconstruct account state at any point in time for audits</li>
+              </ul>
+              <strong>Trade-offs:</strong>
+              <ul>
+                <li>✅ Complete audit trail, temporal queries, event replay</li>
+                <li>❌ Eventual consistency for read models, event schema evolution complexity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">38</div>
+            <div class="qmain"><div class="qtext">How do you design for high availability and disaster recovery? What is RTO and RPO?</div><div class="qtags"><span class="tag t-purple">HA/DR</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>RTO (Recovery Time Objective):</strong> Maximum acceptable downtime after failure.<br>
+              <strong>RPO (Recovery Point Objective):</strong> Maximum acceptable data loss.<br><br>
+              <strong>HA strategies:</strong>
+              <ul>
+                <li><strong>Active-Active:</strong> Multiple regions serving traffic simultaneously. Zero RTO, near-zero RPO. Highest cost.</li>
+                <li><strong>Active-Passive:</strong> Primary active, standby ready. RTO = failover time (minutes). Lower cost.</li>
+                <li><strong>Multi-AZ:</strong> Within a region, span multiple availability zones.</li>
+              </ul>
+              <strong>For JPMC payment systems:</strong> Active-Active across 3 regions (US, EU, APAC). RPO = 0 (synchronous replication). RTO &lt; 30 seconds (automated failover). Meets regulatory requirements for SIFIs.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">39</div>
+            <div class="qmain"><div class="qtext">Design a microservices architecture for a banking application. How do you handle distributed transactions?</div><div class="qtags"><span class="tag t-purple">Microservices</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Core services:</strong> Account, Transaction, Notification, Auth, Audit, Reporting.<br><br>
+              <strong>Distributed transaction patterns:</strong>
+              <ul>
+                <li><strong>2PC:</strong> Strong consistency but blocking — not suitable for high-throughput</li>
+                <li><strong>Saga Pattern (preferred):</strong> Chain of local transactions with compensating transactions for rollback</li>
+              </ul>
+              <strong>Saga — Money Transfer:</strong>
+              <ol>
+                <li>Debit source account → success</li>
+                <li>Credit destination account → success</li>
+                <li>Send notification → success</li>
+                <li>If step 2 fails → compensating: credit back source account</li>
+              </ol>
+              <strong>Choreography vs Orchestration:</strong> Choreography (event-driven, decoupled) for simple flows; Orchestration (central coordinator) for complex flows.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">40</div>
+            <div class="qmain"><div class="qtext">Design a notification system sending alerts to millions of users across email, SMS, and push with priority queuing.</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-teal">Messaging</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Architecture:</strong>
+              <ul>
+                <li><strong>Notification API:</strong> Accepts requests, validates, enqueues</li>
+                <li><strong>Priority Queues (Kafka):</strong> CRITICAL (fraud alerts), HIGH (payment confirmations), NORMAL (statements)</li>
+                <li><strong>Channel Workers:</strong> Separate consumer groups for Email (SendGrid), SMS (Twilio), Push (FCM/APNs)</li>
+                <li><strong>User Preferences Service:</strong> Channel preferences, quiet hours, opt-outs</li>
+                <li><strong>Delivery Tracking:</strong> Track sent/delivered/failed status</li>
+                <li><strong>Retry Logic:</strong> Exponential backoff for failed deliveries</li>
+              </ul>
+              <strong>JPMC context:</strong> Fraud alerts must be CRITICAL priority — delivered within seconds regardless of load.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">41</div>
+            <div class="qmain"><div class="qtext">Design a search autocomplete system for a financial product catalog with 10M products. Handle typos and ranking.</div><div class="qtags"><span class="tag t-purple">System Design</span><span class="tag t-blue">Search</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Architecture:</strong>
+              <ul>
+                <li><strong>Trie (in-memory):</strong> Exact prefix matching — O(L) lookup</li>
+                <li><strong>Elasticsearch:</strong> Fuzzy matching, full-text search, ranking</li>
+                <li><strong>Redis:</strong> Cache top-10 suggestions for popular prefixes</li>
+              </ul>
+              <strong>Typo handling:</strong> Elasticsearch fuzzy query (edit distance 1-2), phonetic matching (Soundex), keyboard proximity scoring.<br>
+              <strong>Ranking signals:</strong> Search frequency, user portfolio/history, recency, business rules (promoted products).<br>
+              <strong>Latency target:</strong> &lt;100ms. Redis cache (80% hit rate) + Elasticsearch for misses.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">42</div>
+            <div class="qmain"><div class="qtext">Design a data pipeline for end-of-day trade reconciliation across multiple exchanges and asset classes.</div><div class="qtags"><span class="tag t-purple">Data Pipeline</span><span class="tag t-gold">JPMC Domain</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Pipeline stages:</strong>
+              <ol>
+                <li><strong>Ingestion:</strong> Pull from exchanges (FIX, REST, SFTP). Normalize to internal format.</li>
+                <li><strong>Validation:</strong> Schema validation, business rule checks</li>
+                <li><strong>Matching:</strong> Match internal trades against exchange confirmations. Flag breaks.</li>
+                <li><strong>Enrichment:</strong> Add market data, counterparty details, regulatory classifications</li>
+                <li><strong>P&amp;L Calculation:</strong> Realized/unrealized P&amp;L per trade, portfolio, desk</li>
+                <li><strong>Reporting:</strong> Regulatory reports (MiFID II, Dodd-Frank), internal dashboards</li>
+                <li><strong>Exception Handling:</strong> Route breaks to operations team</li>
+              </ol>
+              <strong>Technology:</strong> Apache Spark for processing, Airflow for orchestration, PostgreSQL for reconciliation state, S3 for raw data archival.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 4: SQL ═══ -->
+    <div class="section" id="s4">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-teal">  ️</div>
+        <div class="sec-info"><div class="sec-cat">Technical Round</div><div class="sec-title">SQL, Databases & Data Modeling</div></div>
+        <div class="sec-meta"><span class="q-badge">10 Qs</span><span class="diff-tag diff-med">Medium</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">43</div>
+            <div class="qmain"><div class="qtext">Find customers who made transactions in every month of 2024. (JPMC SQL round — reported on GFG)</div><div class="qtags"><span class="tag t-teal">SQL</span><span class="tag t-gold">JPMC Reported</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">SELECT</span> customer_id
+<span class="kw">FROM</span> transactions
+<span class="kw">WHERE</span> YEAR(transaction_date) = 2024
+<span class="kw">GROUP BY</span> customer_id
+<span class="kw">HAVING</span> COUNT(DISTINCT MONTH(transaction_date)) = 12;</pre>
+              <strong>With CTE for clarity:</strong>
+              <pre><span class="kw">WITH</span> monthly_activity <span class="kw">AS</span> (
+    <span class="kw">SELECT</span> customer_id,
+           COUNT(DISTINCT MONTH(transaction_date)) <span class="kw">AS</span> active_months
+    <span class="kw">FROM</span> transactions
+    <span class="kw">WHERE</span> transaction_date >= <span class="st">'2024-01-01'</span>
+      <span class="kw">AND</span> transaction_date < <span class="st">'2025-01-01'</span>
+    <span class="kw">GROUP BY</span> customer_id
+)
+<span class="kw">SELECT</span> customer_id <span class="kw">FROM</span> monthly_activity <span class="kw">WHERE</span> active_months = 12;</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">44</div>
+            <div class="qmain"><div class="qtext">Find the second highest salary in each department. Handle ties and departments with fewer than 2 employees.</div><div class="qtags"><span class="tag t-teal">SQL</span><span class="tag t-blue">Window Functions</span><span class="tag t-gold">JPMC Classic</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">WITH</span> ranked <span class="kw">AS</span> (
+    <span class="kw">SELECT</span> department_id, employee_id, salary,
+           DENSE_RANK() <span class="kw">OVER</span> (
+               <span class="kw">PARTITION BY</span> department_id
+               <span class="kw">ORDER BY</span> salary <span class="kw">DESC</span>
+           ) <span class="kw">AS</span> rnk
+    <span class="kw">FROM</span> employees
+)
+<span class="kw">SELECT</span> department_id, employee_id, salary
+<span class="kw">FROM</span> ranked <span class="kw">WHERE</span> rnk = 2;</pre>
+              <strong>Why DENSE_RANK vs RANK:</strong> DENSE_RANK handles ties correctly — if two employees share the highest salary, the next distinct salary is rank 2 (not rank 3 as with RANK).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">45</div>
+            <div class="qmain"><div class="qtext">Detect accounts with unusual patterns: more than 3 transactions within 1 hour exceeding $10,000 each.</div><div class="qtags"><span class="tag t-teal">SQL</span><span class="tag t-gold">JPMC Domain</span><span class="tag t-teal">Fraud</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">WITH</span> large_txns <span class="kw">AS</span> (
+    <span class="kw">SELECT</span> account_id, transaction_id, amount, transaction_time,
+           COUNT(*) <span class="kw">OVER</span> (
+               <span class="kw">PARTITION BY</span> account_id
+               <span class="kw">ORDER BY</span> transaction_time
+               <span class="kw">RANGE BETWEEN</span> INTERVAL <span class="st">'1 HOUR'</span> <span class="kw">PRECEDING AND CURRENT ROW</span>
+           ) <span class="kw">AS</span> txns_in_window
+    <span class="kw">FROM</span> transactions
+    <span class="kw">WHERE</span> amount > 10000
+)
+<span class="kw">SELECT DISTINCT</span> account_id <span class="kw">FROM</span> large_txns <span class="kw">WHERE</span> txns_in_window > 3;</pre>
+              <strong>Key:</strong> <code>RANGE BETWEEN INTERVAL '1 HOUR' PRECEDING AND CURRENT ROW</code> creates a sliding time window — a powerful SQL pattern for financial analysis.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">46</div>
+            <div class="qmain"><div class="qtext">Calculate a running total and 7-day moving average of transaction amounts per account.</div><div class="qtags"><span class="tag t-teal">SQL</span><span class="tag t-blue">Window Functions</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">SELECT</span>
+    account_id, transaction_date, amount,
+    SUM(amount) <span class="kw">OVER</span> (
+        <span class="kw">PARTITION BY</span> account_id
+        <span class="kw">ORDER BY</span> transaction_date
+        <span class="kw">ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</span>
+    ) <span class="kw">AS</span> running_total,
+    AVG(amount) <span class="kw">OVER</span> (
+        <span class="kw">PARTITION BY</span> account_id
+        <span class="kw">ORDER BY</span> transaction_date
+        <span class="kw">ROWS BETWEEN</span> 6 <span class="kw">PRECEDING AND CURRENT ROW</span>
+    ) <span class="kw">AS</span> moving_avg_7d
+<span class="kw">FROM</span> transactions
+<span class="kw">ORDER BY</span> account_id, transaction_date;</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">47</div>
+            <div class="qmain"><div class="qtext">What are database indexes? Explain B-tree vs Hash indexes. When would you use a composite index?</div><div class="qtags"><span class="tag t-teal">Database</span><span class="tag t-blue">Performance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>B-tree index:</strong> Balanced tree. Supports range queries (&lt;, &gt;, BETWEEN), ORDER BY, equality. Default in PostgreSQL/MySQL.<br>
+              <strong>Hash index:</strong> Only supports equality (=). O(1) lookup but no range queries.<br><br>
+              <strong>Composite index — leftmost prefix rule:</strong> Index on (A, B, C) can be used for queries on A, (A,B), or (A,B,C) but NOT B alone.<br><br>
+              <pre><span class="cm">-- Optimal for "get recent transactions for account"</span>
+<span class="kw">CREATE INDEX</span> idx_account_date
+<span class="kw">ON</span> transactions(account_id, transaction_date DESC);
+
+<span class="cm">-- Uses index: WHERE account_id = ? AND transaction_date > ?</span>
+<span class="cm">-- Uses index: WHERE account_id = ?</span>
+<span class="cm">-- Does NOT use index: WHERE transaction_date > ?</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">48</div>
+            <div class="qmain"><div class="qtext">Explain ACID properties and database isolation levels. What are dirty read, non-repeatable read, and phantom read?</div><div class="qtags"><span class="tag t-teal">Database</span><span class="tag t-red">ACID</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>ACID:</strong> Atomicity, Consistency, Isolation, Durability.<br><br>
+              <strong>Isolation levels (weakest to strongest):</strong><br>
+              <strong>READ UNCOMMITTED:</strong> Dirty read — T1 reads uncommitted data from T2. T2 rolls back. T1 saw data that never existed.<br>
+              <strong>READ COMMITTED:</strong> Prevents dirty reads. Non-repeatable read — T1 reads balance=$1000. T2 commits debit. T1 reads again=$500.<br>
+              <strong>REPEATABLE READ:</strong> Prevents non-repeatable reads. Phantom read — T1 counts 10 rows. T2 inserts one. T1 counts 11.<br>
+              <strong>SERIALIZABLE:</strong> Prevents all anomalies. Highest isolation, lowest concurrency.<br><br>
+              <strong>JPMC recommendation:</strong> READ COMMITTED for most operations. SERIALIZABLE for critical financial operations (balance transfers).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">49</div>
+            <div class="qmain"><div class="qtext">What is database sharding vs partitioning? How would you shard a transactions table for a global bank?</div><div class="qtags"><span class="tag t-teal">Database</span><span class="tag t-blue">Scalability</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Partitioning:</strong> Splitting a table within a single DB instance (range, list, hash).<br>
+              <strong>Sharding:</strong> Splitting data across multiple DB instances (servers).<br><br>
+              <strong>Sharding strategy for global transactions:</strong>
+              <ul>
+                <li><strong>Shard key:</strong> <code>account_id</code> — all transactions for an account on same shard (no cross-shard joins)</li>
+                <li><strong>Hash sharding:</strong> <code>shard = hash(account_id) % num_shards</code> — even distribution</li>
+                <li><strong>Geographic sharding:</strong> EU accounts → EU shards (data residency compliance)</li>
+              </ul>
+              <strong>Challenges:</strong> Cross-shard queries require scatter-gather, rebalancing when adding shards, hot spots with skewed distribution.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">50</div>
+            <div class="qmain"><div class="qtext">Explain OLTP vs OLAP. How would you design a data warehouse for financial reporting at JPMC?</div><div class="qtags"><span class="tag t-teal">Data Warehouse</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>OLTP:</strong> Many small reads/writes, normalized schema, row-oriented. Examples: PostgreSQL, MySQL.<br>
+              <strong>OLAP:</strong> Few large reads, denormalized (star/snowflake schema), columnar. Examples: BigQuery, Snowflake.<br><br>
+              <strong>Star Schema design:</strong>
+              <ul>
+                <li><strong>Fact table:</strong> <code>fact_transactions</code> — transaction_id, amount, date_key, account_key, product_key, geography_key</li>
+                <li><strong>Dimension tables:</strong> <code>dim_date</code>, <code>dim_account</code>, <code>dim_product</code>, <code>dim_geography</code></li>
+                <li><strong>SCD Type 2:</strong> For account attributes that change over time (preserve history)</li>
+              </ul>
+              <strong>ETL pipeline:</strong> OLTP → Kafka → Spark → Data Warehouse (daily batch + near-real-time streaming for critical metrics).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">51</div>
+            <div class="qmain"><div class="qtext">Top 5 customers by total transaction volume in each country for last quarter, excluding customers with any fraudulent transactions.</div><div class="qtags"><span class="tag t-teal">SQL</span><span class="tag t-blue">Complex Query</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">WITH</span> clean_customers <span class="kw">AS</span> (
+    <span class="kw">SELECT DISTINCT</span> customer_id <span class="kw">FROM</span> customers
+    <span class="kw">WHERE</span> customer_id <span class="kw">NOT IN</span> (
+        <span class="kw">SELECT DISTINCT</span> customer_id <span class="kw">FROM</span> transactions
+        <span class="kw">WHERE</span> is_fraudulent = true
+    )
+),
+quarterly_volume <span class="kw">AS</span> (
+    <span class="kw">SELECT</span> t.customer_id, c.country,
+           SUM(t.amount) <span class="kw">AS</span> total_volume,
+           RANK() <span class="kw">OVER</span> (
+               <span class="kw">PARTITION BY</span> c.country
+               <span class="kw">ORDER BY</span> SUM(t.amount) <span class="kw">DESC</span>
+           ) <span class="kw">AS</span> rnk
+    <span class="kw">FROM</span> transactions t
+    <span class="kw">JOIN</span> customers c <span class="kw">ON</span> t.customer_id = c.customer_id
+    <span class="kw">JOIN</span> clean_customers cc <span class="kw">ON</span> t.customer_id = cc.customer_id
+    <span class="kw">WHERE</span> t.transaction_date >= DATEADD(quarter, -1, GETDATE())
+    <span class="kw">GROUP BY</span> t.customer_id, c.country
+)
+<span class="kw">SELECT</span> customer_id, country, total_volume, rnk
+<span class="kw">FROM</span> quarterly_volume <span class="kw">WHERE</span> rnk <= 5
+<span class="kw">ORDER BY</span> country, rnk;</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">52</div>
+            <div class="qmain"><div class="qtext">How do you detect and fix slow queries in PostgreSQL? Walk through your debugging process.</div><div class="qtags"><span class="tag t-teal">Performance</span><span class="tag t-orange">Debugging</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Step 1 — Identify:</strong> Enable <code>pg_stat_statements</code>. Check <code>slow_query_log</code> for queries exceeding threshold.<br>
+              <strong>Step 2 — Analyze:</strong> <code>EXPLAIN ANALYZE SELECT ...</code> — shows actual execution plan, row estimates vs actuals, time per node.<br>
+              <strong>Step 3 — Common fixes:</strong>
+              <ul>
+                <li>Missing index: Add index on WHERE/JOIN columns</li>
+                <li>Bad row estimates: Run <code>ANALYZE table_name</code> to update statistics</li>
+                <li>N+1 queries: Use JOINs or batch fetching</li>
+                <li>Lock contention: Check <code>pg_locks</code> for blocking queries</li>
+                <li>Sequential scan on large table: Verify index exists and is being used</li>
+              </ul>
+              <strong>Step 4 — Verify:</strong> Re-run EXPLAIN ANALYZE after fix to confirm improvement.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 5: GenAI / ML ═══ -->
+    <div class="section" id="s5">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-purple">  </div>
+        <div class="sec-info"><div class="sec-cat">2025–26 Trend · Growing Focus</div><div class="sec-title">GenAI, Machine Learning & Data Science</div></div>
+        <div class="sec-meta"><span class="q-badge">10 Qs</span><span class="diff-tag diff-med">Medium–Hard</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">53</div>
+            <div class="qmain"><div class="qtext">How is JPMC using AI/GenAI? What is LLM Suite and how would you contribute to AI initiatives at JPMC?</div><div class="qtags"><span class="tag t-purple">GenAI</span><span class="tag t-gold">JPMC Specific</span><span class="tag t-red">Must Know</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>JPMC's AI initiatives:</strong>
+              <ul>
+                <li><strong>LLM Suite:</strong> Internal ChatGPT-like tool deployed to 60,000+ employees — document summarization, code generation, research</li>
+                <li><strong>IndexGPT:</strong> AI-powered investment theme identification</li>
+                <li><strong>DocLLM:</strong> Multimodal LLM for financial documents with complex layouts</li>
+                <li><strong>Fraud detection:</strong> ML models processing billions of transactions</li>
+                <li><strong>Code generation:</strong> GitHub Copilot-like tools for developer productivity</li>
+                <li><strong>$2B+ AI investment</strong> announced for 2024-2025</li>
+              </ul>
+              <strong>How I'd contribute:</strong> My RAG system experience at Citi directly maps to JPMC's document intelligence needs. I'd apply similar architecture to financial document processing — regulatory filings, research reports, client communications — using JPMC's internal LLM infrastructure.
+              <div class="warn"><strong>⚠️ Research tip:</strong> Before your interview, read JPMC's latest AI announcements. Mentioning specific initiatives by name shows genuine interest.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">54</div>
+            <div class="qmain"><div class="qtext">What is RAG (Retrieval-Augmented Generation)? How would you build one for JPMC's internal document search?</div><div class="qtags"><span class="tag t-purple">RAG</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>RAG Architecture:</strong>
+              <ul>
+                <li><strong>Ingestion:</strong> Financial documents → chunked → embedded (768-dim) → stored in vector DB (FAISS/Pinecone)</li>
+                <li><strong>Retrieval:</strong> User query → embedded → cosine similarity search → top-k relevant chunks</li>
+                <li><strong>Generation:</strong> Retrieved chunks + query → LLM → grounded answer with citations</li>
+              </ul>
+              <strong>JPMC-specific considerations:</strong>
+              <ul>
+                <li><strong>Data sovereignty:</strong> All documents stay within JPMC's infrastructure — no external API calls for sensitive data</li>
+                <li><strong>Auditability:</strong> Every answer cites exact source documents — regulators can verify</li>
+                <li><strong>Access control:</strong> Users only retrieve documents they're authorized to see</li>
+                <li><strong>Hallucination prevention:</strong> Strict grounding — model instructed to only use retrieved context</li>
+              </ul>
+              <strong>My experience:</strong> Built exactly this at Citi — 100+ regulatory documents, FAISS, Gemini 2.0 Flash, 85% time reduction.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">55</div>
+            <div class="qmain"><div class="qtext">Explain the bias-variance tradeoff. How do you detect and handle overfitting in a credit risk model?</div><div class="qtags"><span class="tag t-purple">ML Theory</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Bias:</strong> Error from wrong assumptions — model too simple (underfitting). Misses patterns.<br>
+              <strong>Variance:</strong> Error from sensitivity to training data — model too complex (overfitting). Memorizes noise.<br><br>
+              <strong>Detecting overfitting in credit risk models:</strong>
+              <ul>
+                <li>Large gap between training AUC and validation AUC</li>
+                <li>Model performs well on historical data but poorly on recent data (temporal drift)</li>
+              </ul>
+              <strong>Handling overfitting:</strong>
+              <ul>
+                <li>Regularization: L1 (Lasso — feature selection), L2 (Ridge — weight shrinkage)</li>
+                <li>Cross-validation: Time-series CV for financial data (no data leakage)</li>
+                <li>Ensemble methods: Random Forest, XGBoost — reduce variance through averaging</li>
+                <li>Feature selection: Remove irrelevant features using SHAP values</li>
+                <li>More data: Collect more training examples</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">56</div>
+            <div class="qmain"><div class="qtext">What is precision vs recall? Which matters more for fraud detection and why?</div><div class="qtags"><span class="tag t-purple">ML Metrics</span><span class="tag t-teal">Fraud</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Precision:</strong> Of all flagged as fraud, what % are actually fraud? (TP / (TP + FP))<br>
+              <strong>Recall:</strong> Of all actual fraud, what % did we catch? (TP / (TP + FN))<br><br>
+              <strong>For fraud detection — Recall matters more:</strong>
+              <ul>
+                <li>Missed fraud (false negative) = financial loss + customer harm + regulatory risk</li>
+                <li>False alarm (false positive) = customer inconvenience (blocked legitimate transaction)</li>
+                <li>Cost of missing fraud >> cost of false alarm</li>
+              </ul>
+              <strong>But precision still matters:</strong> Too many false positives → customers frustrated, call center overwhelmed, churn.<br>
+              <strong>Solution:</strong> Use F-beta score with β &gt; 1 (weights recall higher). Or optimize for specific precision threshold (e.g., maintain 95% precision while maximizing recall).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">57</div>
+            <div class="qmain"><div class="qtext">How do you handle class imbalance in a fraud detection dataset where only 0.1% of transactions are fraudulent?</div><div class="qtags"><span class="tag t-purple">ML</span><span class="tag t-teal">Imbalanced Data</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Techniques:</strong>
+              <ul>
+                <li><strong>SMOTE:</strong> Synthetic Minority Oversampling — generates synthetic fraud examples</li>
+                <li><strong>Undersampling:</strong> Random undersampling of majority class</li>
+                <li><strong>Class weights:</strong> <code>class_weight='balanced'</code> in sklearn — penalizes misclassifying minority class more</li>
+                <li><strong>Cost-sensitive learning:</strong> Higher misclassification cost for fraud</li>
+                <li><strong>Threshold adjustment:</strong> Lower classification threshold from 0.5 to 0.1</li>
+                <li><strong>Anomaly detection:</strong> Train only on legitimate transactions; flag deviations (Isolation Forest, Autoencoder)</li>
+                <li><strong>Ensemble:</strong> BalancedRandomForest, EasyEnsemble</li>
+              </ul>
+              <strong>Evaluation:</strong> Never use accuracy — use AUC-ROC, Precision-Recall curve, F1 score.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">58</div>
+            <div class="qmain"><div class="qtext">How do you prevent data leakage in a time-series financial model? What is the correct cross-validation approach?</div><div class="qtags"><span class="tag t-purple">ML</span><span class="tag t-red">Critical</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Data leakage:</strong> When future information leaks into training data, causing artificially high performance.<br><br>
+              <strong>Common leakage sources:</strong>
+              <ul>
+                <li>Normalizing using statistics from the entire dataset (including test period)</li>
+                <li>Target encoding using the full dataset</li>
+                <li>Features computed using future information</li>
+              </ul>
+              <strong>Correct time-series cross-validation:</strong>
+              <ul>
+                <li><strong>Walk-forward validation:</strong> Train on months 1-12, test on 13. Then 1-13, test on 14. Never use future data for training.</li>
+                <li><strong>Purging:</strong> Remove samples near train/test boundary</li>
+                <li><strong>Embargo:</strong> Gap between train and test sets</li>
+              </ul>
+              <strong>Rule:</strong> All preprocessing (scaling, encoding) must be fit on training data only, then applied to test data.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">59</div>
+            <div class="qmain"><div class="qtext">What is model explainability? Why is it critical in financial services? How do SHAP values work?</div><div class="qtags"><span class="tag t-purple">ML Explainability</span><span class="tag t-teal">Regulatory</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Why explainability is critical in finance:</strong>
+              <ul>
+                <li><strong>ECOA:</strong> Banks must provide specific reasons for credit denial</li>
+                <li><strong>Fair lending:</strong> Must demonstrate models don't discriminate based on protected characteristics</li>
+                <li><strong>SR 11-7:</strong> Requires understanding of model behavior</li>
+              </ul>
+              <strong>SHAP (SHapley Additive exPlanations):</strong> Based on game theory — assigns each feature a contribution value for a specific prediction. Shows how much each feature moved the prediction from the baseline (average) to the actual prediction.<br><br>
+              <strong>Example credit denial explanation:</strong> "Your score was reduced by: high utilization (-45 pts), recent delinquency (-30 pts), short credit history (-15 pts)."<br><br>
+              <strong>Other explainability tools:</strong> LIME (local approximation), Partial Dependence Plots (global), Integrated Gradients (neural networks).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">60</div>
+            <div class="qmain"><div class="qtext">What is model drift? How do you monitor and retrain ML models in production at a bank?</div><div class="qtags"><span class="tag t-purple">MLOps</span><span class="tag t-teal">Production</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Types of drift:</strong>
+              <ul>
+                <li><strong>Data drift (covariate shift):</strong> Input feature distribution changes. COVID caused spending patterns to shift — fraud models trained pre-COVID became less accurate.</li>
+                <li><strong>Concept drift:</strong> Relationship between features and target changes. Fraud patterns evolve as fraudsters adapt.</li>
+              </ul>
+              <strong>Monitoring:</strong>
+              <ul>
+                <li>PSI (Population Stability Index) for feature drift — alert when PSI &gt; 0.2</li>
+                <li>Track AUC, precision, recall on recent data with delayed labels</li>
+                <li>Shadow mode: Run new model alongside old, compare predictions</li>
+              </ul>
+              <strong>Retraining strategy:</strong> Scheduled (monthly/quarterly), triggered (when drift detected), or online learning (continuous updates).<br>
+              <strong>Governance:</strong> All retrained models go through validation and approval before deployment.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">61</div>
+            <div class="qmain"><div class="qtext">How would you use NLP to analyze customer complaints and identify systemic issues at a bank?</div><div class="qtags"><span class="tag t-purple">NLP</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Pipeline:</strong>
+              <ol>
+                <li><strong>Data collection:</strong> Customer service calls (transcribed), emails, chat logs, CFPB complaint database</li>
+                <li><strong>Preprocessing:</strong> Tokenization, stop word removal, PII redaction</li>
+                <li><strong>Topic modeling:</strong> BERTopic to identify complaint themes (fees, fraud, service quality)</li>
+                <li><strong>Sentiment analysis:</strong> Classify complaint severity</li>
+                <li><strong>Entity extraction:</strong> Identify products, channels, locations</li>
+                <li><strong>Clustering:</strong> Group similar complaints to identify systemic issues</li>
+                <li><strong>Trend analysis:</strong> Track complaint volume by topic — spike detection</li>
+                <li><strong>Alerting:</strong> Notify relevant teams when volume exceeds threshold</li>
+              </ol>
+              <strong>Business value:</strong> Identify product defects before they become regulatory issues. CFPB monitors complaint patterns — proactive resolution avoids enforcement actions.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">62</div>
+            <div class="qmain"><div class="qtext">How would you build a recommendation system for financial products (credit cards, loans, investments) for JPMC customers?</div><div class="qtags"><span class="tag t-purple">ML System</span><span class="tag t-gold">JPMC Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Approaches:</strong>
+              <ul>
+                <li><strong>Collaborative filtering:</strong> "Customers like you also took this product." Matrix factorization (SVD, ALS).</li>
+                <li><strong>Content-based filtering:</strong> Match customer profile to product features.</li>
+                <li><strong>Hybrid:</strong> Combine both — better cold start handling.</li>
+              </ul>
+              <strong>Financial-specific considerations:</strong>
+              <ul>
+                <li><strong>Eligibility filtering:</strong> Only recommend products the customer qualifies for</li>
+                <li><strong>Regulatory compliance:</strong> No discriminatory recommendations based on protected characteristics</li>
+                <li><strong>Suitability:</strong> Investment recommendations must match risk tolerance (MiFID II)</li>
+                <li><strong>Explainability:</strong> "We recommend this because..." — required for financial advice</li>
+              </ul>
+              <strong>Evaluation:</strong> A/B testing — measure conversion rate, customer lifetime value, not just click-through rate.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 6: FINANCE DOMAIN ═══ -->
+    <div class="section" id="s6">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-gold">  </div>
+        <div class="sec-info"><div class="sec-cat">Domain Knowledge · Differentiator</div><div class="sec-title">Finance Domain & JPMC-Specific Knowledge</div></div>
+        <div class="sec-meta"><span class="q-badge">12 Qs</span><span class="diff-tag diff-hard">High Priority</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">63</div>
+            <div class="qmain"><div class="qtext">What do you know about JP Morgan Chase? Why JPMC specifically over other banks or tech companies?</div><div class="qtags"><span class="tag t-gold">JPMC Research</span><span class="tag t-red">Must Know</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>Key JPMC facts:</strong>
+              <ul>
+                <li>Largest US bank by assets (~$3.9 trillion), largest investment bank globally</li>
+                <li>4 business lines: CCB, Commercial Banking, CIB, Asset &amp; Wealth Management</li>
+                <li>~300,000 employees, ~60,000 technologists</li>
+                <li>Spends ~$15 billion annually on technology</li>
+                <li>CEO: Jamie Dimon (since 2005)</li>
+                <li>Major AI: LLM Suite (60K+ employees), DocLLM, IndexGPT, $2B+ AI investment</li>
+              </ul>
+              <strong>Why JPMC:</strong> "JPMC's scale means problems I'd work on affect hundreds of millions of customers globally. The $15B technology budget means access to cutting-edge infrastructure. JPMC's AI-first strategy — LLM Suite, DocLLM — aligns perfectly with my GenAI expertise. Unlike pure tech companies, JPMC's problems have real-world financial impact and regulatory complexity that I find intellectually stimulating."
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">64</div>
+            <div class="qmain"><div class="qtext">What is Basel III/IV? How does it affect technology systems at a bank like JPMC?</div><div class="qtags"><span class="tag t-gold">Regulatory</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Basel III:</strong> International regulatory framework post-2008 crisis. Key requirements: capital ratios (CET1, Tier 1), LCR (Liquidity Coverage Ratio), leverage ratio.<br>
+              <strong>Basel IV (2025+):</strong> Revises risk-weighted asset calculations — more standardized approaches.<br><br>
+              <strong>Technology impact:</strong>
+              <ul>
+                <li>Risk calculation engines computing capital requirements daily/intraday</li>
+                <li>BCBS 239 data quality requirements — accurate, timely risk data aggregation</li>
+                <li>Stress testing systems (CCAR) — model thousands of economic scenarios</li>
+                <li>Automated regulatory reporting systems</li>
+              </ul>
+              This is why data engineering and model governance (like my work at Citi) is critical at banks.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">65</div>
+            <div class="qmain"><div class="qtext">What is KYC and AML? How does technology support these compliance processes?</div><div class="qtags"><span class="tag t-gold">Compliance</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>KYC (Know Your Customer):</strong> Verifying customer identity before onboarding. Required to prevent fraud and financial crime.<br>
+              <strong>AML (Anti-Money Laundering):</strong> Detecting and preventing money laundering — disguising illegal funds as legitimate income.<br><br>
+              <strong>Technology solutions:</strong>
+              <ul>
+                <li><strong>Identity verification:</strong> Document OCR + liveness detection + sanctions list checks</li>
+                <li><strong>Transaction monitoring:</strong> Rule-based + ML models to flag suspicious patterns (structuring, layering)</li>
+                <li><strong>Network analysis:</strong> Graph algorithms to detect money laundering networks</li>
+                <li><strong>SAR filing:</strong> Automated Suspicious Activity Report generation to FinCEN</li>
+                <li><strong>Sanctions screening:</strong> Real-time check against OFAC, UN, EU sanctions lists</li>
+              </ul>
+              <strong>ML application:</strong> Graph neural networks for detecting complex laundering networks that rule-based systems miss.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">66</div>
+            <div class="qmain"><div class="qtext">What is PCI-DSS compliance? How does it affect how you design and code payment systems?</div><div class="qtags"><span class="tag t-gold">Security</span><span class="tag t-teal">Compliance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>PCI-DSS:</strong> Security standard for organizations handling credit card data. 12 requirements covering network security, data protection, access control, monitoring.<br><br>
+              <strong>Impact on development:</strong>
+              <ul>
+                <li><strong>Data minimization:</strong> Never store full card numbers — store only last 4 digits + tokenized reference</li>
+                <li><strong>Encryption:</strong> All cardholder data encrypted at rest (AES-256) and in transit (TLS 1.2+)</li>
+                <li><strong>Tokenization:</strong> Replace card numbers with tokens — useless if DB is breached</li>
+                <li><strong>Access control:</strong> Least privilege — developers shouldn't access production cardholder data</li>
+                <li><strong>Audit logging:</strong> All access to cardholder data logged and monitored</li>
+                <li><strong>Code review:</strong> Security review for all payment-related code</li>
+              </ul>
+              <strong>In practice:</strong> Never log card numbers, never store CVV, use payment processors (Stripe, Braintree) to handle raw card data when possible.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">67</div>
+            <div class="qmain"><div class="qtext">What is algorithmic trading? How do latency requirements differ from typical web applications?</div><div class="qtags"><span class="tag t-gold">Finance</span><span class="tag t-blue">Performance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Algorithmic trading:</strong> Using computer programs to execute trades based on predefined rules or ML models.<br><br>
+              <strong>Types:</strong> HFT (microsecond latency), Statistical arbitrage, Market making, Execution algorithms (TWAP, VWAP).<br><br>
+              <strong>Latency requirements vs web apps:</strong>
+              <ul>
+                <li>Web app: 100ms–1s acceptable</li>
+                <li>Trading system: 1–100 microseconds for HFT</li>
+                <li>Techniques: Kernel bypass (DPDK), FPGA, co-location, binary protocols (FIX), lock-free data structures, CPU pinning</li>
+              </ul>
+              <strong>Python's role:</strong> Strategy development, backtesting, risk management — NOT the latency-critical execution layer (C++/Java for that).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">68</div>
+            <div class="qmain"><div class="qtext">What is Value at Risk (VaR)? How would you implement a VaR calculation system in Python?</div><div class="qtags"><span class="tag t-gold">Risk Management</span><span class="tag t-purple">Quantitative</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>VaR:</strong> Maximum loss expected over a given time period at a given confidence level. E.g., "1-day 99% VaR of $1M means 1% chance of losing more than $1M in a day."<br><br>
+              <strong>Three methods:</strong> Historical simulation (no distributional assumptions), Parametric (assumes normal distribution, fast), Monte Carlo (most flexible, expensive).<br><br>
+              <pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> norm
+
+<span class="kw">def</span> <span class="fn">historical_var</span>(returns, confidence=0.99):
+    <span class="kw">return</span> np.percentile(returns, (1 - confidence) * 100)
+
+<span class="kw">def</span> <span class="fn">parametric_var</span>(portfolio_value, volatility, confidence=0.99, days=1):
+    z_score = norm.ppf(1 - confidence)
+    <span class="kw">return</span> portfolio_value * volatility * z_score * np.sqrt(days)</pre>
+              <strong>Limitation:</strong> VaR doesn't tell you how bad losses can be beyond the threshold. Use CVaR (Expected Shortfall) for tail risk.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">69</div>
+            <div class="qmain"><div class="qtext">What is the difference between front office, middle office, and back office in a bank?</div><div class="qtags"><span class="tag t-gold">Finance Structure</span><span class="tag t-blue">Domain</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Front Office:</strong> Revenue-generating — traders, investment bankers, sales, relationship managers. Direct client interaction.<br>
+              <em>Technology:</em> Trading platforms, OMS, pricing engines, market data feeds, CRM.<br><br>
+              <strong>Middle Office:</strong> Risk management, compliance, trade validation. Ensures front office operates within risk limits.<br>
+              <em>Technology:</em> Risk management systems, P&amp;L attribution, limit monitoring, regulatory reporting, model validation platforms.<br><br>
+              <strong>Back Office:</strong> Settlement, clearing, reconciliation, accounting.<br>
+              <em>Technology:</em> Settlement systems, reconciliation platforms, accounting systems, custody systems.<br><br>
+              <strong>My experience spans all three:</strong> Governance platform (middle office), ETL pipelines (back office data), MDD platform (middle office model risk).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">70</div>
+            <div class="qmain"><div class="qtext">What is GDPR and how does it affect how you store and process customer data at a global bank?</div><div class="qtags"><span class="tag t-gold">Compliance</span><span class="tag t-red">Privacy</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>GDPR:</strong> EU regulation governing personal data processing. Applies to any organization processing EU residents' data.<br><br>
+              <strong>Key principles affecting development:</strong>
+              <ul>
+                <li><strong>Data minimization:</strong> Collect only what's necessary</li>
+                <li><strong>Right to erasure:</strong> System must support deleting all personal data — complex in event-sourced systems</li>
+                <li><strong>Data portability:</strong> Customers can request data in machine-readable format</li>
+                <li><strong>Data residency:</strong> EU customer data must stay in EU — affects cloud architecture</li>
+                <li><strong>Breach notification:</strong> Notify regulators within 72 hours of a data breach</li>
+              </ul>
+              <strong>Technical implementation:</strong> PII encryption and pseudonymization, data catalog with PII classification, automated retention/deletion policies, consent management platform.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">71</div>
+            <div class="qmain"><div class="qtext">What is the SWIFT network? How does international money transfer work technically?</div><div class="qtags"><span class="tag t-gold">Finance</span><span class="tag t-teal">Payments</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>SWIFT:</strong> Secure messaging network used by 11,000+ financial institutions in 200+ countries to exchange financial messages (payment instructions, confirmations).<br><br>
+              <strong>International transfer flow:</strong>
+              <ol>
+                <li>Customer initiates transfer at Bank A (US)</li>
+                <li>Bank A sends SWIFT MT103 message to correspondent bank</li>
+                <li>Correspondent bank routes through intermediary banks if needed</li>
+                <li>Destination bank (Bank B, EU) receives funds and credits customer account</li>
+                <li>Settlement via central bank systems (Fedwire in US, TARGET2 in EU)</li>
+              </ol>
+              <strong>Modern alternatives:</strong> SWIFT GPI (same-day settlement, tracking), RippleNet (blockchain-based), SEPA (EU standardized).<br>
+              <strong>Technology:</strong> SWIFT messages are structured (ISO 20022), processed by middleware, with compliance checks (sanctions screening) at each hop.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">72</div>
+            <div class="qmain"><div class="qtext">How would you approach migrating a legacy COBOL banking system to a modern Python/microservices architecture?</div><div class="qtags"><span class="tag t-gold">Migration</span><span class="tag t-blue">Architecture</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>COBOL still processes $3 trillion in daily commerce — this is a real JPMC challenge.</strong><br><br>
+              <strong>Strategy: Strangler Fig Pattern (incremental migration)</strong>
+              <ol>
+                <li>Understand legacy system: document all business logic, data flows, interfaces</li>
+                <li>Write characterization tests capturing current behavior</li>
+                <li>Put modern API facade in front of COBOL</li>
+                <li>Migrate incrementally — start with least critical, most isolated functions</li>
+                <li>Run old and new in parallel, compare outputs for every transaction</li>
+                <li>Gradually shift traffic: 1% → 10% → 50% → 100%</li>
+                <li>Decommission only after 100% traffic on new system with zero incidents</li>
+              </ol>
+              <strong>GenAI opportunity:</strong> LLMs can help understand and document COBOL code — JPMC is actively exploring this. My RAG experience is directly applicable here.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">73</div>
+            <div class="qmain"><div class="qtext">What is the difference between a bond, equity, and derivative? How would you model these in a database?</div><div class="qtags"><span class="tag t-gold">Finance Fundamentals</span><span class="tag t-teal">Data Modeling</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Equity (Stock):</strong> Ownership stake. Returns: dividends + capital appreciation.<br>
+              <strong>Bond (Fixed Income):</strong> Loan to issuer. Returns: fixed coupon + principal at maturity.<br>
+              <strong>Derivative:</strong> Contract whose value derives from an underlying asset. Types: options, futures, swaps.<br><br>
+              <strong>Database modeling (polymorphic):</strong>
+              <pre><span class="cm">-- Base instrument table</span>
+instruments (id, isin, name, asset_class, currency, issuer_id)
+
+<span class="cm">-- Asset-class specific tables</span>
+equities (instrument_id, exchange, shares_outstanding, sector)
+bonds (instrument_id, coupon_rate, maturity_date, face_value, credit_rating)
+options (instrument_id, underlying_id, strike_price, expiry, option_type)</pre>
+              <strong>Alternative:</strong> Single table with nullable columns (simpler) or JSON column for asset-specific attributes (flexible but harder to query).
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">74</div>
+            <div class="qmain"><div class="qtext">What is JPMC's technology organization? What is the difference between working in a bank's tech team vs a pure tech company?</div><div class="qtags"><span class="tag t-gold">JPMC Culture</span><span class="tag t-blue">Career</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>JPMC tech organization:</strong> ~60,000 technologists globally, organized by business line (CCB Tech, CIB Tech) and shared services. Strong focus on proprietary technology, risk management, compliance, and security.<br><br>
+              <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0;">
+                <tr style="background:var(--jpmc-blue-light);">
+                  <th style="padding:8px;border:1px solid var(--gray-200);">Aspect</th>
+                  <th style="padding:8px;border:1px solid var(--gray-200);">Bank Tech (JPMC)</th>
+                  <th style="padding:8px;border:1px solid var(--gray-200);">Pure Tech</th>
+                </tr>
+                <tr><td style="padding:8px;border:1px solid var(--gray-200);">Stability</td><td style="padding:8px;border:1px solid var(--gray-200);">High — regulated, essential</td><td style="padding:8px;border:1px solid var(--gray-200);">Variable</td></tr>
+                <tr style="background:var(--gray-50);"><td style="padding:8px;border:1px solid var(--gray-200);">Domain complexity</td><td style="padding:8px;border:1px solid var(--gray-200);">High — finance + tech</td><td style="padding:8px;border:1px solid var(--gray-200);">Tech-focused</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--gray-200);">Regulatory constraints</td><td style="padding:8px;border:1px solid var(--gray-200);">Significant</td><td style="padding:8px;border:1px solid var(--gray-200);">Minimal</td></tr>
+                <tr style="background:var(--gray-50);"><td style="padding:8px;border:1px solid var(--gray-200);">Impact</td><td style="padding:8px;border:1px solid var(--gray-200);">Global financial system</td><td style="padding:8px;border:1px solid var(--gray-200);">Product users</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 7: OOP & DESIGN PATTERNS ═══ -->
+    <div class="section" id="s7">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-green">☁️</div>
+        <div class="sec-info"><div class="sec-cat">Technical Round</div><div class="sec-title">OOP, Design Patterns & Software Engineering</div></div>
+        <div class="sec-meta"><span class="q-badge">10 Qs</span><span class="diff-tag diff-med">Medium</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">75</div>
+            <div class="qmain"><div class="qtext">Implement the Observer pattern. How would you use it in a real-time trading alert system?</div><div class="qtags"><span class="tag t-green">Design Patterns</span><span class="tag t-gold">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">from</span> abc <span class="kw">import</span> ABC, abstractmethod
+
+<span class="kw">class</span> <span class="fn">Observer</span>(ABC):
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">update</span>(self, event): ...
+
+<span class="kw">class</span> <span class="fn">PriceSubject</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self): self._observers = []
+
+    <span class="kw">def</span> <span class="fn">subscribe</span>(self, obs): self._observers.append(obs)
+    <span class="kw">def</span> <span class="fn">unsubscribe</span>(self, obs): self._observers.remove(obs)
+
+    <span class="kw">def</span> <span class="fn">set_price</span>(self, ticker, price):
+        <span class="kw">for</span> obs <span class="kw">in</span> self._observers:
+            obs.update({<span class="st">'ticker'</span>: ticker, <span class="st">'price'</span>: price})
+
+<span class="kw">class</span> <span class="fn">AlertSystem</span>(Observer):
+    <span class="kw">def</span> <span class="fn">update</span>(self, event):
+        <span class="kw">if</span> event[<span class="st">'price'</span>] > 1000:
+            print(f<span class="st">"ALERT: {event['ticker']} hit ${event['price']}"</span>)</pre>
+              <strong>Real-world use:</strong> Market data feed (Subject) notifies multiple systems (Observers): risk engine, P&amp;L calculator, alert system, trading strategy — all independently without tight coupling.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">76</div>
+            <div class="qmain"><div class="qtext">Implement the Strategy pattern for a payment processing system supporting multiple payment methods.</div><div class="qtags"><span class="tag t-green">Design Patterns</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">from</span> abc <span class="kw">import</span> ABC, abstractmethod
+
+<span class="kw">class</span> <span class="fn">PaymentStrategy</span>(ABC):
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">process</span>(self, amount): ...
+
+<span class="kw">class</span> <span class="fn">CreditCardPayment</span>(PaymentStrategy):
+    <span class="kw">def</span> <span class="fn">process</span>(self, amount): <span class="kw">return</span> f<span class="st">"Charged ${amount} to credit card"</span>
+
+<span class="kw">class</span> <span class="fn">ACHPayment</span>(PaymentStrategy):
+    <span class="kw">def</span> <span class="fn">process</span>(self, amount): <span class="kw">return</span> f<span class="st">"ACH transfer of ${amount}"</span>
+
+<span class="kw">class</span> <span class="fn">WireTransfer</span>(PaymentStrategy):
+    <span class="kw">def</span> <span class="fn">process</span>(self, amount): <span class="kw">return</span> f<span class="st">"Wire transfer of ${amount}"</span>
+
+<span class="kw">class</span> <span class="fn">PaymentProcessor</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, strategy: PaymentStrategy):
+        self.strategy = strategy
+    <span class="kw">def</span> <span class="fn">execute</span>(self, amount): <span class="kw">return</span> self.strategy.process(amount)
+
+<span class="cm"># Switch strategy at runtime</span>
+processor = PaymentProcessor(CreditCardPayment())
+processor.strategy = WireTransfer()</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">77</div>
+            <div class="qmain"><div class="qtext">What is the Factory pattern? Implement a financial instrument factory.</div><div class="qtags"><span class="tag t-green">Design Patterns</span><span class="tag t-gold">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">class</span> <span class="fn">InstrumentFactory</span>:
+    _registry = {}
+
+    @classmethod
+    <span class="kw">def</span> <span class="fn">register</span>(cls, instrument_type):
+        <span class="kw">def</span> <span class="fn">decorator</span>(klass):
+            cls._registry[instrument_type] = klass
+            <span class="kw">return</span> klass
+        <span class="kw">return</span> decorator
+
+    @classmethod
+    <span class="kw">def</span> <span class="fn">create</span>(cls, instrument_type, **kwargs):
+        <span class="kw">if</span> instrument_type <span class="kw">not in</span> cls._registry:
+            <span class="kw">raise</span> ValueError(f<span class="st">"Unknown: {instrument_type}"</span>)
+        <span class="kw">return</span> cls._registry[instrument_type](**kwargs)
+
+@InstrumentFactory.register(<span class="st">'equity'</span>)
+<span class="kw">class</span> <span class="fn">Equity</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, ticker, exchange): ...
+
+@InstrumentFactory.register(<span class="st">'bond'</span>)
+<span class="kw">class</span> <span class="fn">Bond</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, isin, coupon, maturity): ...
+
+equity = InstrumentFactory.create(<span class="st">'equity'</span>, ticker=<span class="st">'AAPL'</span>, exchange=<span class="st">'NASDAQ'</span>)</pre>
+              <strong>Advantage:</strong> Adding new instrument types requires only registering a new class — Open/Closed Principle.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">78</div>
+            <div class="qmain"><div class="qtext">What is the difference between composition and inheritance? When should you prefer each?</div><div class="qtags"><span class="tag t-green">OOP</span><span class="tag t-blue">Design</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Inheritance:</strong> "is-a" relationship. Subclass inherits behavior from parent. Creates tight coupling.<br>
+              <strong>Composition:</strong> "has-a" relationship. Class contains instances of other classes. Loose coupling — components can be swapped independently.<br><br>
+              <strong>Prefer composition when:</strong> Behavior needs to vary at runtime, multiple inheritance would be needed, the "is-a" relationship isn't truly accurate.<br><br>
+              <pre><span class="cm"># Inheritance (fragile — class explosion)</span>
+<span class="kw">class</span> <span class="fn">PremiumSavingsAccount</span>(SavingsAccount): ...
+
+<span class="cm"># Composition (flexible)</span>
+<span class="kw">class</span> <span class="fn">Account</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, interest_calc, overdraft_policy):
+        self.interest = interest_calc
+        self.overdraft = overdraft_policy</pre>
+              <strong>Rule:</strong> "Favor composition over inheritance" (Gang of Four). Use inheritance only for true "is-a" relationships.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">79</div>
+            <div class="qmain"><div class="qtext">Implement the Command pattern for an undo/redo system for financial transactions.</div><div class="qtags"><span class="tag t-green">Design Patterns</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <pre><span class="kw">from</span> abc <span class="kw">import</span> ABC, abstractmethod
+
+<span class="kw">class</span> <span class="fn">Command</span>(ABC):
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">execute</span>(self): ...
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">undo</span>(self): ...
+
+<span class="kw">class</span> <span class="fn">TransferCommand</span>(Command):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, from_acc, to_acc, amount):
+        self.from_acc = from_acc; self.to_acc = to_acc; self.amount = amount
+
+    <span class="kw">def</span> <span class="fn">execute</span>(self):
+        self.from_acc.debit(self.amount); self.to_acc.credit(self.amount)
+
+    <span class="kw">def</span> <span class="fn">undo</span>(self):
+        self.to_acc.debit(self.amount); self.from_acc.credit(self.amount)
+
+<span class="kw">class</span> <span class="fn">TransactionHistory</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self): self.history = []
+    <span class="kw">def</span> <span class="fn">execute</span>(self, cmd): cmd.execute(); self.history.append(cmd)
+    <span class="kw">def</span> <span class="fn">undo_last</span>(self):
+        <span class="kw">if</span> self.history: self.history.pop().undo()</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">80</div>
+            <div class="qmain"><div class="qtext">What is SOLID? Give a concrete example of violating and fixing the Single Responsibility Principle in a banking context.</div><div class="qtags"><span class="tag t-green">SOLID</span><span class="tag t-blue">OOP</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>SRP Violation:</strong>
+              <pre><span class="kw">class</span> <span class="fn">Account</span>:  <span class="cm"># Does too much!</span>
+    <span class="kw">def</span> <span class="fn">deposit</span>(self, amount): ...
+    <span class="kw">def</span> <span class="fn">calculate_interest</span>(self): ...
+    <span class="kw">def</span> <span class="fn">generate_statement</span>(self): ...
+    <span class="kw">def</span> <span class="fn">send_email</span>(self): ...
+    <span class="kw">def</span> <span class="fn">save_to_db</span>(self): ...</pre>
+              <strong>SRP Fix — each class has one reason to change:</strong>
+              <pre><span class="kw">class</span> <span class="fn">Account</span>:           <span class="cm"># Core domain logic only</span>
+    <span class="kw">def</span> <span class="fn">deposit</span>(self, amount): ...
+
+<span class="kw">class</span> <span class="fn">InterestCalculator</span>:  <span class="cm"># Interest logic</span>
+    <span class="kw">def</span> <span class="fn">calculate</span>(self, account): ...
+
+<span class="kw">class</span> <span class="fn">StatementGenerator</span>:  <span class="cm"># Reporting</span>
+    <span class="kw">def</span> <span class="fn">generate</span>(self, account): ...
+
+<span class="kw">class</span> <span class="fn">AccountRepository</span>:  <span class="cm"># Persistence</span>
+    <span class="kw">def</span> <span class="fn">save</span>(self, account): ...</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">81</div>
+            <div class="qmain"><div class="qtext">What is clean code? What are code smells? Give examples from financial software.</div><div class="qtags"><span class="tag t-green">Code Quality</span><span class="tag t-blue">Best Practices</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Clean code:</strong> Readable, maintainable, testable, minimal duplication, clear naming, small functions with single purpose.<br><br>
+              <strong>Common code smells in financial software:</strong>
+              <ul>
+                <li><strong>Magic numbers:</strong> <code>if amount > 10000</code> → <code>SUSPICIOUS_AMOUNT_THRESHOLD = 10000</code></li>
+                <li><strong>Long methods:</strong> 500-line <code>process_trade()</code> — split into validate, enrich, execute, settle</li>
+                <li><strong>Primitive obsession:</strong> Using <code>float</code> for money → use <code>Decimal</code> or a <code>Money</code> value object</li>
+                <li><strong>God class:</strong> <code>TradeManager</code> that does everything — split by responsibility</li>
+                <li><strong>Shotgun surgery:</strong> Adding a new currency requires changes in 20 files — missing abstraction</li>
+              </ul>
+              <strong>Financial-specific:</strong> Never use <code>float</code> for monetary calculations. Always use <code>Decimal</code> with explicit precision.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">82</div>
+            <div class="qmain"><div class="qtext">What is the difference between synchronous and asynchronous programming? When would you use message queues vs direct API calls?</div><div class="qtags"><span class="tag t-green">Architecture</span><span class="tag t-blue">Async</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>Synchronous:</strong> Caller waits for response. Simple, easy to reason about. Risk: caller blocked if downstream is slow/down.<br>
+              <strong>Asynchronous:</strong> Caller sends request and continues. More complex but resilient.<br><br>
+              <strong>Direct API calls (sync) when:</strong> Response needed immediately (user is waiting), simple request-response, low latency required. Example: Check account balance, validate card.<br><br>
+              <strong>Message queues (async) when:</strong> Processing can be deferred, need to decouple producer from consumer, handle traffic spikes, need guaranteed delivery and retry. Example: Send confirmation email, generate monthly statement, fraud analysis.<br><br>
+              <strong>JPMC context:</strong> Payment initiation is sync (customer waits). Downstream processing (settlement, notifications, reporting) is async via Kafka.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">83</div>
+            <div class="qmain"><div class="qtext">What is test-driven development (TDD)? How do you apply it in a financial application where correctness is critical?</div><div class="qtags"><span class="tag t-green">Testing</span><span class="tag t-teal">Finance</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>TDD cycle:</strong> Red (write failing test) → Green (write minimal code to pass) → Refactor (improve without breaking tests).<br><br>
+              <strong>Benefits for financial software:</strong>
+              <ul>
+                <li>Tests document expected behavior — critical when regulatory requirements change</li>
+                <li>Regression safety — refactoring doesn't break existing calculations</li>
+                <li>Forces thinking about edge cases upfront (negative amounts, zero balance, currency conversion)</li>
+              </ul>
+              <pre><span class="kw">def</span> <span class="fn">test_transfer_insufficient_funds</span>():
+    acc = Account(balance=Decimal(<span class="st">'100.00'</span>))
+    <span class="kw">with</span> pytest.raises(InsufficientFundsError):
+        acc.debit(Decimal(<span class="st">'150.00'</span>))
+
+<span class="kw">def</span> <span class="fn">test_transfer_exact_balance</span>():
+    acc = Account(balance=Decimal(<span class="st">'100.00'</span>))
+    acc.debit(Decimal(<span class="st">'100.00'</span>))
+    assert acc.balance == Decimal(<span class="st">'0.00'</span>)</pre>
+              <strong>Property-based testing:</strong> Use Hypothesis to generate random financial scenarios — finds edge cases you didn't think of.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">84</div>
+            <div class="qmain"><div class="qtext">How do you approach code reviews? What do you look for as a reviewer and how do you respond to feedback?</div><div class="qtags"><span class="tag t-green">Process</span><span class="tag t-blue">Collaboration</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>As a reviewer, I look for:</strong>
+              <ul>
+                <li><strong>Correctness:</strong> Does it do what it's supposed to? Edge cases handled?</li>
+                <li><strong>Security:</strong> Input validation, SQL injection, secrets management</li>
+                <li><strong>Performance:</strong> N+1 queries, unnecessary loops, memory issues</li>
+                <li><strong>Financial correctness:</strong> Decimal vs float, rounding modes, currency handling</li>
+                <li><strong>Tests:</strong> Are edge cases covered? Are tests meaningful?</li>
+              </ul>
+              <strong>How I give feedback:</strong> Distinguish blocking issues from suggestions ("Must fix" vs "Consider"). Explain the why. Acknowledge good code. Ask questions rather than make demands.<br><br>
+              <strong>Receiving feedback:</strong> I treat code review feedback as a gift. Never take it personally. If I disagree, I explain my reasoning — the best argument wins, not seniority.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 8: BEHAVIORAL ═══ -->
+    <div class="section" id="s8">
+      <div class="sec-header" onclick="toggleSec(this)">
+        <div class="sec-icon ic-orange">  </div>
+        <div class="sec-info"><div class="sec-cat">Final Round · Culture Fit</div><div class="sec-title">Behavioral, HR & Leadership Questions</div></div>
+        <div class="sec-meta"><span class="q-badge">16 Qs</span><span class="diff-tag diff-hard">High Priority</span><span class="chevron">▼</span></div>
+      </div>
+      <div class="sec-body">
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">85</div>
+            <div class="qmain"><div class="qtext">Tell me about yourself. Why are you interested in JPMC? (Opening — must be perfect)</div><div class="qtags"><span class="tag t-orange">Opening</span><span class="tag t-red">Must Prepare</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework (90 seconds)</div>
+            <div class="ans">
+              "I'm a Full Stack Python Developer with 4 years of experience at the intersection of AI and financial services. Currently at Citi, I've built a GenAI platform that reduced regulatory documentation time by 85% — processing 100+ regulatory documents through a RAG system I architected from scratch. Before that, I led data engineering at MSCI, migrating 37TB of financial data to BigQuery with 99.9% accuracy.<br><br>
+              I'm drawn to JPMC because of the scale and ambition of your technology vision. JPMC processes trillions of dollars daily — the engineering challenges at that scale are unlike anything else in the industry. Your AI investments — LLM Suite, DocLLM — show a genuine commitment to AI-first transformation. My RAG and GenAI experience maps directly to these initiatives.<br><br>
+              I want to work on problems that matter at global scale, with the resources and talent to solve them properly. JPMC is the only place where I can do that in financial services."
+              <div class="tip"><strong>   Tip:</strong> Mention specific JPMC AI initiatives by name — it shows you've done your research and are genuinely interested.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">86</div>
+            <div class="qmain"><div class="qtext">Tell me about the most impactful project you've delivered. What was your role and the measurable outcome?</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-red">Must Prepare</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> Model risk analysts at Citi were spending 40+ hours per Model Development Document — a critical regulatory requirement. With dozens of CCAR models requiring annual documentation, this was a significant bottleneck.<br><br>
+              <strong>Task:</strong> Lead end-to-end development of an AI solution to automate this process.<br><br>
+              <strong>Action:</strong> Architected a RAG system using FAISS + Gemini 2.0 Flash, processing 100+ regulatory documents. Built microservices architecture with Streamlit UI. Implemented enterprise authentication, singleton patterns for performance, and a human review gate for compliance.<br><br>
+              <strong>Result:</strong> Reduced MDD time from 40+ hours to &lt;6 hours — 85% reduction and 700%+ efficiency gain. Achieved 99.9% system availability. Enabled the team to process significantly more models within regulatory deadlines.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">87</div>
+            <div class="qmain"><div class="qtext">Describe a time you faced a significant technical challenge. How did you approach it and what did you learn?</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Problem Solving</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> During the 37TB Oracle→BigQuery migration at MSCI, discovered mid-migration that Oracle's NUMBER type stored values with precision that BigQuery's FLOAT64 couldn't represent exactly — causing subtle rounding errors in financial calculations.<br><br>
+              <strong>Task:</strong> Fix the precision issue without restarting the entire migration or compromising the 99.9% accuracy target.<br><br>
+              <strong>Action:</strong> Paused affected data streams. Researched BigQuery's NUMERIC type (38 digits, 9 decimal places). Built a type mapping layer detecting high-precision columns and mapping them to NUMERIC. Implemented checksum validation. Backfilled already-migrated data for affected columns.<br><br>
+              <strong>Result:</strong> Achieved 99.9% data accuracy. Learned to always validate data type compatibility before large-scale migrations — now a standard step in my migration checklist.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">88</div>
+            <div class="qmain"><div class="qtext">Tell me about a time you disagreed with your manager or team. How did you handle it?</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Conflict</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> My manager wanted a template-based approach for MDD generation. I believed a RAG + LLM approach would be significantly more effective but required more upfront investment.<br><br>
+              <strong>Task:</strong> Advocate for my technical position while respecting the decision-making hierarchy.<br><br>
+              <strong>Action:</strong> Prepared a structured comparison. Built a 3-day proof-of-concept demonstrating the quality difference with real regulatory documents. Quantified the business case: if RAG saves 30 more hours per MDD vs templates, the ROI justified the extra 2 weeks of development. Presented to manager and business users together — let them see the quality difference directly.<br><br>
+              <strong>Result:</strong> Manager approved the RAG approach after seeing the demo. Final system achieved 85% time reduction. Lesson: data and demos are more persuasive than arguments.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">89</div>
+            <div class="qmain"><div class="qtext">Describe a situation where you had to work under extreme pressure with a tight deadline.</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Pressure</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> At MSCI, a critical production ETL pipeline failed 3 days before a major regulatory reporting deadline. The pipeline processed data for 50+ client reports.<br><br>
+              <strong>Task:</strong> Fix the pipeline and ensure all client reports were delivered on time.<br><br>
+              <strong>Action:</strong> Immediately assessed impact — identified which reports were affected and their deadlines. Communicated transparently with stakeholders. Divided the problem: I focused on root cause analysis while a colleague manually processed the most critical reports as backup. Root cause: schema change in source system. Fixed within 4 hours. Ran pipeline in accelerated mode to catch up on backlog.<br><br>
+              <strong>Result:</strong> All reports delivered on time. Zero client impact. Added schema change detection to prevent recurrence. Lesson: always have a manual fallback plan for critical processes.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">90</div>
+            <div class="qmain"><div class="qtext">Tell me about a time you failed. What did you learn and how did you recover?</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Growth Mindset</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> Early in my career at MSCI, I deployed a data transformation change to production without adequate testing. The change caused incorrect financial calculations in client reports for 2 hours before detection.<br><br>
+              <strong>Task:</strong> Fix the issue, communicate with stakeholders, and prevent recurrence.<br><br>
+              <strong>Action:</strong> Immediately rolled back the change. Identified all affected reports and clients. Communicated transparently with my manager — no hiding. Worked overtime to regenerate all affected reports. Conducted a thorough post-mortem: root cause was insufficient test coverage for edge cases.<br><br>
+              <strong>Result:</strong> All clients received corrected reports within 4 hours. Implemented mandatory staging environment validation and expanded test coverage to 95%. This failure made me a much more rigorous engineer.
+              <div class="tip"><strong>   Tip:</strong> JPMC values honesty and accountability. A genuine failure story with clear learnings is more impressive than claiming you've never failed.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">91</div>
+            <div class="qmain"><div class="qtext">Describe a time you proactively identified an opportunity to improve a process or system.</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Initiative</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> At MSCI, I noticed BigQuery queries were running slowly and costs were increasing month-over-month, but no one had been assigned to investigate.<br><br>
+              <strong>Task:</strong> Self-initiated — no one asked me to do this.<br><br>
+              <strong>Action:</strong> Analyzed BigQuery query logs to identify the most expensive queries. Found most were doing full table scans on a 37TB table. Proposed and implemented: date partitioning, clustering on frequently filtered columns, materialized views for common aggregations, query optimization for top 10 most expensive queries.<br><br>
+              <strong>Result:</strong> 85% reduction in query execution time, 27% reduction in processing costs. This initiative was recognized with the Rockstar Rookie Award. Lesson: always look beyond your assigned tasks for opportunities to add value.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">92</div>
+            <div class="qmain"><div class="qtext">Tell me about a time you mentored a junior developer. What was your approach?</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Leadership</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Situation:</strong> A junior developer on my team at MSCI was struggling with PySpark — making inefficient queries causing pipeline slowdowns.<br><br>
+              <strong>Task:</strong> Help them improve without undermining their confidence or creating dependency.<br><br>
+              <strong>Action:</strong> Pair programming sessions — worked through their code together, asking questions rather than giving answers. Shared a curated learning path. Code reviews with detailed explanations — not just "this is wrong" but "here's why and here's the pattern." Gave them ownership of a specific pipeline optimization.<br><br>
+              <strong>Result:</strong> Within 2 months, they were independently optimizing queries and caught a performance issue I had missed. They became the team's go-to person for Spark questions. Lesson: the best mentoring builds independence, not dependency.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">93</div>
+            <div class="qmain"><div class="qtext">How do you stay current with rapidly evolving technologies like GenAI? What have you learned recently?</div><div class="qtags"><span class="tag t-orange">Learning</span><span class="tag t-purple">GenAI</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>How I stay current:</strong>
+              <ul>
+                <li>arXiv for AI research papers — follow key researchers</li>
+                <li>Hacker News for engineering discussions</li>
+                <li>LeetCode for algorithmic skills (active profile)</li>
+                <li>GitHub — contribute to and study open-source projects</li>
+                <li>Personal projects: SahakarBot, Personal Finance Tracker — learn by building</li>
+                <li>JPMC's own research publications and blog posts</li>
+              </ul>
+              <strong>Recent exciting developments:</strong>
+              <ul>
+                <li><strong>Agentic AI:</strong> LangGraph and multi-agent systems — autonomous agents that plan and execute complex tasks. Directly applicable to automating financial workflows.</li>
+                <li><strong>Gemini 2.0 Flash multimodal:</strong> Processing financial charts and tables in documents, not just text.</li>
+                <li><strong>Reasoning models (o1/o3):</strong> Chain-of-thought for complex financial calculations and regulatory interpretation.</li>
+                <li><strong>MCP (Model Context Protocol):</strong> Standardizing how AI agents interact with tools — could transform financial system data exposure to AI.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">94</div>
+            <div class="qmain"><div class="qtext">What are JPMC's core values and how do they align with your personal values?</div><div class="qtags"><span class="tag t-orange">Culture Fit</span><span class="tag t-gold">JPMC</span><span class="tag t-red">Must Know</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              <strong>JPMC's core values:</strong> Exceptional client service, Operational excellence, Integrity, Fair and inclusive workplace.<br><br>
+              <strong>How to connect:</strong><br>
+              "JPMC's emphasis on integrity resonates deeply with me — in financial services, a single ethical lapse can have systemic consequences. In my work, I've always prioritized doing things right over doing things fast. When I discovered the data precision issue during the MSCI migration, I could have ignored it — it was subtle and unlikely to be caught. Instead, I stopped the migration, fixed it properly, and implemented validation to prevent recurrence. That's the kind of integrity JPMC's clients deserve.<br><br>
+              Operational excellence also aligns with my engineering philosophy — the 99.9% accuracy and 99.9% availability targets I've achieved aren't accidents, they're the result of systematic quality practices."
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">95</div>
+            <div class="qmain"><div class="qtext">Where do you see yourself in 5 years? How does JPMC fit into your career trajectory?</div><div class="qtags"><span class="tag t-orange">Career</span><span class="tag t-blue">HR</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              "In 5 years, I see myself as a technical lead or principal engineer specializing in AI-powered financial systems — someone who can architect solutions that operate at JPMC's scale and complexity.<br><br>
+              This role is a perfect next step because JPMC's scale of problems — processing trillions of dollars, serving hundreds of millions of customers — will push me to grow in ways that smaller environments simply can't. The AI initiatives at JPMC are at the frontier of what's possible in financial services, and I want to be part of building that future.<br><br>
+              I'm also excited about JPMC's investment in developer growth — the opportunity to work alongside some of the best engineers in financial services will accelerate my development significantly."
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">96</div>
+            <div class="qmain"><div class="qtext">What is your greatest weakness? How are you working to improve it?</div><div class="qtags"><span class="tag t-orange">HR</span><span class="tag t-blue">Self-Awareness</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              "Early in my career, I tended to dive deep into technical implementation before fully validating requirements with stakeholders — sometimes building the right solution to the wrong problem. I learned this lesson during a project where I built a sophisticated feature that the business users didn't actually need.<br><br>
+              I've actively worked on this by: (1) Always starting with a requirements document that stakeholders sign off on, (2) Building proof-of-concepts for validation before full development, (3) Scheduling regular check-ins during development rather than only at the end.<br><br>
+              This has made me a much more effective developer — my MDD platform succeeded partly because I spent the first week understanding exactly what model risk analysts needed before writing a single line of code."
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">97</div>
+            <div class="qmain"><div class="qtext">How do you prioritize when you have multiple competing deadlines? Give a specific example.</div><div class="qtags"><span class="tag t-orange">STAR</span><span class="tag t-blue">Time Management</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">STAR Framework</div>
+            <div class="ans">
+              <strong>Framework:</strong> Impact × urgency matrix. Regulatory deadlines are non-negotiable — they take priority. Within discretionary work, prioritize by business impact and dependencies (what's blocking others).<br><br>
+              <strong>Example:</strong> At Citi, I simultaneously had: (1) A CCAR model documentation deadline (regulatory, fixed date), (2) A new ETL pipeline feature request, (3) A production bug in the governance platform.<br><br>
+              <strong>Action:</strong> Fixed the production bug first — it was blocking users. Communicated to the modeling team that the ETL feature would be delayed by 1 week with a revised timeline. Focused entirely on CCAR documentation until the deadline. Delivered the ETL feature the following week.<br><br>
+              <strong>Result:</strong> All three delivered. Key was transparent communication — stakeholders knew the plan and weren't surprised by delays.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">98</div>
+            <div class="qmain"><div class="qtext">How do you handle working with legacy code that has no tests and poor documentation?</div><div class="qtags"><span class="tag t-orange">Technical</span><span class="tag t-blue">Legacy</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer</div>
+            <div class="ans">
+              <strong>My approach:</strong>
+              <ol>
+                <li><strong>Understand before changing:</strong> Read the code, run it, trace execution paths with a debugger</li>
+                <li><strong>Characterization tests:</strong> Write tests capturing current behavior — even if wrong. These become your safety net.</li>
+                <li><strong>Document as you go:</strong> Add docstrings and comments as you understand each function</li>
+                <li><strong>Boy Scout Rule:</strong> Leave the code better than you found it — in small, safe increments</li>
+                <li><strong>Refactor with tests:</strong> Never refactor without tests. Extract methods, rename variables, verify behavior unchanged.</li>
+                <li><strong>Strangler Fig:</strong> For large rewrites, replace incrementally rather than big-bang rewrite</li>
+              </ol>
+              <strong>At MSCI:</strong> Inherited Oracle PL/SQL procedures with no documentation. Spent 2 weeks writing characterization tests before touching any code. This investment paid off — zero regressions during the migration to Python.
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">99</div>
+            <div class="qmain"><div class="qtext">Why should we hire you over other candidates? What makes you uniquely qualified for this role?</div><div class="qtags"><span class="tag t-orange">Closing</span><span class="tag t-red">Must Prepare</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Model Answer Framework</div>
+            <div class="ans">
+              "Three things make me uniquely qualified:<br><br>
+              <strong>1. I sit at the exact intersection JPMC needs.</strong> Most Python developers don't understand financial regulations. Most finance professionals don't know RAG systems. I bring both — and I've demonstrated I can translate between technical and business stakeholders effectively.<br><br>
+              <strong>2. I've proven I can deliver measurable impact in exactly this domain.</strong> My MDD platform achieved an 85% reduction in documentation time and 700%+ efficiency gain — not a prototype, a production system with 99.9% availability. My ETL work handled 37TB with 99.9% accuracy. These aren't theoretical — they're delivered results.<br><br>
+              <strong>3. I'm genuinely excited about JPMC's specific challenges.</strong> The COBOL modernization, LLM Suite expansion, DocLLM — these are problems I've been thinking about and have directly relevant experience for. I'm not just qualified for this role — I'm excited about it."
+            </div>
+          </div>
+        </div>
+
+        <div class="qcard">
+          <div class="qhead" onclick="toggleQ(this)">
+            <div class="qnum">100</div>
+            <div class="qmain"><div class="qtext">What questions do you have for us? (Always prepare 3-5 thoughtful questions)</div><div class="qtags"><span class="tag t-orange">Closing</span><span class="tag t-red">Must Prepare</span></div></div>
+            <div class="qtoggle">▼ Show</div>
+          </div>
+          <div class="qbody">
+            <div class="ans-label">Recommended Questions to Ask</div>
+            <div class="ans">
+              <ol>
+                <li style="margin-bottom:10px;">"What does the team's AI/GenAI roadmap look like for the next 12 months, and where would someone in this role have the most impact?"</li>
+                <li style="margin-bottom:10px;">"What does success look like for this role at the 6-month and 1-year marks?"</li>
+                <li style="margin-bottom:10px;">"How does the team balance innovation with the stability requirements of financial systems?"</li>
+                <li style="margin-bottom:10px;">"What are the biggest technical challenges the team is facing right now that I could help solve?"</li>
+                <li style="margin-bottom:10px;">"How does JPMC's engineering culture support continuous learning and staying current with rapidly evolving technologies like GenAI?"</li>
+              </ol>
+              <div class="tip"><strong>   Tip:</strong> Asking thoughtful questions demonstrates genuine interest and strategic thinking. Avoid asking about salary, benefits, or vacation in the first interview. Reference specific JPMC initiatives in your questions to show you've done your research.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>JPMC Interview Preparation Guide</strong> · Om Rawal · Software Engineer · JP Morgan Chase<br>
+  <span style="margin-top:6px;display:block;">100 questions based on real JPMC interview reports from GFG, LeetCode Discuss, Glassdoor & Blind · 2025–26 Edition</span>
+</footer>
+
+<script>
+  function toggleSec(header) {
+    const section = header.closest('.section');
+    section.classList.toggle('open');
+  }
+
+  function toggleQ(header) {
+    const card = header.closest('.qcard');
+    const toggle = header.querySelector('.qtoggle');
+    card.classList.toggle('open');
+    if (toggle) toggle.textContent = card.classList.contains('open') ? '▲ Hide' : '▼ Show';
+  }
+
+  let allOpen = false;
+  function toggleAll() {
+    allOpen = !allOpen;
+    document.querySelectorAll('.section').forEach(s => {
+      allOpen ? s.classList.add('open') : s.classList.remove('open');
+    });
+    document.querySelectorAll('.qcard').forEach(c => {
+      const toggle = c.querySelector('.qtoggle');
+      if (allOpen) {
+        c.classList.add('open');
+        if (toggle) toggle.textContent = '▲ Hide';
+      } else {
+        c.classList.remove('open');
+        if (toggle) toggle.textContent = '▼ Show';
+      }
+    });
+    document.querySelector('.expand-btn').textContent = allOpen ? '⊖ Collapse All' : '⊕ Expand All Answers';
+  }
+
+  document.querySelectorAll('.side-nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
+<workspaces-note>DO NOT REMOVE|3284081a46707c8cce345a06382f5d4078d13467d3ccd067abd41f2f18676a59</workspaces-note>
